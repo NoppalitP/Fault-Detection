@@ -94,58 +94,62 @@ def compute_top_frequencies(sig, sr=SR, top_n=3):
     return f[idx]
 
 # === MAIN LOOP ===
-while True:
-    try:
-        # --- SYNC HEADER ---
-        b1 = ser.read(1)
-        if not b1 or b1[0]!=0xAA:
-            continue
-        b2 = ser.read(1)
-        if not b2 or b2[0]!=0x55:
-            continue
+try:
+    while True:
+        try:
+            # --- SYNC HEADER ---
+            b1 = ser.read(1)
+            if not b1 or b1[0]!=0xAA:
+                continue
+            b2 = ser.read(1)
+            if not b2 or b2[0]!=0x55:
+                continue
 
-        # --- READ BLOCK ---
-        raw_bytes = ser.read(BLOCK_SIZE*2)
-        if len(raw_bytes) < BLOCK_SIZE*2:
-            continue
+            # --- READ BLOCK ---
+            raw_bytes = ser.read(BLOCK_SIZE*2)
+            if len(raw_bytes) < BLOCK_SIZE*2:
+                continue
 
-        # --- BUFFERING ---
-        samples = np.frombuffer(raw_bytes,dtype=np.int16)
-        buffer.extend(samples)
-        sample_counter += len(samples)
+            # --- BUFFERING ---
+            samples = np.frombuffer(raw_bytes,dtype=np.int16)
+            buffer.extend(samples)
+            sample_counter += len(samples)
 
-        # --- WINDOW READY? ---
-        if sample_counter >= STEP_SIZE and len(buffer) >= WINDOW_SIZE:
-            sample_counter = 0
-            window = np.array(buffer)[-WINDOW_SIZE:]
+            # --- WINDOW READY? ---
+            if sample_counter >= STEP_SIZE and len(buffer) >= WINDOW_SIZE:
+                sample_counter = 0
+                window = np.array(buffer)[-WINDOW_SIZE:]
 
-            # preprocess + inference
-            features, float_win = preprocess_samples(window)
-            db = compute_db(float_win)
-            print(float_win)
-            top_freqs = compute_top_frequencies(float_win)
-            scores = ocsvm.decision_function(features)[0]
-            print(scores)
-            is_normal = 1 if scores >= -0.007414712784148846 else -1
-            #is_normal = ocsvm.predict(features)[0]
-            label_idx = svm.predict(features)[0]
-            label = COMPONENT_NAMES[label_idx]
-            status = "NORMAL" if is_normal==1 else "ANOMALY"
-            icon = "🟢" if is_normal==1 else "🔴"
-            now = datetime.now().isoformat(timespec='seconds')
-            freqs_str = [f"{f:.1f}" for f in top_freqs]
+                # preprocess + inference
+                features, float_win = preprocess_samples(window)
+                db = compute_db(float_win)
+                print(float_win)
+                top_freqs = compute_top_frequencies(float_win)
+                scores = ocsvm.decision_function(features)[0]
+                print(scores)
+                is_normal = 1 if scores >= -0.007414712784148846 else -1
+                #is_normal = ocsvm.predict(features)[0]
+                label_idx = svm.predict(features)[0]
+                label = COMPONENT_NAMES[label_idx]
+                status = "NORMAL" if is_normal==1 else "ANOMALY"
+                icon = "🟢" if is_normal==1 else "🔴"
+                now = datetime.now().isoformat(timespec='seconds')
+                freqs_str = [f"{f:.1f}" for f in top_freqs]
 
-            print(f"{icon} {now} - {label} {status} dB={db:.1f}Hz={freqs_str}")
+                print(f"{icon} {now} - {label} {status} dB={db:.1f}Hz={freqs_str}")
 
-            # log CSV
-            with open(CSV_FILE,'a',newline='') as f:
-                w = csv.writer(f)
-                w.writerow([now,label,status,f"{db:.1f}",*freqs_str])
+                # log CSV
+                with open(CSV_FILE,'a',newline='') as f:
+                    w = csv.writer(f)
+                    w.writerow([now,label,status,f"{db:.1f}",*freqs_str])
 
-    except KeyboardInterrupt:
-        print("Exiting.")
-        break
-    except Exception as e:
-        print("Runtime error:", e)
-        traceback.print_exc()
-        time.sleep(1)
+        except KeyboardInterrupt:
+            print("Exiting.")
+            break
+        except Exception as e:
+            print("Runtime error:", e)
+            traceback.print_exc()
+            time.sleep(1)
+finally:
+    if ser.is_open:
+        ser.close()
