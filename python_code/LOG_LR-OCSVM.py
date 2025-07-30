@@ -145,9 +145,11 @@ try:
 
         except KeyboardInterrupt:
             print("Exiting.")
+            ser.close()
             break
         except Exception as e:
             print("Runtime error:", e)
+            ser.close()
             traceback.print_exc()
             time.sleep(1)
 finally:
