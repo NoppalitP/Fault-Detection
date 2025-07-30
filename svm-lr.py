@@ -21,7 +21,7 @@ WINDOW_DURATION = 2.0
 STEP_DURATION   = 1.0
 WINDOW_SIZE     = int(SAMPLE_RATE * WINDOW_DURATION)
 STEP_SIZE       = int(SAMPLE_RATE * STEP_DURATION)
-CSV_FILE        = "log_results.csv"
+CSV_FILE        = "log\log_results.csv"
 COMPONENT_NAMES = ['mast','elevator','Gripper','shuttle','envir']
 
 # Feature dims (must match dataset builder)
@@ -30,9 +30,9 @@ MAX_FRAMES = 63
 SR         = SAMPLE_RATE
 
 # === LOAD MODELS & SCALER ===
-ocsvm  = joblib.load("svm_oc_model.joblib")
-svm    = joblib.load("log_reg_model (1).joblib")
-scaler = joblib.load("scaler.joblib")
+ocsvm  = joblib.load("model_file\svm_oc_model.joblib")
+svm    = joblib.load("model_file\log_reg_model.joblib")
+scaler = joblib.load("model_file\scaler.joblib")
 
 # === SERIAL INIT ===
 ser = serial.Serial(SERIAL_PORT, BAUD_RATE)
@@ -71,18 +71,18 @@ def preprocess_samples(signal):
     # 5) flatten + scale
     flat = mf_fixed.flatten()[None,:]
     scaled = scaler.transform(flat)
-    return scaled, raw
+    return scaled, signal
 
-CALIBRATION_OFFSET = 66.0  # Based on SPL meter or calibrator
+
 
 def compute_db(sig):
     rms = np.sqrt(np.mean(sig.astype(np.float64)**2))
-    if rms < 1e-12:
-        return 0.0
-    dbfs = 20 * np.log10(rms)  # normalized input
-    db = dbfs + CALIBRATION_OFFSET
-    print(f"[DEBUG] rms={rms:.6f}, dbfs={dbfs:.2f}, db={db:.2f}")
-    return db
+    dBFS = 20 * np.log10(rms/32768) 
+    mic_sensitivity_offset = 94- (-22)
+    estimated_dbspl = dBFS + mic_sensitivity_offset
+    calibrated_dbspl_offset = 54 - 80
+    dBSPL = estimated_dbspl + calibrated_dbspl_offset 
+    return dBSPL
 
 
 
@@ -122,6 +122,7 @@ while True:
             # preprocess + inference
             features, float_win = preprocess_samples(window)
             db = compute_db(float_win)
+            print(float_win)
             top_freqs = compute_top_frequencies(float_win)
             scores = ocsvm.decision_function(features)[0]
             print(scores)
