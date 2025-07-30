@@ -61,7 +61,7 @@ def pad_mfcc(mfcc, max_frames=MAX_FRAMES):
 
 def preprocess_samples(signal):
     # 1) normalize
-    raw = signal.astype(np.float32)/32768
+    raw = signal.astype(np.float32)/32768.0
     # 2) denoise
     den = reduce_noise(raw)
     # 3) MFCC
