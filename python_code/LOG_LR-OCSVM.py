@@ -71,18 +71,19 @@ def preprocess_samples(signal):
     # 5) flatten + scale
     flat = mf_fixed.flatten()[None,:]
     scaled = scaler.transform(flat)
-    return scaled, signal
+    return scaled, raw
 
 
 
 def compute_db(sig):
     rms = np.sqrt(np.mean(sig.astype(np.float64)**2))
-    dBFS = 20 * np.log10(rms/32768) 
+    print(f"RMS: {rms}")
+    dBFS = 20 * np.log10(rms) 
     mic_sensitivity_offset = 94- (-22)
     estimated_dbspl = dBFS + mic_sensitivity_offset
-    calibrated_dbspl_offset = 54 - 80
+    calibrated_dbspl_offset = 54 - 80 + 68 - 64 +2
     dBSPL = estimated_dbspl + calibrated_dbspl_offset 
-    return dBSPL
+    return estimated_dbspl
 
 
 
@@ -122,13 +123,15 @@ try:
 
                 # preprocess + inference
                 features, float_win = preprocess_samples(window)
+                print(float_win)
+
                 db = compute_db(float_win)
                 print(float_win)
                 top_freqs = compute_top_frequencies(float_win)
-                scores = ocsvm.decision_function(features)[0]
-                print(scores)
-                is_normal = 1 if scores >= -0.007414712784148846 else -1
-                #is_normal = ocsvm.predict(features)[0]
+                # scores = ocsvm.decision_function(features)[0]
+                # print(scores)
+                # is_normal = 1 if scores >= -0.007414712784148846 else -1
+                is_normal = ocsvm.predict(features)[0]
                 label_idx = svm.predict(features)[0]
                 label = COMPONENT_NAMES[label_idx]
                 status = "NORMAL" if is_normal==1 else "ANOMALY"

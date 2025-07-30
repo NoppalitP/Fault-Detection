@@ -32,8 +32,8 @@ STEP_DURATION = 1.0    # ความถี่ในการบันทึก�
 
 #============================================================================
 
-OUTPUT_DIRECTORY = r"record\anormal"
-NAME_COMPONENT= "random"  # ชื่อของ component ที่บันทึก
+OUTPUT_DIRECTORY = r"record\normal"
+NAME_COMPONENT= "environment"  # ชื่อของ component ที่บันทึก
 
 
 # === DERIVED CONSTANTS (DO NOT CHANGE) ======================================
