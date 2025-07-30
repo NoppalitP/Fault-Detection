@@ -1,88 +1,78 @@
+from pathlib import Path
 import serial
 import numpy as np
+import wave
 import time
-import mysql.connector
+from collections import deque
 from datetime import datetime
 
-# CONFIG
-PORT = 'COM11'
-BAUD = 921600
-BUFFER_SIZE = 256  # จุดที่จะใช้สำหรับ FFT
-SAMPLING_RATE = 955  # Hz (จากการวัดจริง)
+# === CONFIG ===
+SERIAL_PORT   = 'COM3'
+BAUD_RATE     = 500000
+SAMPLE_RATE   = 16000        # Hz
+CHANNELS      = 1            # mono
+SAMPLE_WIDTH  = 2            # bytes (int16)
+WINDOW_SEC    = 2.0          # ความยาวหน้าต่าง (วินาที)
+STEP_SEC      = 1.0          # ก้าวหน้าต่าง (วินาที)
+OUTPUT_DIR    = Path('recordings')
+CHUNK_SIZE    = int(SAMPLE_RATE * STEP_SEC)  # จำนวนตัวอย่างที่อ่านแต่ละครั้ง
 
-MYSQL_CONFIG = {
-    'host': 'localhost',
-    'user': 'root',
-    'password': '170970022Za-',
-    'database': 'gyro'
-}
-TABLE_NAME = 'fft_result'
+# สร้างโฟลเดอร์ถ้ายังไม่มี
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-# สร้างตาราง
-def create_table(cursor):
-    cursor.execute(f'''
-        CREATE TABLE IF NOT EXISTS {TABLE_NAME} (
-            id INT AUTO_INCREMENT PRIMARY KEY,
-            timestamp DATETIME(3),
-            sampling_rate FLOAT,
-            dominant_freq FLOAT,
-            max_magnitude FLOAT
-        )
-    ''')
+# เรียก buffer สำหรับหน้าต่างเสียง
+window_size = int(SAMPLE_RATE * WINDOW_SEC)
+buffer = deque(maxlen=window_size)
 
-# คำนวณ FFT
-def compute_fft(signal, rate):
-    N = len(signal)
-    signal = np.array(signal) - np.mean(signal)  # remove DC bias
-    freqs = np.fft.rfftfreq(N, d=1.0 / rate)
-    fft_vals = np.fft.rfft(signal)
-    magnitudes = np.abs(fft_vals)
+# เปิด Serial
+ser = serial.Serial(SERIAL_PORT, BAUD_RATE, timeout=1)
+print(f"Listening on {SERIAL_PORT} @ {BAUD_RATE} baud...")
 
-    dominant_freq = freqs[np.argmax(magnitudes)]
-    max_mag = np.max(magnitudes)
-
-    return dominant_freq, max_mag
-
-# MAIN
-ser = serial.Serial(PORT, BAUD, timeout=1)
-print(f"📡 Listening on {PORT}...")
-
-conn = mysql.connector.connect(**MYSQL_CONFIG)
-cursor = conn.cursor()
-create_table(cursor)
-
-buffer = []
-
+# อ่านข้อมูลจาก serial และบันทึกเป็น WAV ด้วย sliding window
 try:
+    # เติม buffer ครั้งแรก
+    required_bytes = window_size * SAMPLE_WIDTH
+    collected = bytearray()
+    print(f"Collecting initial {WINDOW_SEC}s of data...")
+    while len(collected) < required_bytes:
+        chunk = ser.read(ser.in_waiting or SAMPLE_WIDTH)
+        if chunk:
+            collected.extend(chunk)
+    init_samples = np.frombuffer(collected[:required_bytes], dtype=np.int16)
+    buffer.extend(init_samples.tolist())
+    print("Initial buffer filled. Starting sliding window recording...")
+
+    # Loop อ่านและเขียนไฟล์
     while True:
-        line = ser.readline().decode('utf-8').strip()
-        try:
-            ax, ay, az = map(float, line.split(','))
+        # อ่าน CHUNK_SIZE ตัวอย่างจาก serial
+        bytes_needed = CHUNK_SIZE * SAMPLE_WIDTH
+        data = bytearray()
+        while len(data) < bytes_needed:
+            chunk = ser.read(ser.in_waiting or SAMPLE_WIDTH)
+            if chunk:
+                data.extend(chunk)
+        samples = np.frombuffer(data[:bytes_needed], dtype=np.int16)
 
-            # เลือกแกนใดแกนหนึ่ง เช่น z-axis
-            buffer.append(az)
+        # อัพเดต buffer (auto drop เก่าตาม maxlen)
+        buffer.extend(samples.tolist())
 
-            if len(buffer) >= BUFFER_SIZE:
-                # ทำ FFT
-                dominant_freq, max_mag = compute_fft(buffer, SAMPLING_RATE)
-                timestamp = datetime.now()
+        # สร้างไฟล์ WAV
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S_%f')[:-3]
+        wav_path = OUTPUT_DIR / f"record_{timestamp}.wav"
+        with wave.open(str(wav_path), 'wb') as wf:
+            wf.setnchannels(CHANNELS)
+            wf.setsampwidth(SAMPLE_WIDTH)
+            wf.setframerate(SAMPLE_RATE)
+            # เขียนช่วงเวลาปัจจุบัน (WINDOW_SEC)
+            arr = np.array(buffer, dtype=np.int16)
+            wf.writeframes(arr.tobytes())
+        print(f"Saved {wav_path} ({WINDOW_SEC}s window)")
 
-                print(f"[FFT] Dominant: {dominant_freq:.2f} Hz | Max Mag: {max_mag:.2f}")
+        # รอจนกระทีก้าวถัดไป (ไม่บล็อก อ่านแล้วเกิดไปเรื่อย ๆ)
+        # ในที่นี้อ่านทันทีต่อเนื่อง จึงไม่ต้อง sleep
 
-                # ส่งเข้า MySQL
-                cursor.execute(f'''
-                    INSERT INTO {TABLE_NAME} (timestamp, sampling_rate, dominant_freq, max_magnitude)
-                    VALUES (%s, %s, %s, %s)
-                ''', (timestamp, SAMPLING_RATE, dominant_freq, max_mag))
-                conn.commit()
-
-                # ล้าง buffer
-                buffer = []
-
-        except ValueError:
-            print(f"[WARN] Invalid: {line}")
 except KeyboardInterrupt:
-    print("🛑 Stopped.")
+    print("Stopping recording.")
 finally:
     ser.close()
-    conn.close()
+    print("Serial port closed.")
