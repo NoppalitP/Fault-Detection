@@ -61,9 +61,10 @@ def pad_mfcc(mfcc, max_frames=MAX_FRAMES):
 
 def preprocess_samples(signal):
     # 1) normalize
-    raw = signal.astype(np.float32)/32768.0
+    scaled = signal.astype(np.float32)/32768.0
+    print(scaled.max(), scaled.min())
     # 2) denoise
-    den = reduce_noise(raw)
+    den = reduce_noise(scaled)
     # 3) MFCC
     mf = extract_mfcc(den)
     # 4) pad/truncate
@@ -71,19 +72,18 @@ def preprocess_samples(signal):
     # 5) flatten + scale
     flat = mf_fixed.flatten()[None,:]
     scaled = scaler.transform(flat)
-    return scaled, raw
+    return scaled, scaled
 
 
 
 def compute_db(sig):
     rms = np.sqrt(np.mean(sig.astype(np.float64)**2))
-    print(f"RMS: {rms}")
     dBFS = 20 * np.log10(rms) 
     mic_sensitivity_offset = 94- (-22)
     estimated_dbspl = dBFS + mic_sensitivity_offset
     calibrated_dbspl_offset = 54 - 80 + 68 - 64 +2
     dBSPL = estimated_dbspl + calibrated_dbspl_offset 
-    return estimated_dbspl
+    return dBSPL
 
 
 
@@ -123,10 +123,8 @@ try:
 
                 # preprocess + inference
                 features, float_win = preprocess_samples(window)
-                print(float_win)
 
                 db = compute_db(float_win)
-                print(float_win)
                 top_freqs = compute_top_frequencies(float_win)
                 # scores = ocsvm.decision_function(features)[0]
                 # print(scores)
