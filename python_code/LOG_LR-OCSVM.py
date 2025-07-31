@@ -62,7 +62,6 @@ def pad_mfcc(mfcc, max_frames=MAX_FRAMES):
 def preprocess_samples(signal):
     # 1) normalize
     scaled = signal.astype(np.float32)/32768.0
-    print(scaled.max(), scaled.min())
     # 2) denoise
     den = reduce_noise(scaled)
     # 3) MFCC
@@ -72,16 +71,16 @@ def preprocess_samples(signal):
     # 5) flatten + scale
     flat = mf_fixed.flatten()[None,:]
     scaled = scaler.transform(flat)
-    return scaled, scaled
+    return scaled, signal
 
 
 
 def compute_db(sig):
-    rms = np.sqrt(np.mean(sig.astype(np.float64)**2))
+    rms = np.sqrt(np.mean((sig.astype(np.float64) / 32768.0) ** 2))
     dBFS = 20 * np.log10(rms) 
     mic_sensitivity_offset = 94- (-22)
     estimated_dbspl = dBFS + mic_sensitivity_offset
-    calibrated_dbspl_offset = 54 - 80 + 68 - 64 +2
+    calibrated_dbspl_offset = 54 -79
     dBSPL = estimated_dbspl + calibrated_dbspl_offset 
     return dBSPL
 
@@ -137,7 +136,7 @@ try:
                 now = datetime.now().isoformat(timespec='seconds')
                 freqs_str = [f"{f:.1f}" for f in top_freqs]
 
-                print(f"{icon} {now} - {label} {status} dB={db:.1f}Hz={freqs_str}")
+                print(f"{icon} {now} - {label} {status} dB={db:.1f} Hz={freqs_str}")
 
                 # log CSV
                 with open(CSV_FILE,'a',newline='') as f:
