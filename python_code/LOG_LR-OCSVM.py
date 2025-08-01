@@ -15,14 +15,14 @@ from sklearn.preprocessing import StandardScaler
 # === CONFIG ===
 SERIAL_PORT     = 'COM3'
 BAUD_RATE       = 500000
-SAMPLE_RATE     = 16000
+SAMPLE_RATE     = 22050
 BLOCK_SIZE      = 512
 WINDOW_DURATION = 2.0
 STEP_DURATION   = 1.0
 WINDOW_SIZE     = int(SAMPLE_RATE * WINDOW_DURATION)
 STEP_SIZE       = int(SAMPLE_RATE * STEP_DURATION)
 CSV_FILE        = "log\log_results.csv"
-COMPONENT_NAMES = ['mast','elevator','Gripper','shuttle','envir']
+COMPONENT_NAMES = ['mast','elevator','gripper','shuttle','environment']
 
 # Feature dims (must match dataset builder)
 N_MFCC     = 40
@@ -30,7 +30,7 @@ MAX_FRAMES = 63
 SR         = SAMPLE_RATE
 
 # === LOAD MODELS & SCALER ===
-ocsvm  = joblib.load("model_file\svm_oc_model.joblib")
+ocsvm  = joblib.load("model_file\ocsvm_model.joblib")
 svm    = joblib.load("model_file\log_reg_model.joblib")
 scaler = joblib.load("model_file\scaler.joblib")
 
@@ -62,6 +62,7 @@ def pad_mfcc(mfcc, max_frames=MAX_FRAMES):
 def preprocess_samples(signal):
     # 1) normalize
     scaled = signal.astype(np.float32)/32768.0
+    print(f"{scaled.mean():.3f} {scaled.std():.3f}")
     # 2) denoise
     den = reduce_noise(scaled)
     # 3) MFCC
