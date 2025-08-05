@@ -35,6 +35,7 @@ models:
   ocsvm: "model_file/ocsvm_model.joblib"
   log_reg: "model_file/log_reg_model.joblib"
   scaler: "model_file/scaler.joblib"
+  threshold: -0.3
 
 testers:
   name: "IPC1"
