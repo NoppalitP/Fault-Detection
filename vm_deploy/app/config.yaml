@@ -9,8 +9,7 @@ serial:
 audio:
   sample_rate: 22050
   block_size: 512
-  window_duration: 2.0      # seconds
-  step_duration: 1.0        # seconds
+
 
 # === WINDOW CALCULATED ===
 window:
@@ -39,3 +38,11 @@ models:
 
 testers:
   name: "IPC1"
+
+batch:
+  size: 30
+  wav_dir: "app/wav_file_temp"
+
+mfcc:
+  n_mfcc: 40
+  max_frames: 63

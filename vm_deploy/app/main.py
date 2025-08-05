@@ -1,112 +1,204 @@
-from pathlib import Path
-import serial
-import numpy as np
-import librosa
-import noisereduce as nr
-import joblib
 import csv
 import time
+import logging
 import traceback
 from datetime import datetime, timedelta
-from collections import deque
+from pathlib import Path
+
+import joblib
+import librosa
+import numpy as np
+import noisereduce as nr
+import serial
 import yaml
+import wave
+import sys
+from collections import deque
+import threading
 
-# --- โหลด config ---
-BASE = Path(__file__).parent.parent     # สมมติโครงสร้าง /deploy/app/main.py
-cfg_path = BASE / "app" / "config.yaml"
-with open(cfg_path, 'r') as f:
-    cfg = yaml.safe_load(f)
+def spinner_task():
+    spinner = ['|', '/', '-', '\\']
+    idx = 0
+    while True:
+        print(f"\rInitializing fault detection... {spinner[idx]}", end='', flush=True)
+        idx = (idx + 1) % len(spinner)
+        time.sleep(0.2)
 
-# --- ดึงค่าต่างๆ ---
-SERIAL_PORT   = cfg['serial']['port']
-BAUD_RATE     = cfg['serial']['baud_rate']
-SAMPLE_RATE   = cfg['audio']['sample_rate']
-BLOCK_SIZE    = cfg['audio']['block_size']
-WINDOW_SIZE   = cfg['window']['size']
-STEP_SIZE     = cfg['window']['step']
 
-LOG_DIR       = BASE / cfg['logging']['log_dir']
-LOG_DIR.mkdir(exist_ok=True)
-ROTATION_MIN  = cfg['logging']['rotation_minutes']
+def setup_logging(log_file: Path):
+    logging.basicConfig(
+        filename=str(log_file),
+        level=logging.INFO,
+        format="%(asctime)s %(levelname)s: %(message)s",
+        datefmt="%Y-%m-%dT%H:%M:%S"
+    )
 
-COMPONENTS    = cfg['components']
 
-ocsvm_path    = BASE / cfg['models']['ocsvm']
-svm_path      = BASE / cfg['models']['log_reg']
-scaler_path   = BASE / cfg['models']['scaler']
-MODEL_THRESHOLD = cfg["models"]["threshold"]
-TESTER_NAME = cfg["testers"]["name"]
-
-ocsvm = joblib.load(ocsvm_path)
-svm = joblib.load(svm_path)
-scaler = joblib.load(scaler_path)
-# === SERIAL INIT ===
-ser = serial.Serial(SERIAL_PORT, BAUD_RATE)
-buffer = deque(maxlen=WINDOW_SIZE)
-sample_counter = 0
-
-# === CSV ROTATION SETUP ===
-current_start = datetime.now()
-def new_log_file(start_time):
-    fname = start_time.strftime(f"{TESTER_NAME}_%Y%m%d_%H%M%S.csv")
-    path = LOG_DIR / fname
+def new_log_file(start_time: datetime, log_dir: Path, tester_name: str) -> Path:
+    fname = start_time.strftime(f"{tester_name}_%Y%m%d_%H%M%S.csv")
+    path = log_dir / fname
     with open(path, 'w', newline='') as f:
-        w = csv.writer(f)
-        w.writerow(["Timestamp","Component","Status","dB","TopFreq1","TopFreq2","TopFreq3","Tester_id"])
+        writer = csv.writer(f)
+        writer.writerow([
+            "Timestamp", "Component", "Status",
+            "dB", "TopFreq1", "TopFreq2", "TopFreq3", "Tester_id"
+        ])
     return path
 
-current_log = new_log_file(current_start)
 
-# === PREPROCESSING UTILITIES ===
-def reduce_noise(sig, sr=SAMPLE_RATE):
+def save_wave_file(filepath: str, audio_data: bytes, sample_rate: int, sample_width: int):
+    """
+    Saves the provided audio data to a .wav file.
+
+    Args:
+        filepath (str): The full path to the output .wav file.
+        audio_data (bytes): The raw audio data to save.
+        sample_rate (int): The sample rate of the audio.
+        sample_width (int): The sample width in bytes (e.g., 2 for 16-bit).
+        channels (int): The number of audio channels (e.g., 1 for mono).
+    """
+    try:
+        with wave.open(filepath, 'wb') as wf:
+            wf.setnchannels(1)
+            wf.setsampwidth(sample_width)
+            wf.setframerate(sample_rate)
+            wf.writeframes(audio_data)
+    except Exception as e:
+        print(f"❌ Error saving file {filepath}: {e}", file=sys.stderr)
+
+
+def reduce_noise(sig: np.ndarray, sr: int) -> np.ndarray:
     return nr.reduce_noise(y=sig, sr=sr)
 
-def extract_mfcc(sig, sr=SAMPLE_RATE, n_mfcc=40):
-    return librosa.feature.mfcc(y=sig, sr=sr, n_mfcc=n_mfcc)
 
-def pad_mfcc(mfcc, max_frames=63):
+def extract_mfcc(sig: np.ndarray, sr: int, n_mfcc: int = 40, hop_length: int = 512) -> np.ndarray:
+    return librosa.feature.mfcc(y=sig, sr=sr, n_mfcc=n_mfcc, hop_length=hop_length)
+
+
+def pad_mfcc(mfcc: np.ndarray, max_frames: int) -> np.ndarray:
     n_mfcc, n_frames = mfcc.shape
     if n_frames < max_frames:
-        return np.pad(mfcc, ((0,0),(0,max_frames-n_frames)), mode='constant')
+        return np.pad(mfcc, ((0, 0), (0, max_frames - n_frames)), mode='constant')
     return mfcc[:, :max_frames]
 
-def preprocess_samples(signal):
-    scaled = signal.astype(np.float32) / 32768.0
-    den    = reduce_noise(scaled)
-    mf     = extract_mfcc(den)
-    mf_fixed = pad_mfcc(mf)
-    flat   = mf_fixed.flatten()[None,:]
-    scaled_features = scaler.transform(flat)
-    return scaled_features, signal
+
+def preprocess_file(wav_path: Path, scaler, sample_rate: int, n_mfcc: int, max_frames: int, hop_length: int):
+    sig, sr = librosa.load(str(wav_path), sr=sample_rate)
+    denoised = reduce_noise(sig, sr=sr)
+    mf = extract_mfcc(denoised, sr=sr, n_mfcc=n_mfcc, hop_length=hop_length)
+    mf_fixed = pad_mfcc(mf, max_frames=max_frames)
+    flat = mf_fixed.flatten()[None, :]
+    features = scaler.transform(flat)
+    return features, sig
 
 
-def compute_db(sig):
-    rms = np.sqrt(np.mean((sig.astype(np.float64)/32768.0)**2))
-    dBFS = 20*np.log10(rms)
-    mic_sensitivity_offset = 94 - (-22)
-    est_dbspl = dBFS + mic_sensitivity_offset
-    calibrated_offset = 54 - 79
-    return est_dbspl + calibrated_offset
+def compute_db(sig: np.ndarray) -> float:
+    rms = librosa.feature.rms(y=sig)[0]  # shape (T,)
+    # Convert to dBFS (max=0 dB)
+    dbfs = librosa.amplitude_to_db(rms, ref=1)
+    # Apply microphone calibration offset to estimate dB SPL
+    mic_offset = 94 - (-22) +54 - 82 # example: device outputs -22 dBFS at 94 dB SPL
+    dbspl = dbfs + mic_offset
+    # Return max SPL in window
+    return float(np.max(dbspl))
 
 
-def compute_top_frequencies(sig, sr=SAMPLE_RATE, top_n=3):
-    S    = np.fft.rfft(sig)
-    f    = np.fft.rfftfreq(len(sig),1/sr)
+def compute_top_frequencies(sig: np.ndarray, sr: int, top_n: int = 3) -> np.ndarray:
+    S = np.fft.rfft(sig)
+    f = np.fft.rfftfreq(len(sig), 1/sr)
     mags = np.abs(S)
-    idx  = np.argsort(mags)[-top_n:][::-1]
+    idx = np.argsort(mags)[-top_n:][::-1]
     return f[idx]
 
-# === MAIN LOOP ===
-try:
-    running = True
-    while running:
-        now = datetime.now()
-        if now - current_start >= timedelta(minutes=ROTATION_MIN):
-            current_start = now
-            current_log = new_log_file(current_start)
-            print(f"🔄 Rotated log file: {current_log}")
 
+def batch_predict(wav_dir: Path, log_path: Path, scaler, ocsvm, svm, components,
+                  model_threshold, sample_rate, n_mfcc, max_frames, hop_length, tester_name, ts_array):
+    for index, wav_file in enumerate(sorted(wav_dir.glob("window_*.wav"))):
         try:
+            features, denoised = preprocess_file(
+                wav_file, scaler, sample_rate,
+                n_mfcc, max_frames, hop_length
+            )
+            db = compute_db(denoised)
+            top_freqs = compute_top_frequencies(denoised, sr=sample_rate)
+            score = ocsvm.decision_function(features)[0]
+            is_normal = 1 if score >= model_threshold else -1
+            label_idx = svm.predict(features)[0]
+            label = components[label_idx]
+            status = "NORMAL" if is_normal == 1 else "ANOMALY"
+
+            freqs_str = [f"{f:.1f}" for f in top_freqs]
+            row = [ts_array[index], label, status, f"{db:.1f}", *freqs_str, tester_name]
+
+            with open(log_path, 'a', newline='') as f:
+                writer = csv.writer(f)
+                writer.writerow(row)
+
+            logging.info(f"Batch {wav_file.name}: {label} {status} dB={db:.1f} Hz={freqs_str}")
+        except Exception as e:
+            logging.error(f"Error processing {wav_file}", exc_info=e)
+    for wav_file in wav_dir.glob("window_*.wav"):
+        wav_file.unlink()
+
+
+def main():
+    base = Path(__file__).resolve().parent.parent
+    with open(base / "app" / "config.yaml", 'r') as f:
+        cfg = yaml.safe_load(f)
+
+    serial_port = cfg['serial']['port']
+    baud_rate = cfg['serial']['baud_rate']
+    sample_rate = cfg['audio']['sample_rate']
+    block_size = cfg['audio']['block_size']
+    window_size = cfg['window']['size']
+    step_size = cfg['window']['step']
+    batch_size = cfg['batch']['size']
+    tester_name = cfg['testers']['name']
+    components = cfg['components']
+    model_threshold = cfg['models']['threshold']
+    n_mfcc = cfg['audio'].get('n_mfcc', 40)
+    hop_length = cfg['audio'].get('hop_length', 512)
+
+    scaler = joblib.load(base / cfg['models']['scaler'])
+    expected_dim = scaler.mean_.shape[0]
+    max_frames = expected_dim // n_mfcc
+    ocsvm = joblib.load(base / cfg['models']['ocsvm'])
+    svm = joblib.load(base / cfg['models']['log_reg'])
+
+    log_dir = base / cfg['logging']['log_dir']
+    log_dir.mkdir(parents=True, exist_ok=True)
+    wav_dir = base / cfg['batch']['wav_dir']
+    wav_dir.mkdir(parents=True, exist_ok=True)
+
+    app_log = base / "app.log"
+    setup_logging(app_log)
+    logging.info("Starting batch fault detection monitoring")
+
+    try:
+        ser = serial.Serial(serial_port, baud_rate, timeout=1)
+        logging.info("Serial port opened successfully")
+    except Exception as se:
+        logging.error("Unable to open serial port", exc_info=se)
+        return
+
+    buffer = deque(maxlen=window_size)
+    sample_counter = batch_counter = file_log_batch_counter = 0
+    current_start = datetime.now()
+    ts_array = []
+    current_log = new_log_file(current_start, log_dir, tester_name)
+    logging.info(f"Rotated log file: {current_log}")
+
+    spinner_thread = threading.Thread(target=spinner_task, daemon=True)
+    spinner_thread.start()
+    try:
+        while True:
+            now = datetime.now()
+            if file_log_batch_counter >= 180:
+                current_start = now
+                current_log = new_log_file(current_start, log_dir, tester_name)
+                logging.info(f"Rotated log file: {current_log}")
+                file_log_batch_counter = 0
+
             b1 = ser.read(1)
             if not b1 or b1[0] != 0xAA:
                 continue
@@ -114,51 +206,42 @@ try:
             if not b2 or b2[0] != 0x55:
                 continue
 
-            raw_bytes = ser.read(BLOCK_SIZE*2)
-            if len(raw_bytes) < BLOCK_SIZE*2:
+            raw_bytes = ser.read(block_size * 2)
+            if len(raw_bytes) < block_size * 2:
+                time.sleep(0.005)
                 continue
 
             samples = np.frombuffer(raw_bytes, dtype=np.int16)
             buffer.extend(samples)
             sample_counter += len(samples)
 
-            if sample_counter >= STEP_SIZE and len(buffer) >= WINDOW_SIZE:
+            if sample_counter >= step_size and len(buffer) >= window_size:
                 sample_counter = 0
-                window = np.array(buffer)[-WINDOW_SIZE:]
+                batch_counter += 1
+                file_log_batch_counter += 1
+                window = np.array(buffer)[-window_size:]
 
-                features, float_win = preprocess_samples(window)
-                db = compute_db(float_win)
-                top_freqs = compute_top_frequencies(float_win)
-
-                score = ocsvm.decision_function(features)[0]
-                is_normal = 1 if score >= MODEL_THRESHOLD else -1 
-                label_idx = svm.predict(features)[0]
-                label = COMPONENTS[label_idx]
-                status = "NORMAL" if is_normal==1 else "ANOMALY"
-
+                # Prepare WAV save
+                wav_path = wav_dir / f"window_{batch_counter:03d}.wav"
+                audio_bytes = window.astype(np.int16).tobytes()
+                save_wave_file(str(wav_path), audio_bytes, sample_rate, sample_width=2,)
+                logging.info(f"Saved batch wav {batch_counter}/{batch_size}")
                 ts = datetime.now().isoformat(timespec='seconds')
-                freqs_str = [f"{f:.1f}" for f in top_freqs]
-                print(f"{TESTER_NAME} - {ts} - {label} {status} dB={db:.1f} Hz={freqs_str}")
+                ts_array.append(ts)
+                if batch_counter >= batch_size:
+                    batch_predict(
+                        wav_dir, current_log, scaler, ocsvm, svm,
+                        components, model_threshold, sample_rate,
+                        n_mfcc, max_frames, hop_length, tester_name, ts_array
+                    )
+                    batch_counter = 0
 
-                with open(current_log, 'a', newline='') as f:
-                    w = csv.writer(f)
-                    w.writerow([ts, label, status, f"{db:.1f}", *freqs_str, TESTER_NAME])
+    except KeyboardInterrupt:
+        logging.info("Keyboard interrupt received. Shutting down.")
+    finally:
+        if ser.is_open:
+            ser.close()
+            logging.info("Serial port closed.")
 
-        except Exception as e:
-            ts = datetime.now().isoformat(timespec='seconds')
-            err_msg = f"[{ts}] Runtime error: {e}"
-            print(err_msg)
-            traceback.print_exc()
-
-            with open(BASE / "error.log", "a") as logf:
-                logf.write(err_msg + "\n")
-                logf.write(traceback.format_exc() + "\n")
-
-except KeyboardInterrupt:
-    print("🛑 Keyboard interrupt received. Closing...")
-
-finally:
-    if ser.is_open:
-        ser.close()
-    print("✅ Serial port closed.")
-
+if __name__ == "__main__":
+    main()
