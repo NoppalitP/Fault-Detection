@@ -195,6 +195,7 @@ def main():
             now = datetime.now()
             if file_log_batch_counter >= 180:
                 current_start = now
+                ts_array = []
                 current_log = new_log_file(current_start, log_dir, tester_name)
                 logging.info(f"Rotated log file: {current_log}")
                 file_log_batch_counter = 0
