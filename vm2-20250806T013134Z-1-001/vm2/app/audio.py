@@ -4,17 +4,6 @@ import noisereduce as nr
 import wave
 import sys
 
-def reduce_noise(sig: np.ndarray, sr: int) -> np.ndarray:
-    return nr.reduce_noise(y=sig, sr=sr)
-
-def extract_mfcc(sig: np.ndarray, sr: int, n_mfcc: int = 40, hop_length: int = 512) -> np.ndarray:
-    return librosa.feature.mfcc(y=sig, sr=sr, n_mfcc=n_mfcc, hop_length=hop_length)
-
-def pad_mfcc(mfcc: np.ndarray, max_frames: int) -> np.ndarray:
-    n_mfcc, n_frames = mfcc.shape
-    if n_frames < max_frames:
-        return np.pad(mfcc, ((0, 0), (0, max_frames - n_frames)), mode='constant')
-    return mfcc[:, :max_frames]
 
 def compute_db(sig: np.ndarray) -> float:
     rms = librosa.feature.rms(y=sig)[0]

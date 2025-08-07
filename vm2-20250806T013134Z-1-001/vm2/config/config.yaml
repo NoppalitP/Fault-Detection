@@ -31,10 +31,8 @@ components:
 
 # === MODEL PATHS ===
 models:
-  ocsvm: "model_files/ocsvm_model.joblib"
+  iso: "model_files/iso_model.joblib"
   log_reg: "model_files/log_reg_model.joblib"
-  scaler: "model_files/scaler.joblib"
-  threshold: -0.3
 
 testers:
   name: "IPC1"
@@ -44,5 +42,5 @@ batch:
   wav_dir: "wav_file_temp"
 
 mfcc:
-  n_mfcc: 40
+  n_mfcc: 13
   max_frames: 63

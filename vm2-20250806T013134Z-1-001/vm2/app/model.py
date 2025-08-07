@@ -4,22 +4,45 @@ from typing import Tuple, List
 from app.audio import reduce_noise, extract_mfcc, pad_mfcc
 
 def load_models(base: Path, cfg: dict):
-    scaler = joblib.load(base / cfg['models']['scaler'])
-    ocsvm  = joblib.load(base / cfg['models']['ocsvm'])
-    svm    = joblib.load(base / cfg['models']['log_reg'])
-    expected_dim = scaler.mean_.shape[0]
-    return scaler, ocsvm, svm, expected_dim
+    iso  = joblib.load(base / cfg['models']['iso'])
+    log_reg    = joblib.load(base / cfg['models']['log_reg'])
+    
+    return  iso, svm, 
 
-def preprocess_file(wav_path: Path, scaler, sample_rate: int, n_mfcc: int, max_frames: int, hop_length: int) -> Tuple:
+def extract_features(segment, sr, n_mfcc):
+    #Spectral features
+    #centroid  = librosa.feature.spectral_centroid(y=segment, sr=sr)
+    # bandwidth = librosa.feature.spectral_bandwidth(y=segment, sr=sr)
+    # rolloff   = librosa.feature.spectral_rolloff(y=segment, sr=sr)
+    #flatness  = librosa.feature.spectral_flatness(y=segment)
+    # contrast  = librosa.feature.spectral_contrast(y=segment, sr=sr)
+    # zcr       = librosa.feature.zero_crossing_rate(y=segment)
+    #rms       = librosa.feature.rms(y=segment)
+
+    mfccs = librosa.feature.mfcc(y=segment, sr=22050, n_mfcc=n_mfcc)
+
+    # Combine all features (take mean across time axis)
+    feat_vec = np.concatenate([
+        #centroid.mean(axis=1),
+        # bandwidth.mean(axis=1),
+        # rolloff.mean(axis=1),
+        #flatness.mean(axis=1),
+        # contrast.mean(axis=1),
+        # zcr.mean(axis=1),
+        #rms.mean(axis=1),
+        mfccs.mean(axis=1),
+    ])
+
+    return feat_vec
+
+def preprocess_file(wav_path: Path, , sample_rate: int, n_mfcc: int) -> Tuple:
     sig, sr = librosa.load(str(wav_path), sr=sample_rate)
-    denoised = reduce_noise(sig, sr=sr)
-    mf = extract_mfcc(denoised, sr=sr, n_mfcc=n_mfcc, hop_length=hop_length)
-    mf_fixed = pad_mfcc(mf, max_frames)
-    flat = mf_fixed.flatten()[None, :]
-    features = scaler.transform(flat)
-    return features, denoised
+    feat_vec = extract_features(raw,sample_rate,sig,n_mfcc)
+    return feat_vec, sig
 
-def batch_predict(wav_dir: Path, log_path: Path, scaler, ocsvm, svm, components: List[str],
+
+
+def batch_predict(wav_dir: Path, log_path: Path, scaler, iso, log_reg, components: List[str],
                   model_threshold: float, sample_rate: int, n_mfcc: int, max_frames: int,
                   hop_length: int, tester_name: str, ts_array: List[str]):
     from .audio import compute_db, compute_top_frequencies
@@ -30,10 +53,14 @@ def batch_predict(wav_dir: Path, log_path: Path, scaler, ocsvm, svm, components:
             features, sig = preprocess_file(wav_file, scaler, sample_rate, n_mfcc, max_frames, hop_length)
             db = compute_db(sig)
             freqs = compute_top_frequencies(sig, sample_rate)
-            score = ocsvm.decision_function(features)[0]
-            status = "NORMAL" if score >= model_threshold else "ANOMALY"
-            label = components[svm.predict(features)[0]]
-            row = [ts_array[idx], label, status, f"{db:.1f}", *[f"{f:.1f}" for f in freqs], tester_name]
+            if iso.predict(features)[0]:
+                isnormal = "Normal"
+            else:
+                isnormal = "Anomaly"
+
+
+            label = components[log_reg.predict(features)[0]]
+            row = [ts_array[idx], label, isnormal, f"{db:.1f}", *[f"{f:.1f}" for f in freqs], tester_name]
             with open(log_path, 'a', newline='') as f:
                 csv.writer(f).writerow(row)
             logging.info(f"{wav_file.name}: {label} {status} dB={db:.1f}")
