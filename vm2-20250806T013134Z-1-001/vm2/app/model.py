@@ -1,13 +1,13 @@
 import joblib , librosa
 from pathlib import Path
 from typing import Tuple, List
-from app.audio import reduce_noise, extract_mfcc, pad_mfcc
-
+from app.audio import save_wave_file
+import numpy as np
 def load_models(base: Path, cfg: dict):
     iso  = joblib.load(base / cfg['models']['iso'])
     log_reg    = joblib.load(base / cfg['models']['log_reg'])
     
-    return  iso, svm, 
+    return  iso, log_reg 
 
 def extract_features(segment, sr, n_mfcc):
     #Spectral features
@@ -35,9 +35,9 @@ def extract_features(segment, sr, n_mfcc):
 
     return feat_vec
 
-def preprocess_file(wav_path: Path, , sample_rate: int, n_mfcc: int) -> Tuple:
+def preprocess_file(wav_path: Path,  sample_rate: int, n_mfcc: int) -> Tuple:
     sig, sr = librosa.load(str(wav_path), sr=sample_rate)
-    feat_vec = extract_features(raw,sample_rate,sig,n_mfcc)
+    feat_vec = extract_features(sig,sample_rate,sig,n_mfcc)
     return feat_vec, sig
 
 
@@ -63,7 +63,7 @@ def batch_predict(wav_dir: Path, log_path: Path, scaler, iso, log_reg, component
             row = [ts_array[idx], label, isnormal, f"{db:.1f}", *[f"{f:.1f}" for f in freqs], tester_name]
             with open(log_path, 'a', newline='') as f:
                 csv.writer(f).writerow(row)
-            logging.info(f"{wav_file.name}: {label} {status} dB={db:.1f}")
+            logging.info(f"{wav_file.name}: {label} {isnormal} dB={db:.1f}")
         except Exception as e:
             logging.error(f"Error processing {wav_file}", exc_info=e)
 
