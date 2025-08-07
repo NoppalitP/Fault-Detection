@@ -1,5 +1,10 @@
 #include <M5Unified.h>
+///////config
 
+int Board_rate = 500000;
+int Sampling_rate = 22050;
+
+/////
 static constexpr size_t BLOCK_SIZE = 512;
 int16_t buffer[BLOCK_SIZE];
 
@@ -31,7 +36,7 @@ void setup() {
   auto cfg = M5.config();
   M5.begin(cfg);
   
-  Serial.begin(500000);
+  Serial.begin(Board_rate);
   M5.Mic.begin();
   
   // Initialize display
@@ -56,7 +61,7 @@ void loop() {
   }
   
   // Record audio data
-  if (M5.Mic.record(buffer, BLOCK_SIZE, 22050)) {
+  if (M5.Mic.record(buffer, BLOCK_SIZE, Sampling_rate)) {
     if (currentPage == 0) {
       // Page 0: Send PCM data via Serial
       sendPCMData();
@@ -96,14 +101,23 @@ digitalWrite(10, LOW);
 
 void analyzeAudio() {
   // Calculate RMS for dB level
-  long sum = 0;
+  float mean = 0;
+  for (int i = 0; i < BLOCK_SIZE; i++) mean += buffer[i];
+  mean /= BLOCK_SIZE;
+
+  // 2. คำนวณ RMS
+  double sumSq = 0;
   for (int i = 0; i < BLOCK_SIZE; i++) {
-    sum += (long)buffer[i] * buffer[i];
+    float x = buffer[i] - mean;
+    sumSq += x * x;
   }
-  float rms = sqrt(sum / BLOCK_SIZE);
-  
-  // Convert to dB (with reference level)
-  currentDB = 20.0 * log10(rms / 32767.0) + 90.0; // Approximate dB SPL
+  float rms = sqrt(sumSq / BLOCK_SIZE);
+
+  // 3. dBFS และแปลงเป็น dB SPL
+  float dbFS = 20.0 * log10(rms / 32767.0);
+  currentDB = dbFS + 116.0 +54-80;        // calibration offset จากสเปค
+
+  // 4. ไม่ให้ลงต่ำกว่า 0
   if (currentDB < 0) currentDB = 0;
   
   // Update waveform buffer (downsample for display)
@@ -126,7 +140,7 @@ void findDominantFrequency() {
   float maxMagnitude = 0.0;
   int maxIndex = 0;
   
-  // Check frequencies up to Nyquist (11025 Hz for 22050 sample rate)
+  // Check frequencies up to Nyquist (11025 Hz for Sampling_rate sample rate)
   for (int k = 1; k < BLOCK_SIZE/4; k++) {
     float real_sum = 0.0;
     float imag_sum = 0.0;
@@ -190,9 +204,9 @@ void drawSenderInterface() {
   M5.Display.println("SERIAL CONFIG:");
   M5.Display.setTextColor(WHITE);
   M5.Display.setCursor(10, 80);
-  M5.Display.println("Baud Rate: 500,000");
+  M5.Display.println("Baud Rate: " + String(Board_rate));
   M5.Display.setCursor(10, 95);
-  M5.Display.println("Sample Rate: 22,050");
+  M5.Display.println("Sample Rate: " + String(Sampling_rate));
 
   
   // Instructions
