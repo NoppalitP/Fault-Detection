@@ -51,15 +51,24 @@ def batch_predict(wav_dir: Path, log_path: Path, iso, log_reg, components: List[
     for idx, wav_file in enumerate(sorted(wav_dir.glob("window_*.wav"))):
         try:
             features, sig = preprocess_file(wav_file, sample_rate, n_mfcc)
+            # features is 1D (n_features,), convert to 2D (1, n_features)
+            X = np.asarray(features).reshape(1, -1)
+
+            # If you used a scaler during training, apply it here:
+            # X = scaler.transform(X)  # <-- uncomment if you load a scaler
+
             db = compute_db(sig)
             freqs = compute_top_frequencies(sig, sample_rate)
-            if iso.predict(features)[0]:
-                isnormal = "Normal"
-            else:
-                isnormal = "Anomaly"
 
+            # IsolationForest: 1 => normal/inlier, -1 => anomaly/outlier
+            iso_pred = iso.predict(X)[0]
+            is_normal = (iso_pred == 1)
+            isnormal = "Normal" if is_normal else "Anomaly"
 
-            label = components[log_reg.predict(features)[0]]
+            # logistic/regression or classifier expects 2D input too
+            label_idx = int(log_reg.predict(X)[0])
+            label = components[label_idx]
+
             row = [ts_array[idx], label, isnormal, f"{db:.1f}", *[f"{f:.1f}" for f in freqs], tester_name]
             with open(log_path, 'a', newline='') as f:
                 csv.writer(f).writerow(row)

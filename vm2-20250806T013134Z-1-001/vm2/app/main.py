@@ -97,7 +97,7 @@ def main():
                 audio_bytes = window.astype(np.int16).tobytes()
                 from .audio import save_wave_file
                 save_wave_file(str(wav_path), audio_bytes, sr, sample_width=2)
-                logging.info(f"Saving wave file {batch_file_counter} / {blk_sz}")
+                logging.info(f"Saving wave file {batch_file_counter} / {batch_sz}")
                 ts_arr.append(datetime.now().isoformat(timespec='seconds'))
                 
                 # Run batch prediction ทุก 30 ไฟล์
