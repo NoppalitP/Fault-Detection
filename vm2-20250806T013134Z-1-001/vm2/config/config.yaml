@@ -34,6 +34,7 @@ models:
   iso: "model_files/iso_model.joblib"
   log_reg: "model_files/log_reg_model.joblib"
 
+
 testers:
   name: "IPC1"
 
@@ -43,4 +44,3 @@ batch:
 
 mfcc:
   n_mfcc: 13
-  max_frames: 63

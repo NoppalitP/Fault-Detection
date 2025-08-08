@@ -33,8 +33,7 @@ def main():
     batch_sz  = cfg['batch']['size']
     tester    = cfg['testers']['name']
     comps     = cfg['components']
-    n_mfcc    = cfg['audio'].get('n_mfcc',40)
-    hop       = cfg['audio'].get('hop_length',512)
+    n_mfcc    = cfg['audio'].get('n_mfcc',13)
 
     iso,log_reg = load_models(base, cfg)
 
