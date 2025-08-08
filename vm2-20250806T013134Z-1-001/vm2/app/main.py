@@ -33,12 +33,10 @@ def main():
     batch_sz  = cfg['batch']['size']
     tester    = cfg['testers']['name']
     comps     = cfg['components']
-    thr       = cfg['models']['threshold']
     n_mfcc    = cfg['audio'].get('n_mfcc',40)
     hop       = cfg['audio'].get('hop_length',512)
 
-    scaler, ocsvm, svm, expected_dim = load_models(base, cfg)
-    max_fr = expected_dim // n_mfcc
+    iso,log_reg = load_models(base, cfg)
 
     # prepare dirs & logging
     log_dir = base / cfg['logging']['log_dir']; log_dir.mkdir(exist_ok=True, parents=True)
@@ -105,7 +103,7 @@ def main():
                 # Run batch prediction ทุก 30 ไฟล์
                 if batch_file_counter >= batch_sz:
                     curr_log = new_log_file(datetime.now(), log_dir, tester)
-                    batch_predict(wav_dir, curr_log, scaler, ocsvm, svm, comps, thr, sr, n_mfcc, max_fr, hop, tester, ts_arr[-batch_sz:])  # ส่งเฉพาะ timestamp 30 ตัวล่าสุด
+                    batch_predict(wav_dir, curr_log, iso, log_reg, comps, sr, n_mfcc, tester, ts_arr[-batch_sz:])  # ส่งเฉพาะ timestamp 30 ตัวล่าสุด
                     batch_file_counter = 0  # รีเซ็ตตัวนับ batch
                     ts_arr = []
                     gc.collect()  # ล้างหน่วยความจำ
@@ -118,7 +116,7 @@ def main():
     finally:
         if 0 < batch_file_counter < batch_sz:
             logging.info(f"Processing remaining {batch_file_counter} files before shutdown")
-            batch_predict(wav_dir, curr_log, scaler, ocsvm, svm, comps, thr, sr, n_mfcc, max_fr, hop, tester, ts_arr[-batch_file_counter:])
+            batch_predict(wav_dir, curr_log, iso, log_reg, comps, sr, n_mfcc, tester, ts_arr[-batch_sz:])
         stop_event.set()
         if ser.is_open:
             ser.close()
