@@ -4,9 +4,17 @@ from typing import Tuple, List
 from app.audio import save_wave_file
 import numpy as np
 def load_models(base: Path, cfg: dict):
+    """Load OCSVM, classifier, and optional scaler (if configured)."""
     ocsvm = joblib.load(base / cfg['models']['ocsvm'])
     log_reg = joblib.load(base / cfg['models']['log_reg'])
-    return ocsvm, log_reg
+    scaler = None
+    try:
+        scaler_path = cfg.get('models', {}).get('scaler')
+        if scaler_path:
+            scaler = joblib.load(base / scaler_path)
+    except Exception:
+        scaler = None
+    return ocsvm, log_reg, scaler
 
 def extract_features(segment, sr, n_mfcc):
     #Spectral features
@@ -41,7 +49,7 @@ def preprocess_file(wav_path: Path,  sample_rate: int, n_mfcc: int) -> Tuple:
 
 
 
-def batch_predict_fast(
+def batch_predict(
     wav_dir: Path, log_path: Path, ocsvm, log_reg, components: List[str],
     sample_rate: int, n_mfcc: int, tester_name: str, ts_array: List[str],
     db_normal_max: float, db_anomaly_min: float, ocsvm_threshold: float,
@@ -167,26 +175,3 @@ def batch_predict_fast(
     for wf in wav_dir.glob("window_*.wav"):
         wf.unlink()
 
-def batch_predict(
-    wav_dir: Path, log_path: Path, ocsvm, log_reg, components: List[str],
-    sample_rate: int, n_mfcc: int, tester_name: str, ts_array: List[str],
-    db_normal_max: float, db_anomaly_min: float, ocsvm_threshold: float,
-    calib_offset: float,
-    scaler=None,
-):
-    return batch_predict_fast(
-        wav_dir=wav_dir,
-        log_path=log_path,
-        ocsvm=ocsvm,
-        log_reg=log_reg,
-        components=components,
-        sample_rate=sample_rate,
-        n_mfcc=n_mfcc,
-        tester_name=tester_name,
-        ts_array=ts_array,
-        db_normal_max=db_normal_max,
-        db_anomaly_min=db_anomaly_min,
-        ocsvm_threshold=ocsvm_threshold,
-        calib_offset=calib_offset,
-        scaler=scaler,
-    )

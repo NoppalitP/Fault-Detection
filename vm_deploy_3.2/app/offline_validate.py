@@ -33,6 +33,14 @@ def predict_files(input_dir: Path, base: Path):
     cfg = load_cfg(base)
     ocsvm = joblib.load(base / cfg['models']['ocsvm'])
     log_reg = joblib.load(base / cfg['models']['log_reg'])
+    # Optional scaler
+    scaler = None
+    try:
+        scaler_path = cfg.get('models', {}).get('scaler')
+        if scaler_path:
+            scaler = joblib.load(base / scaler_path)
+    except Exception:
+        scaler = None
 
     sr = 22050
     n_mfcc = cfg['mfcc']['n_mfcc']
@@ -53,6 +61,8 @@ def predict_files(input_dir: Path, base: Path):
         y, _ = librosa.load(str(p), sr=sr)
         feat = extract_features(y, sr, n_mfcc)
         X = np.asarray([feat], dtype=np.float32)
+        if scaler is not None:
+            X = scaler.transform(X)
 
         # classifier
         cls = int(log_reg.predict(X)[0])

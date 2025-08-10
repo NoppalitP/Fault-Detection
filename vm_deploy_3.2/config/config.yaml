@@ -32,6 +32,8 @@ components:
 models:
   ocsvm: "model_files/ocsvm_model.joblib"
   log_reg: "model_files/log_reg_model.joblib"
+  # Optional feature scaler (e.g., StandardScaler). If not present, features are used as-is.
+  scaler: "model_files/scaler.joblib"
 
 # === DB/OCSVM THRESHOLDS ===
 db:
@@ -40,7 +42,7 @@ db:
   anomaly_min: 88.0        # dB > anomaly_min => Anomaly (skip OCSVM)
 
 ocsvm:
-  threshold: -0.12668845990800176   # decision_function score threshold
+  threshold: -0.2   # decision_function score threshold
 
 
 testers:

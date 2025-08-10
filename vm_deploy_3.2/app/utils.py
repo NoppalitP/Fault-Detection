@@ -7,6 +7,7 @@ Exports a legacy-compatible `spinner_task(stop_event)` plus higher-level helpers
 
 import sys
 import time
+import threading
 from contextlib import contextmanager
 from threading import Event, Thread
 from typing import Iterable, List, Optional, Sequence, Tuple
@@ -18,6 +19,8 @@ __all__ = [
     "stop_spinner",
     "spinner",
 ]
+
+IO_LOCK = threading.RLock()
 
 
 def spinner_loop(
@@ -41,11 +44,18 @@ def spinner_loop(
     try:
         while not stop_event.is_set():
             if is_tty:
-                print(f"\r{message} {spinner_frames[frame_index]}", end="", flush=True)
+                with IO_LOCK:
+                    print(
+                        f"\r{message} {spinner_frames[frame_index]}",
+                        end="",
+                        flush=True,
+                        file=sys.stdout,
+                    )
             else:
                 # In non-TTY, avoid carriage return noise. Emit heartbeat occasionally.
                 if frame_index % max(1, int(round(1.0 / max(0.001, interval_seconds)))) == 0:
-                    print(f"{message} ...", flush=True)
+                    with IO_LOCK:
+                        print(f"{message} ...", flush=True, file=sys.stdout)
 
             frame_index = (frame_index + 1) % len(spinner_frames)
             time.sleep(interval_seconds)
@@ -53,8 +63,9 @@ def spinner_loop(
         if is_tty:
             # Clear the line to avoid leaving spinner residue
             clear_len = len(message) + 4
-            print("\r" + (" " * clear_len), end="", flush=True)
-            print("\r", end="", flush=True)
+            with IO_LOCK:
+                print("\r" + (" " * clear_len), end="", flush=True, file=sys.stdout)
+                print("\r", end="", flush=True, file=sys.stdout)
 
 
 def spinner_task(stop_event: Event) -> None:

@@ -42,7 +42,7 @@ def main():
     spinner_ctx = spinner if spinner_enabled else nullcontext
 
     with spinner_ctx("Loading models...", interval_seconds=spinner_interval):
-        ocsvm, log_reg = load_models(base, cfg)
+        ocsvm, log_reg, scaler = load_models(base, cfg)
 
     # prepare dirs & logging
     log_dir = base / cfg['logging']['log_dir']; log_dir.mkdir(exist_ok=True, parents=True)
@@ -70,8 +70,6 @@ def main():
         wait_stop_event, wait_thread = start_spinner("Waiting for data...", interval_seconds=spinner_interval)
 
     try:
-        stop_event, th = start_spinner("Waiting for data...", interval_seconds=0.3)
-
         while True:
   
             b1 = ser.read(1)
@@ -103,7 +101,7 @@ def main():
                 batch_file_counter += 1
                 
                 audio_bytes = window.astype(np.int16).tobytes()
-                from .audio import save_wave_file
+                from app.audio import save_wave_file
                 save_wave_file(str(wav_path), audio_bytes, sr, sample_width=2)
                 logging.info(f"Saving wave file {batch_file_counter} / {batch_sz}")
                 ts_arr.append(datetime.now().isoformat(timespec='seconds'))
@@ -116,7 +114,8 @@ def main():
                         wav_dir, curr_log, ocsvm, log_reg, comps,
                         sr, n_mfcc, tester, ts_arr[-batch_sz:],
                         cfg['db']['normal_max'], cfg['db']['anomaly_min'],
-                        cfg['ocsvm']['threshold'], cfg['db']['calib_offset']
+                        cfg['ocsvm']['threshold'], cfg['db']['calib_offset'],
+                        scaler=scaler
                     )  # ส่งเฉพาะ timestamp 30 ตัวล่าสุด
                     batch_file_counter = 0  # รีเซ็ตตัวนับ batch
                     ts_arr = []
@@ -136,7 +135,8 @@ def main():
                 wav_dir, curr_log, ocsvm, log_reg, comps,
                 sr, n_mfcc, tester, ts_arr[-batch_sz:],
                 cfg['db']['normal_max'], cfg['db']['anomaly_min'],
-                cfg['ocsvm']['threshold'], cfg['db']['calib_offset']
+                cfg['ocsvm']['threshold'], cfg['db']['calib_offset'],
+                scaler=scaler
             )
         if spinner_enabled:
             stop_spinner(wait_stop_event, wait_thread)

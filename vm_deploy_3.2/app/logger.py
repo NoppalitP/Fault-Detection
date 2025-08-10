@@ -74,7 +74,14 @@ def setup_logging(log_file: Path) -> None:
     file_handler.setFormatter(file_formatter)
 
     # Console handler (colorized)
-    console_handler = logging.StreamHandler(sys.stdout)
+    # Send console logs to stderr to avoid interleaving with spinner (stdout)
+    console_handler = logging.StreamHandler(sys.stderr)
+    # Reuse the same I/O lock as spinner to serialize writes across streams
+    try:
+        from app.utils import IO_LOCK  # type: ignore
+        console_handler.lock = IO_LOCK  # type: ignore[attr-defined]
+    except Exception:
+        pass
     console_handler.setLevel(logging.INFO)
     console_handler.setFormatter(_ColorFormatter())
 
