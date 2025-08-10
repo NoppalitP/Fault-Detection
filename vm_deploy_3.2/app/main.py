@@ -8,8 +8,9 @@ import numpy as np
 # app/main.py
 from app.logger import setup_logging
 from app.serial_handler import open_serial_with_retry
-from app.utils import spinner_task
+from app.utils import spinner, start_spinner, stop_spinner
 from app.model import load_models, batch_predict
+from contextlib import nullcontext
 
 
 def new_log_file(start_time: datetime, log_dir: Path, tester_name: str) -> Path:
@@ -34,29 +35,43 @@ def main():
     comps     = cfg['components']
     n_mfcc    = cfg['mfcc']['n_mfcc']
 
-    ocsvm, log_reg = load_models(base, cfg)
+    ui_cfg = cfg.get('ui', {})
+    spinner_enabled = bool(ui_cfg.get('spinner_enabled', True))
+    spinner_interval = float(ui_cfg.get('spinner_interval', 0.3))
+
+    spinner_ctx = spinner if spinner_enabled else nullcontext
+
+    with spinner_ctx("Loading models...", interval_seconds=spinner_interval):
+        ocsvm, log_reg = load_models(base, cfg)
 
     # prepare dirs & logging
     log_dir = base / cfg['logging']['log_dir']; log_dir.mkdir(exist_ok=True, parents=True)
     wav_dir = base / cfg['batch']['wav_dir'];   wav_dir.mkdir(exist_ok=True, parents=True)
     setup_logging(base/"app.log")
     logging.info("Starting monitoring")
+    logging.info(
+        f"Serial={sp_port} @ {baud} | SR={sr} | Window={win_sz} Step={step_sz} | Batch={batch_sz} | MFCC={n_mfcc}"
+    )
 
-    ser = open_serial_with_retry(sp_port, baud)
-    if not ser:
-        return
+    with spinner_ctx("Connecting to serial...", interval_seconds=spinner_interval):
+        ser = open_serial_with_retry(sp_port, baud)
+        if not ser:
+            return
 
     buffer = deque(maxlen=win_sz)
     ts_arr = []
     batch_file_counter = 0  # ตัวนับไฟล์สำหรับ batch processing (รีเซ็ตทุก 30 ไฟล์)
     sample_counter = 0
 
-
-    stop_event = threading.Event()
-    spinner = threading.Thread(target=spinner_task, args=(stop_event,), daemon=True)
-    spinner.start()
+    wait_stop_event = None
+    wait_thread = None
+    first_packet_received = False
+    if spinner_enabled:
+        wait_stop_event, wait_thread = start_spinner("Waiting for data...", interval_seconds=spinner_interval)
 
     try:
+        stop_event, th = start_spinner("Waiting for data...", interval_seconds=0.3)
+
         while True:
   
             b1 = ser.read(1)
@@ -65,6 +80,10 @@ def main():
             b2 = ser.read(1)
             if not b2 or b2[0] != 0x55:
                 continue
+            if not first_packet_received:
+                first_packet_received = True
+                if spinner_enabled:
+                    stop_spinner(wait_stop_event, wait_thread)
 
             raw_bytes = ser.read(blk_sz * 2)
             if len(raw_bytes) < blk_sz * 2:
@@ -111,13 +130,16 @@ def main():
     finally:
         if 0 < batch_file_counter < batch_sz:
             logging.info(f"Processing remaining {batch_file_counter} files before shutdown")
+            curr_log = new_log_file(datetime.now(), log_dir, tester)
+            logging.info(f"Rotated log: {curr_log}")
             batch_predict(
                 wav_dir, curr_log, ocsvm, log_reg, comps,
                 sr, n_mfcc, tester, ts_arr[-batch_sz:],
                 cfg['db']['normal_max'], cfg['db']['anomaly_min'],
                 cfg['ocsvm']['threshold'], cfg['db']['calib_offset']
             )
-        stop_event.set()
+        if spinner_enabled:
+            stop_spinner(wait_stop_event, wait_thread)
         if ser.is_open:
             ser.close()
             logging.info("Serial closed")

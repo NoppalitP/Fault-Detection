@@ -35,7 +35,7 @@ models:
 
 # === DB/OCSVM THRESHOLDS ===
 db:
-  calib_offset: 0.0        # additional field calibration offset (dB)
+  calib_offset: -15        # additional field calibration offset (dB)
   normal_max: 78.0         # dB < normal_max => Normal (skip OCSVM)
   anomaly_min: 88.0        # dB > anomaly_min => Anomaly (skip OCSVM)
 
@@ -52,3 +52,8 @@ batch:
 
 mfcc:
   n_mfcc: 13
+
+# === UI OPTIONS ===
+ui:
+  spinner_enabled: true
+  spinner_interval: 0.3

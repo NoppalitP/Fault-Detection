@@ -1,5 +1,6 @@
 import argparse
 import csv
+import re
 from pathlib import Path
 import numpy as np
 import yaml
@@ -14,12 +15,26 @@ def load_cfg(base: Path):
     return yaml.safe_load(open(base/"config"/"config.yaml"))
 
 
+def _parse_timestamp_from_filename(filename: str) -> str:
+    """
+    Extract timestamp from filenames like:
+    - component_YYYYMMDD_HHMMSS.wav
+    - elevator_audio_YYYYMMDD_HHMMSS.wav
+    Returns ISO-like "YYYY-MM-DDTHH:MM:SS" or empty string if not found.
+    """
+    m = re.search(r"(\d{8})_(\d{6})", filename)
+    if not m:
+        return ""
+    ymd, hms = m.group(1), m.group(2)
+    return f"{ymd[0:4]}-{ymd[4:6]}-{ymd[6:8]}T{hms[0:2]}:{hms[2:4]}:{hms[4:6]}"
+
+
 def predict_files(input_dir: Path, base: Path):
     cfg = load_cfg(base)
     ocsvm = joblib.load(base / cfg['models']['ocsvm'])
     log_reg = joblib.load(base / cfg['models']['log_reg'])
 
-    sr = cfg['audio']['sample_rate']
+    sr = 22050
     n_mfcc = cfg['mfcc']['n_mfcc']
     components = cfg['components']
 
@@ -42,8 +57,19 @@ def predict_files(input_dir: Path, base: Path):
         # classifier
         cls = int(log_reg.predict(X)[0])
         label = components[cls]
+        # probability for the predicted class (fallback to max if classes not aligned)
         try:
-            prob = float(np.max(log_reg.predict_proba(X)[0]))
+            proba_row = np.asarray(log_reg.predict_proba(X)[0], dtype=float)
+            if hasattr(log_reg, 'classes_'):
+                classes = np.asarray(getattr(log_reg, 'classes_'))
+                # classes_ could be ints [0..n-1] or other labels
+                match_idx = np.where(classes == cls)[0]
+                if match_idx.size:
+                    prob = float(proba_row[int(match_idx[0])])
+                else:
+                    prob = float(np.max(proba_row))
+            else:
+                prob = float(np.max(proba_row))
         except Exception:
             prob = float('nan')
 
@@ -65,7 +91,10 @@ def predict_files(input_dir: Path, base: Path):
             score = f"{score_val:.1f}"
 
         rows.append([
-            p.name, "", label, f"{prob:.1f}" if np.isfinite(prob) else "",
+            p.name,
+            _parse_timestamp_from_filename(p.name),
+            label,
+            f"{prob:.1f}" if np.isfinite(prob) else "",
             status, f"{db:.1f}" if np.isfinite(db) else "",
             score,
             *[f"{f:.1f}" for f in (freqs if len(freqs) else [np.nan, np.nan, np.nan])][:3],
