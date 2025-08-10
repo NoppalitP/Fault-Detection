@@ -50,8 +50,7 @@ def main():
     ts_arr = []
     batch_file_counter = 0  # ตัวนับไฟล์สำหรับ batch processing (รีเซ็ตทุก 30 ไฟล์)
     sample_counter = 0
-    curr_log = new_log_file(datetime.now(), log_dir, tester)
-    logging.info(f"Rotated log: {curr_log}")
+
 
     stop_event = threading.Event()
     spinner = threading.Thread(target=spinner_task, args=(stop_event,), daemon=True)
@@ -59,14 +58,7 @@ def main():
 
     try:
         while True:
-            # สร้าง log file ใหม่ทุก 60 ไฟล์
-            if batch_file_counter >= batch_sz:
-                curr_log = new_log_file(datetime.now(), log_dir, tester)
-                batch_file_counter = 0
-                ts_arr = []
-                gc.collect()  # ล้างหน่วยความจำ
-                logging.info(f"Rotated log: {curr_log}")
-
+  
             b1 = ser.read(1)
             if not b1 or b1[0] != 0xAA:
                 continue
@@ -100,7 +92,13 @@ def main():
                 # Run batch prediction ทุก 30 ไฟล์
                 if batch_file_counter >= batch_sz:
                     curr_log = new_log_file(datetime.now(), log_dir, tester)
-                    batch_predict(wav_dir, curr_log, ocsvm, log_reg, comps, sr, n_mfcc, tester, ts_arr[-batch_sz:])  # ส่งเฉพาะ timestamp 30 ตัวล่าสุด
+                    logging.info(f"Rotated log: {curr_log}")
+                    batch_predict(
+                        wav_dir, curr_log, ocsvm, log_reg, comps,
+                        sr, n_mfcc, tester, ts_arr[-batch_sz:],
+                        cfg['db']['normal_max'], cfg['db']['anomaly_min'],
+                        cfg['ocsvm']['threshold'], cfg['db']['calib_offset']
+                    )  # ส่งเฉพาะ timestamp 30 ตัวล่าสุด
                     batch_file_counter = 0  # รีเซ็ตตัวนับ batch
                     ts_arr = []
                     gc.collect()  # ล้างหน่วยความจำ
@@ -113,7 +111,12 @@ def main():
     finally:
         if 0 < batch_file_counter < batch_sz:
             logging.info(f"Processing remaining {batch_file_counter} files before shutdown")
-            batch_predict(wav_dir, curr_log, ocsvm, log_reg, comps, sr, n_mfcc, tester, ts_arr[-batch_sz:])
+            batch_predict(
+                wav_dir, curr_log, ocsvm, log_reg, comps,
+                sr, n_mfcc, tester, ts_arr[-batch_sz:],
+                cfg['db']['normal_max'], cfg['db']['anomaly_min'],
+                cfg['ocsvm']['threshold'], cfg['db']['calib_offset']
+            )
         stop_event.set()
         if ser.is_open:
             ser.close()

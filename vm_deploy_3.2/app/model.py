@@ -44,14 +44,16 @@ def preprocess_file(wav_path: Path,  sample_rate: int, n_mfcc: int) -> Tuple:
 def batch_predict_fast(
     wav_dir: Path, log_path: Path, ocsvm, log_reg, components: List[str],
     sample_rate: int, n_mfcc: int, tester_name: str, ts_array: List[str],
+    db_normal_max: float, db_anomaly_min: float, ocsvm_threshold: float,
+    calib_offset: float,
     scaler=None  # optional
 ):
     from .audio import compute_db, compute_top_frequencies
     import csv, logging
     import numpy as np
 
-    DB_NORMAL_MAX = 78.0   # < 78 => Normal
-    DB_ANOMALY_MIN = 88.0  # > 88 => Anomaly
+    DB_NORMAL_MAX = float(db_normal_max)
+    DB_ANOMALY_MIN = float(db_anomaly_min)
 
     files = sorted(wav_dir.glob("window_*.wav"))
     if not files:
@@ -86,12 +88,18 @@ def batch_predict_fast(
 
     # ทำนายคลาสด้วย log_reg (ทุกรายการ)
     cls_out = log_reg.predict(X).astype(int)
+    # ความน่าจะเป็นของคลาสที่ทำนาย (ถ้ามี predict_proba)
+    probs_all = None
+    try:
+        probs_all = log_reg.predict_proba(X)
+    except Exception:
+        probs_all = None
 
     # คำนวณ dB / top-freq ต่อแถว (สำหรับทำกติกา override และบันทึก log)
     dbs = []
     freqs_all = []
     for i in valid_idx:
-        dbs.append(compute_db(sigs[i]))
+        dbs.append(compute_db(sigs[i], calib_offset))
         freqs_all.append(compute_top_frequencies(sigs[i], sample_rate))
 
     # --- เลือกเฉพาะแถวที่ "ต้องรัน" OCSVM ---
@@ -102,9 +110,11 @@ def batch_predict_fast(
     need_oc  = ~(lt_mask | gt_mask)                  # ช่วง 78–88 หรือ dB ไม่ finite
 
     ocsvm_out = np.zeros(len(valid_idx), dtype=int)  # เตรียมที่ไว้ (0 เป็นค่า placeholder)
+    ocsvm_score = np.full(len(valid_idx), np.nan, dtype=float)
     if np.any(need_oc):
-        ocsvm_scores = ocsvm.decision_function(X[need_oc])  # shape = (n_nonenv,)
-        ocsvm_out[need_oc] = np.where(ocsvm_scores >= -0.12668845990800176, 1, -1) 
+        ocsvm_scores = ocsvm.decision_function(X[need_oc])  # shape = (n_need,)
+        ocsvm_score[need_oc] = ocsvm_scores
+        ocsvm_out[need_oc] = np.where(ocsvm_scores >= ocsvm_threshold, 1, -1)
     # ------------------------------------------------
 
     f1 = "{:.1f}".format
@@ -136,8 +146,22 @@ def batch_predict_fast(
         else:
             isnormal_str = "Normal" if ocsvm_out[k] == 1 else "Anomaly"
 
-        logging.info("%s: %s %s dB=%s",
-                     files[i].name, components[cls_out[k]], isnormal_str, f1(db_arr[k]))
+        # probability for predicted class if available
+        if probs_all is not None and 0 <= cls_out[k] < probs_all.shape[1]:
+            prob_for_label = float(probs_all[k, cls_out[k]])
+            prob_str = f1(prob_for_label)
+        else:
+            prob_str = ""
+
+        logging.info(
+            "%s: %s prob=%s %s dB=%s ocsvm=%s",
+            files[i].name,
+            components[cls_out[k]],
+            prob_str,
+            isnormal_str,
+            f1(db_arr[k]),
+            f1(ocsvm_score[k]) if np.isfinite(ocsvm_score[k]) else "",
+        )
 
     # cleanup
     for wf in wav_dir.glob("window_*.wav"):
@@ -146,7 +170,9 @@ def batch_predict_fast(
 def batch_predict(
     wav_dir: Path, log_path: Path, ocsvm, log_reg, components: List[str],
     sample_rate: int, n_mfcc: int, tester_name: str, ts_array: List[str],
-    scaler=None
+    db_normal_max: float, db_anomaly_min: float, ocsvm_threshold: float,
+    calib_offset: float,
+    scaler=None,
 ):
     return batch_predict_fast(
         wav_dir=wav_dir,
@@ -158,5 +184,9 @@ def batch_predict(
         n_mfcc=n_mfcc,
         tester_name=tester_name,
         ts_array=ts_array,
+        db_normal_max=db_normal_max,
+        db_anomaly_min=db_anomaly_min,
+        ocsvm_threshold=ocsvm_threshold,
+        calib_offset=calib_offset,
         scaler=scaler,
     )
