@@ -31,7 +31,7 @@ components:
 
 # === MODEL PATHS ===
 models:
-  iso: "model_files/iso_model.joblib"
+  ocsvm: "model_files/ocsvm_model.joblib"
   log_reg: "model_files/log_reg_model.joblib"
 
 

@@ -6,7 +6,6 @@ import threading
 import numpy as np
 
 # app/main.py
-# app/main.py
 from app.logger import setup_logging
 from app.serial_handler import open_serial_with_retry
 from app.utils import spinner_task
@@ -33,9 +32,9 @@ def main():
     batch_sz  = cfg['batch']['size']
     tester    = cfg['testers']['name']
     comps     = cfg['components']
-    n_mfcc    = cfg['audio'].get('n_mfcc',13)
+    n_mfcc    = cfg['mfcc']['n_mfcc']
 
-    iso,log_reg = load_models(base, cfg)
+    ocsvm, log_reg = load_models(base, cfg)
 
     # prepare dirs & logging
     log_dir = base / cfg['logging']['log_dir']; log_dir.mkdir(exist_ok=True, parents=True)
@@ -50,7 +49,6 @@ def main():
     buffer = deque(maxlen=win_sz)
     ts_arr = []
     batch_file_counter = 0  # ตัวนับไฟล์สำหรับ batch processing (รีเซ็ตทุก 30 ไฟล์)
-    total_file_counter = 0  # ตัวนับไฟล์รวมสำหรับการสร้าง log ใหม่ (รีเซ็ตทุก 180 ไฟล์)
     sample_counter = 0
     curr_log = new_log_file(datetime.now(), log_dir, tester)
     logging.info(f"Rotated log: {curr_log}")
@@ -62,9 +60,9 @@ def main():
     try:
         while True:
             # สร้าง log file ใหม่ทุก 60 ไฟล์
-            if total_file_counter >= batch_sz:
+            if batch_file_counter >= batch_sz:
                 curr_log = new_log_file(datetime.now(), log_dir, tester)
-                total_file_counter = 0
+                batch_file_counter = 0
                 ts_arr = []
                 gc.collect()  # ล้างหน่วยความจำ
                 logging.info(f"Rotated log: {curr_log}")
@@ -102,7 +100,7 @@ def main():
                 # Run batch prediction ทุก 30 ไฟล์
                 if batch_file_counter >= batch_sz:
                     curr_log = new_log_file(datetime.now(), log_dir, tester)
-                    batch_predict(wav_dir, curr_log, iso, log_reg, comps, sr, n_mfcc, tester, ts_arr[-batch_sz:])  # ส่งเฉพาะ timestamp 30 ตัวล่าสุด
+                    batch_predict(wav_dir, curr_log, ocsvm, log_reg, comps, sr, n_mfcc, tester, ts_arr[-batch_sz:])  # ส่งเฉพาะ timestamp 30 ตัวล่าสุด
                     batch_file_counter = 0  # รีเซ็ตตัวนับ batch
                     ts_arr = []
                     gc.collect()  # ล้างหน่วยความจำ
@@ -115,7 +113,7 @@ def main():
     finally:
         if 0 < batch_file_counter < batch_sz:
             logging.info(f"Processing remaining {batch_file_counter} files before shutdown")
-            batch_predict(wav_dir, curr_log, iso, log_reg, comps, sr, n_mfcc, tester, ts_arr[-batch_sz:])
+            batch_predict(wav_dir, curr_log, ocsvm, log_reg, comps, sr, n_mfcc, tester, ts_arr[-batch_sz:])
         stop_event.set()
         if ser.is_open:
             ser.close()
