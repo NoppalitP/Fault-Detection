@@ -37,7 +37,7 @@ def _rms_counts(
 
 def compute_db(
     sig: np.ndarray,
-    calib_offset: float = 59-189,
+    calib_offset: float = 0.0,
     *,
     method: str = "ln",           # "ref" หรือ "ln"
     gain_factor: float = 3.0,      # ตรงกับ GAIN_FACTOR ในตัวอย่าง C++

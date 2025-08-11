@@ -106,7 +106,7 @@ def batch_predict(
     dbs = []
     freqs_all = []
     for i in valid_idx:
-        dbs.append(compute_db(sigs[i], calib_offset,clamp_min=0))
+        dbs.append(compute_db(sigs[i],method='ln' ,calib_offset=-30,clamp_min=0))
         freqs_all.append(compute_top_frequencies(sigs[i], sample_rate))
 
     # --- เลือกเฉพาะแถวที่ "ต้องรัน" OCSVM ---
