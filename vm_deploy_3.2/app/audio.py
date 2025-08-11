@@ -4,30 +4,67 @@ import wave
 import sys
 
 
-def compute_db(sig: np.ndarray, calib_offset: float = 0.0) -> float:
-    """
-    Return approximate dB SPL of this window using mic sensitivity:
-    SPM1423: -22 dBFS @ 94 dB SPL  => offset ~ +116 dB.
-    Optionally add `calib_offset` from field calibration.
-    """
+import numpy as np
 
+def calcDecibell(athiwat: float) -> float:
+    """
+    จำลองสูตรใน C++: 8.6859 * ln(athiwat) + 25.6699
+    หมายเหตุ: ใช้ ln (natural log)
+    """
+    athiwat = max(float(athiwat), 1e-12)  # กัน log(0)
+    return 8.6859 * np.log(athiwat) + 25.6699
 
-    # Normalize PCM int16 to float32 in [-1, 1]
-    if np.issubdtype(sig.dtype, np.integer):
-        y = sig.astype(np.float32) / 32768.0
+def _rms_counts(
+    sig: np.ndarray,
+    *,
+    gain_factor: float,
+    subtract_dc: bool,
+) -> float:
+    """
+    เตรียมสัญญาณให้อยู่ในหน่วย "counts" แบบ int16 แล้วคำนวณ RMS
+    - ถ้า sig เป็น float [-1,1] จะคูณ 32768 ให้เป็นสเกล int16
+    - (เลือกได้) ลบ DC ก่อน
+    - คูณ gain_factor เพื่อเลียนแบบเฟิร์มแวร์
+    """
+    x = sig.astype(np.float32, copy=False)
+    if np.issubdtype(sig.dtype, np.floating):
+        x *= 32768.0
+    if subtract_dc:
+        x = x - np.mean(x)
+    x *= float(gain_factor)
+    rms = float(np.sqrt(np.mean(np.maximum(x * x, 0.0))))
+    return max(rms, 1e-12)
+
+def compute_db(
+    sig: np.ndarray,
+    calib_offset: float = 0.0,
+    *,
+    method: str = "ln",           # "ref" หรือ "ln"
+    gain_factor: float = 3.0,      # ตรงกับ GAIN_FACTOR ในตัวอย่าง C++
+    ref_rms: float = 1000.0,       # ตรงกับ REF ในตัวอย่าง C++
+    subtract_dc: bool = True,
+    clamp_min: float  = 0.0, # เลือก clamp ขั้นต่ำ (เช่น 0 dB)
+) -> float:
+    """
+    คำนวณ dB จากสัญญาณหนึ่งหน้าต่าง (window)
+    - method="ref": dB = 20*log10(rms / ref_rms)  (เทียบกับตัวอย่าง measure_dB)
+    - method="ln" : dB = calcDecibell(rms)        (เทียบกับฟังก์ชัน calcDecibell)
+    ทั้งสองแบบบวก calib_offset ภายหลังสำหรับคาลิเบรตภาคสนาม
+    """
+    rms = _rms_counts(sig, gain_factor=gain_factor, subtract_dc=subtract_dc)
+
+    if method == "ref":
+        db = 20.0 * np.log10(rms / float(ref_rms))
+    elif method == "ln":
+        db = calcDecibell(rms)
     else:
-        y = sig.astype(np.float32, copy=False)
+        raise ValueError("method ต้องเป็น 'ref' หรือ 'ln'")
 
-    # Frame RMS (librosa default frame_length=2048, hop_length=512)
-    rms = librosa.feature.rms(y=y)[0]          # shape = (n_frames,)
-    rms = np.clip(rms, 1e-12, None)            # avoid -inf
+    if clamp_min is not None:
+        db = max(db, float(clamp_min))
 
-    # dBFS (RMS referenced to full-scale amplitude = 1.0)
-    dbfs = librosa.amplitude_to_db(rms, ref=1.0)  # 20*log10(rms/1.0)
+    return float(db + float(calib_offset))
 
-    # Convert to approx dB SPL using mic sensitivity + optional calibration
-    dbspl = np.max(dbfs)  + float(calib_offset)  # use peak frame in the window
-    return float(dbspl)
 
 
 

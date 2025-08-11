@@ -37,7 +37,7 @@ models:
 
 # === DB/OCSVM THRESHOLDS ===
 db:
-  calib_offset: 120        # additional field calibration offset (dB)
+  calib_offset: -30        # additional field calibration offset (dB)
   normal_max: 78.0         # dB < normal_max => Normal (skip OCSVM)
   anomaly_min: 88.0        # dB > anomaly_min => Anomaly (skip OCSVM)
 
@@ -49,7 +49,7 @@ testers:
   name: "IPC1"
 
 batch:
-  size: 30
+  size: 1
   wav_dir: "wav_file_temp"
 
 mfcc:

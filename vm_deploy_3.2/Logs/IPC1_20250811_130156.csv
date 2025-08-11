@@ -1,0 +1,2 @@
+Timestamp,Component,Status,dB,TopFreq1,TopFreq2,TopFreq3,Tester_id
+2025-08-11T13:01:56,gripper,Normal,77.4,1719.5,1684.0,1720.0,IPC1

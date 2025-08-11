@@ -7,7 +7,6 @@ def load_models(base: Path, cfg: dict):
     """Load OCSVM, classifier, and optional scaler (if configured)."""
     ocsvm = joblib.load(base / cfg['models']['ocsvm'])
     log_reg = joblib.load(base / cfg['models']['log_reg'])
-    scaler = None
     try:
         scaler_path = cfg.get('models', {}).get('scaler')
         if scaler_path:
@@ -56,7 +55,7 @@ def batch_predict(
     calib_offset: float,
     scaler=None  # optional
 ):
-    from audio import compute_db, compute_top_frequencies
+    from app.audio import compute_db, compute_top_frequencies
     import csv, logging
     import numpy as np
 
@@ -107,7 +106,7 @@ def batch_predict(
     dbs = []
     freqs_all = []
     for i in valid_idx:
-        dbs.append(compute_db(sigs[i], calib_offset))
+        dbs.append(compute_db(sigs[i],method='ln' ,calib_offset=-30,clamp_min=0))
         freqs_all.append(compute_top_frequencies(sigs[i], sample_rate))
 
     # --- เลือกเฉพาะแถวที่ "ต้องรัน" OCSVM ---
