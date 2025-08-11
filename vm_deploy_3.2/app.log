@@ -17345,3 +17345,573 @@
 2025-08-11 13:05:18 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130518.csv
 2025-08-11 13:05:18 INFO: window_000.wav: environment prob=1.0 Normal dB=57.5 ocsvm=
 2025-08-11 13:05:18 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130518.csv
+2025-08-11 13:05:19 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:19 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130519.csv
+2025-08-11 13:05:19 INFO: window_000.wav: environment prob=1.0 Normal dB=64.7 ocsvm=
+2025-08-11 13:05:19 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130519.csv
+2025-08-11 13:05:20 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:20 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130520.csv
+2025-08-11 13:05:20 INFO: window_000.wav: environment prob=1.0 Normal dB=65.4 ocsvm=
+2025-08-11 13:05:20 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130520.csv
+2025-08-11 13:05:21 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:21 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130521.csv
+2025-08-11 13:05:21 INFO: window_000.wav: environment prob=1.0 Normal dB=59.1 ocsvm=
+2025-08-11 13:05:21 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130521.csv
+2025-08-11 13:05:22 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:22 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130522.csv
+2025-08-11 13:05:23 INFO: window_000.wav: environment prob=1.0 Normal dB=53.6 ocsvm=
+2025-08-11 13:05:23 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130522.csv
+2025-08-11 13:05:23 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:23 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130523.csv
+2025-08-11 13:05:24 INFO: window_000.wav: environment prob=1.0 Normal dB=63.2 ocsvm=
+2025-08-11 13:05:24 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130523.csv
+2025-08-11 13:05:25 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:25 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130525.csv
+2025-08-11 13:05:25 INFO: window_000.wav: environment prob=1.0 Normal dB=63.3 ocsvm=
+2025-08-11 13:05:25 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130525.csv
+2025-08-11 13:05:26 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:26 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130526.csv
+2025-08-11 13:05:26 INFO: window_000.wav: environment prob=1.0 Normal dB=54.4 ocsvm=
+2025-08-11 13:05:26 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130526.csv
+2025-08-11 13:05:27 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:27 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130527.csv
+2025-08-11 13:05:27 INFO: window_000.wav: environment prob=1.0 Normal dB=54.7 ocsvm=
+2025-08-11 13:05:27 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130527.csv
+2025-08-11 13:05:28 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:28 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130528.csv
+2025-08-11 13:05:28 INFO: window_000.wav: environment prob=1.0 Normal dB=59.1 ocsvm=
+2025-08-11 13:05:28 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130528.csv
+2025-08-11 13:05:29 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:29 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130529.csv
+2025-08-11 13:05:29 INFO: window_000.wav: environment prob=0.9 Normal dB=61.6 ocsvm=
+2025-08-11 13:05:29 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130529.csv
+2025-08-11 13:05:30 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:30 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130530.csv
+2025-08-11 13:05:30 INFO: window_000.wav: environment prob=1.0 Normal dB=60.5 ocsvm=
+2025-08-11 13:05:30 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130530.csv
+2025-08-11 13:05:31 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:31 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130531.csv
+2025-08-11 13:05:31 INFO: window_000.wav: environment prob=1.0 Normal dB=67.1 ocsvm=
+2025-08-11 13:05:31 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130531.csv
+2025-08-11 13:05:32 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:32 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130532.csv
+2025-08-11 13:05:32 INFO: window_000.wav: environment prob=1.0 Normal dB=67.0 ocsvm=
+2025-08-11 13:05:32 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130532.csv
+2025-08-11 13:05:33 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:33 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130533.csv
+2025-08-11 13:05:33 INFO: window_000.wav: environment prob=1.0 Normal dB=56.5 ocsvm=
+2025-08-11 13:05:33 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130533.csv
+2025-08-11 13:05:34 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:34 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130534.csv
+2025-08-11 13:05:34 INFO: window_000.wav: environment prob=1.0 Normal dB=55.8 ocsvm=
+2025-08-11 13:05:34 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130534.csv
+2025-08-11 13:05:35 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:35 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130535.csv
+2025-08-11 13:05:35 INFO: window_000.wav: environment prob=1.0 Normal dB=59.1 ocsvm=
+2025-08-11 13:05:35 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130535.csv
+2025-08-11 13:05:36 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:36 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130536.csv
+2025-08-11 13:05:36 INFO: window_000.wav: environment prob=1.0 Normal dB=59.6 ocsvm=
+2025-08-11 13:05:36 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130536.csv
+2025-08-11 13:05:37 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:37 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130537.csv
+2025-08-11 13:05:37 INFO: window_000.wav: environment prob=1.0 Normal dB=55.5 ocsvm=
+2025-08-11 13:05:37 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130537.csv
+2025-08-11 13:05:38 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:38 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130538.csv
+2025-08-11 13:05:38 INFO: window_000.wav: environment prob=1.0 Normal dB=61.1 ocsvm=
+2025-08-11 13:05:38 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130538.csv
+2025-08-11 13:05:39 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:39 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130539.csv
+2025-08-11 13:05:39 INFO: window_000.wav: environment prob=1.0 Normal dB=61.3 ocsvm=
+2025-08-11 13:05:39 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130539.csv
+2025-08-11 13:05:40 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:40 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130540.csv
+2025-08-11 13:05:40 INFO: window_000.wav: environment prob=1.0 Normal dB=56.9 ocsvm=
+2025-08-11 13:05:40 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130540.csv
+2025-08-11 13:05:41 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:41 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130541.csv
+2025-08-11 13:05:41 INFO: window_000.wav: environment prob=1.0 Normal dB=56.6 ocsvm=
+2025-08-11 13:05:41 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130541.csv
+2025-08-11 13:05:42 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:42 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130542.csv
+2025-08-11 13:05:42 INFO: window_000.wav: environment prob=1.0 Normal dB=57.0 ocsvm=
+2025-08-11 13:05:42 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130542.csv
+2025-08-11 13:05:43 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:43 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130543.csv
+2025-08-11 13:05:43 INFO: window_000.wav: environment prob=1.0 Normal dB=57.0 ocsvm=
+2025-08-11 13:05:43 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130543.csv
+2025-08-11 13:05:44 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:44 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130544.csv
+2025-08-11 13:05:44 INFO: window_000.wav: environment prob=1.0 Normal dB=54.5 ocsvm=
+2025-08-11 13:05:44 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130544.csv
+2025-08-11 13:05:45 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:45 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130545.csv
+2025-08-11 13:05:45 INFO: window_000.wav: environment prob=1.0 Normal dB=54.3 ocsvm=
+2025-08-11 13:05:45 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130545.csv
+2025-08-11 13:05:46 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:46 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130546.csv
+2025-08-11 13:05:46 INFO: window_000.wav: environment prob=1.0 Normal dB=65.6 ocsvm=
+2025-08-11 13:05:46 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130546.csv
+2025-08-11 13:05:47 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:47 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130547.csv
+2025-08-11 13:05:47 INFO: window_000.wav: environment prob=1.0 Normal dB=65.7 ocsvm=
+2025-08-11 13:05:47 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130547.csv
+2025-08-11 13:05:48 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:48 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130548.csv
+2025-08-11 13:05:48 INFO: window_000.wav: environment prob=1.0 Normal dB=57.6 ocsvm=
+2025-08-11 13:05:48 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130548.csv
+2025-08-11 13:05:49 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:49 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130549.csv
+2025-08-11 13:05:49 INFO: window_000.wav: environment prob=1.0 Normal dB=60.0 ocsvm=
+2025-08-11 13:05:49 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130549.csv
+2025-08-11 13:05:50 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:50 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130550.csv
+2025-08-11 13:05:50 INFO: window_000.wav: environment prob=1.0 Normal dB=59.0 ocsvm=
+2025-08-11 13:05:50 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130550.csv
+2025-08-11 13:05:51 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:51 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130551.csv
+2025-08-11 13:05:51 INFO: window_000.wav: environment prob=1.0 Normal dB=58.4 ocsvm=
+2025-08-11 13:05:51 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130551.csv
+2025-08-11 13:05:52 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:52 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130552.csv
+2025-08-11 13:05:52 INFO: window_000.wav: environment prob=1.0 Normal dB=57.6 ocsvm=
+2025-08-11 13:05:52 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130552.csv
+2025-08-11 13:05:53 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:53 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130553.csv
+2025-08-11 13:05:53 INFO: window_000.wav: environment prob=1.0 Normal dB=58.6 ocsvm=
+2025-08-11 13:05:53 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130553.csv
+2025-08-11 13:05:54 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:54 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130554.csv
+2025-08-11 13:05:54 INFO: window_000.wav: environment prob=1.0 Normal dB=59.9 ocsvm=
+2025-08-11 13:05:54 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130554.csv
+2025-08-11 13:05:55 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:55 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130555.csv
+2025-08-11 13:05:55 INFO: window_000.wav: environment prob=1.0 Normal dB=58.2 ocsvm=
+2025-08-11 13:05:55 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130555.csv
+2025-08-11 13:05:56 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:56 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130556.csv
+2025-08-11 13:05:56 INFO: window_000.wav: environment prob=1.0 Normal dB=57.0 ocsvm=
+2025-08-11 13:05:56 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130556.csv
+2025-08-11 13:05:57 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:57 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130557.csv
+2025-08-11 13:05:57 INFO: window_000.wav: environment prob=1.0 Normal dB=55.1 ocsvm=
+2025-08-11 13:05:57 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130557.csv
+2025-08-11 13:05:58 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:58 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130558.csv
+2025-08-11 13:05:58 INFO: window_000.wav: environment prob=1.0 Normal dB=53.6 ocsvm=
+2025-08-11 13:05:58 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130558.csv
+2025-08-11 13:05:59 INFO: Saving wave file 1 / 1
+2025-08-11 13:05:59 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130559.csv
+2025-08-11 13:05:59 INFO: window_000.wav: environment prob=1.0 Normal dB=53.5 ocsvm=
+2025-08-11 13:05:59 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130559.csv
+2025-08-11 13:06:00 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:00 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130600.csv
+2025-08-11 13:06:00 INFO: window_000.wav: environment prob=1.0 Normal dB=53.8 ocsvm=
+2025-08-11 13:06:00 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130600.csv
+2025-08-11 13:06:01 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:01 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130601.csv
+2025-08-11 13:06:01 INFO: window_000.wav: environment prob=1.0 Normal dB=69.4 ocsvm=
+2025-08-11 13:06:01 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130601.csv
+2025-08-11 13:06:02 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:02 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130602.csv
+2025-08-11 13:06:02 INFO: window_000.wav: environment prob=1.0 Normal dB=69.5 ocsvm=
+2025-08-11 13:06:03 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130602.csv
+2025-08-11 13:06:03 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:03 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130603.csv
+2025-08-11 13:06:04 INFO: window_000.wav: environment prob=1.0 Normal dB=71.2 ocsvm=
+2025-08-11 13:06:04 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130603.csv
+2025-08-11 13:06:05 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:05 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130605.csv
+2025-08-11 13:06:05 INFO: window_000.wav: environment prob=1.0 Normal dB=71.2 ocsvm=
+2025-08-11 13:06:05 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130605.csv
+2025-08-11 13:06:06 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:06 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130606.csv
+2025-08-11 13:06:06 INFO: window_000.wav: environment prob=1.0 Normal dB=53.5 ocsvm=
+2025-08-11 13:06:06 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130606.csv
+2025-08-11 13:06:07 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:07 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130607.csv
+2025-08-11 13:06:07 INFO: window_000.wav: environment prob=1.0 Normal dB=54.0 ocsvm=
+2025-08-11 13:06:07 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130607.csv
+2025-08-11 13:06:08 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:08 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130608.csv
+2025-08-11 13:06:08 INFO: window_000.wav: environment prob=1.0 Normal dB=54.0 ocsvm=
+2025-08-11 13:06:08 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130608.csv
+2025-08-11 13:06:09 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:09 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130609.csv
+2025-08-11 13:06:09 INFO: window_000.wav: environment prob=1.0 Normal dB=70.5 ocsvm=
+2025-08-11 13:06:09 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130609.csv
+2025-08-11 13:06:10 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:10 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130610.csv
+2025-08-11 13:06:10 INFO: window_000.wav: environment prob=1.0 Normal dB=70.5 ocsvm=
+2025-08-11 13:06:10 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130610.csv
+2025-08-11 13:06:11 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:11 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130611.csv
+2025-08-11 13:06:11 INFO: window_000.wav: environment prob=1.0 Normal dB=53.4 ocsvm=
+2025-08-11 13:06:11 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130611.csv
+2025-08-11 13:06:12 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:12 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130612.csv
+2025-08-11 13:06:12 INFO: window_000.wav: environment prob=1.0 Normal dB=52.9 ocsvm=
+2025-08-11 13:06:12 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130612.csv
+2025-08-11 13:06:13 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:13 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130613.csv
+2025-08-11 13:06:13 INFO: window_000.wav: environment prob=1.0 Normal dB=53.2 ocsvm=
+2025-08-11 13:06:13 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130613.csv
+2025-08-11 13:06:14 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:14 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130614.csv
+2025-08-11 13:06:14 INFO: window_000.wav: environment prob=1.0 Normal dB=66.6 ocsvm=
+2025-08-11 13:06:14 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130614.csv
+2025-08-11 13:06:15 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:15 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130615.csv
+2025-08-11 13:06:15 INFO: window_000.wav: environment prob=1.0 Normal dB=66.6 ocsvm=
+2025-08-11 13:06:15 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130615.csv
+2025-08-11 13:06:16 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:16 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130616.csv
+2025-08-11 13:06:16 INFO: window_000.wav: environment prob=1.0 Normal dB=68.9 ocsvm=
+2025-08-11 13:06:16 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130616.csv
+2025-08-11 13:06:17 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:17 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130617.csv
+2025-08-11 13:06:17 INFO: window_000.wav: environment prob=1.0 Normal dB=68.9 ocsvm=
+2025-08-11 13:06:18 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130617.csv
+2025-08-11 13:06:18 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:18 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130618.csv
+2025-08-11 13:06:18 INFO: window_000.wav: environment prob=1.0 Normal dB=54.1 ocsvm=
+2025-08-11 13:06:19 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130618.csv
+2025-08-11 13:06:19 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:19 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130619.csv
+2025-08-11 13:06:20 INFO: window_000.wav: environment prob=1.0 Normal dB=52.8 ocsvm=
+2025-08-11 13:06:20 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130619.csv
+2025-08-11 13:06:21 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:21 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130621.csv
+2025-08-11 13:06:21 INFO: window_000.wav: environment prob=1.0 Normal dB=70.2 ocsvm=
+2025-08-11 13:06:21 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130621.csv
+2025-08-11 13:06:22 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:22 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130622.csv
+2025-08-11 13:06:22 INFO: window_000.wav: environment prob=1.0 Normal dB=71.7 ocsvm=
+2025-08-11 13:06:22 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130622.csv
+2025-08-11 13:06:23 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:23 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130623.csv
+2025-08-11 13:06:23 INFO: window_000.wav: environment prob=1.0 Normal dB=66.6 ocsvm=
+2025-08-11 13:06:23 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130623.csv
+2025-08-11 13:06:24 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:24 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130624.csv
+2025-08-11 13:06:24 INFO: window_000.wav: environment prob=1.0 Normal dB=53.1 ocsvm=
+2025-08-11 13:06:24 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130624.csv
+2025-08-11 13:06:25 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:25 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130625.csv
+2025-08-11 13:06:25 INFO: window_000.wav: environment prob=1.0 Normal dB=53.0 ocsvm=
+2025-08-11 13:06:25 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130625.csv
+2025-08-11 13:06:26 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:26 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130626.csv
+2025-08-11 13:06:26 INFO: window_000.wav: environment prob=1.0 Normal dB=53.2 ocsvm=
+2025-08-11 13:06:26 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130626.csv
+2025-08-11 13:06:27 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:27 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130627.csv
+2025-08-11 13:06:27 INFO: window_000.wav: environment prob=1.0 Normal dB=53.4 ocsvm=
+2025-08-11 13:06:27 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130627.csv
+2025-08-11 13:06:28 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:28 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130628.csv
+2025-08-11 13:06:28 INFO: window_000.wav: environment prob=1.0 Normal dB=53.7 ocsvm=
+2025-08-11 13:06:28 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130628.csv
+2025-08-11 13:06:29 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:29 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130629.csv
+2025-08-11 13:06:29 INFO: window_000.wav: environment prob=1.0 Normal dB=71.2 ocsvm=
+2025-08-11 13:06:29 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130629.csv
+2025-08-11 13:06:30 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:30 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130630.csv
+2025-08-11 13:06:30 INFO: window_000.wav: environment prob=1.0 Normal dB=71.1 ocsvm=
+2025-08-11 13:06:30 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130630.csv
+2025-08-11 13:06:31 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:31 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130631.csv
+2025-08-11 13:06:31 INFO: window_000.wav: environment prob=1.0 Normal dB=53.2 ocsvm=
+2025-08-11 13:06:31 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130631.csv
+2025-08-11 13:06:32 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:32 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130632.csv
+2025-08-11 13:06:32 INFO: window_000.wav: environment prob=1.0 Normal dB=53.5 ocsvm=
+2025-08-11 13:06:32 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130632.csv
+2025-08-11 13:06:33 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:33 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130633.csv
+2025-08-11 13:06:33 INFO: window_000.wav: environment prob=1.0 Normal dB=53.6 ocsvm=
+2025-08-11 13:06:33 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130633.csv
+2025-08-11 13:06:34 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:34 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130634.csv
+2025-08-11 13:06:34 INFO: window_000.wav: environment prob=1.0 Normal dB=53.8 ocsvm=
+2025-08-11 13:06:34 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130634.csv
+2025-08-11 13:06:35 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:35 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130635.csv
+2025-08-11 13:06:35 INFO: window_000.wav: environment prob=1.0 Normal dB=53.6 ocsvm=
+2025-08-11 13:06:35 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130635.csv
+2025-08-11 13:06:36 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:36 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130636.csv
+2025-08-11 13:06:36 INFO: window_000.wav: environment prob=1.0 Normal dB=53.3 ocsvm=
+2025-08-11 13:06:36 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130636.csv
+2025-08-11 13:06:37 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:37 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130637.csv
+2025-08-11 13:06:37 INFO: window_000.wav: environment prob=1.0 Normal dB=54.2 ocsvm=
+2025-08-11 13:06:37 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130637.csv
+2025-08-11 13:06:38 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:38 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130638.csv
+2025-08-11 13:06:38 INFO: window_000.wav: environment prob=1.0 Normal dB=53.9 ocsvm=
+2025-08-11 13:06:39 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130638.csv
+2025-08-11 13:06:39 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:39 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130639.csv
+2025-08-11 13:06:39 INFO: window_000.wav: environment prob=1.0 Normal dB=53.2 ocsvm=
+2025-08-11 13:06:40 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130639.csv
+2025-08-11 13:06:40 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:40 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130640.csv
+2025-08-11 13:06:41 INFO: window_000.wav: environment prob=1.0 Normal dB=53.6 ocsvm=
+2025-08-11 13:06:41 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130640.csv
+2025-08-11 13:06:42 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:42 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130642.csv
+2025-08-11 13:06:42 INFO: window_000.wav: environment prob=1.0 Normal dB=53.9 ocsvm=
+2025-08-11 13:06:42 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130642.csv
+2025-08-11 13:06:43 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:43 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130643.csv
+2025-08-11 13:06:43 INFO: window_000.wav: environment prob=1.0 Normal dB=53.6 ocsvm=
+2025-08-11 13:06:43 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130643.csv
+2025-08-11 13:06:44 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:44 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130644.csv
+2025-08-11 13:06:44 INFO: window_000.wav: environment prob=1.0 Normal dB=53.4 ocsvm=
+2025-08-11 13:06:44 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130644.csv
+2025-08-11 13:06:45 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:45 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130645.csv
+2025-08-11 13:06:45 INFO: window_000.wav: environment prob=1.0 Normal dB=53.8 ocsvm=
+2025-08-11 13:06:45 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130645.csv
+2025-08-11 13:06:46 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:46 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130646.csv
+2025-08-11 13:06:46 INFO: window_000.wav: environment prob=1.0 Normal dB=53.6 ocsvm=
+2025-08-11 13:06:46 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130646.csv
+2025-08-11 13:06:47 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:47 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130647.csv
+2025-08-11 13:06:47 INFO: window_000.wav: environment prob=1.0 Normal dB=53.8 ocsvm=
+2025-08-11 13:06:47 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130647.csv
+2025-08-11 13:06:48 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:48 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130648.csv
+2025-08-11 13:06:48 INFO: window_000.wav: environment prob=1.0 Normal dB=53.8 ocsvm=
+2025-08-11 13:06:48 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130648.csv
+2025-08-11 13:06:49 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:49 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130649.csv
+2025-08-11 13:06:49 INFO: window_000.wav: environment prob=1.0 Normal dB=53.9 ocsvm=
+2025-08-11 13:06:49 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130649.csv
+2025-08-11 13:06:50 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:50 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130650.csv
+2025-08-11 13:06:50 INFO: window_000.wav: environment prob=1.0 Normal dB=53.7 ocsvm=
+2025-08-11 13:06:50 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130650.csv
+2025-08-11 13:06:51 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:51 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130651.csv
+2025-08-11 13:06:51 INFO: window_000.wav: environment prob=1.0 Normal dB=53.3 ocsvm=
+2025-08-11 13:06:51 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130651.csv
+2025-08-11 13:06:52 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:52 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130652.csv
+2025-08-11 13:06:52 INFO: window_000.wav: environment prob=1.0 Normal dB=53.6 ocsvm=
+2025-08-11 13:06:52 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130652.csv
+2025-08-11 13:06:53 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:53 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130653.csv
+2025-08-11 13:06:53 INFO: window_000.wav: environment prob=1.0 Normal dB=53.6 ocsvm=
+2025-08-11 13:06:53 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130653.csv
+2025-08-11 13:06:54 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:54 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130654.csv
+2025-08-11 13:06:54 INFO: window_000.wav: environment prob=1.0 Normal dB=53.6 ocsvm=
+2025-08-11 13:06:54 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130654.csv
+2025-08-11 13:06:55 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:55 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130655.csv
+2025-08-11 13:06:55 INFO: window_000.wav: environment prob=1.0 Normal dB=53.3 ocsvm=
+2025-08-11 13:06:55 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130655.csv
+2025-08-11 13:06:56 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:56 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130656.csv
+2025-08-11 13:06:56 INFO: window_000.wav: environment prob=1.0 Normal dB=53.7 ocsvm=
+2025-08-11 13:06:56 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130656.csv
+2025-08-11 13:06:57 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:57 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130657.csv
+2025-08-11 13:06:57 INFO: window_000.wav: environment prob=1.0 Normal dB=53.7 ocsvm=
+2025-08-11 13:06:57 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130657.csv
+2025-08-11 13:06:58 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:58 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130658.csv
+2025-08-11 13:06:58 INFO: window_000.wav: environment prob=1.0 Normal dB=53.5 ocsvm=
+2025-08-11 13:06:58 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130658.csv
+2025-08-11 13:06:59 INFO: Saving wave file 1 / 1
+2025-08-11 13:06:59 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130659.csv
+2025-08-11 13:06:59 INFO: window_000.wav: environment prob=1.0 Normal dB=54.6 ocsvm=
+2025-08-11 13:06:59 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130659.csv
+2025-08-11 13:07:00 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:00 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130700.csv
+2025-08-11 13:07:00 INFO: window_000.wav: environment prob=1.0 Normal dB=55.0 ocsvm=
+2025-08-11 13:07:00 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130700.csv
+2025-08-11 13:07:01 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:01 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130701.csv
+2025-08-11 13:07:01 INFO: window_000.wav: environment prob=1.0 Normal dB=66.0 ocsvm=
+2025-08-11 13:07:01 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130701.csv
+2025-08-11 13:07:02 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:02 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130702.csv
+2025-08-11 13:07:02 INFO: window_000.wav: environment prob=1.0 Normal dB=66.0 ocsvm=
+2025-08-11 13:07:02 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130702.csv
+2025-08-11 13:07:03 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:03 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130703.csv
+2025-08-11 13:07:03 INFO: window_000.wav: environment prob=1.0 Normal dB=53.5 ocsvm=
+2025-08-11 13:07:03 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130703.csv
+2025-08-11 13:07:04 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:04 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130704.csv
+2025-08-11 13:07:04 INFO: window_000.wav: environment prob=1.0 Normal dB=54.2 ocsvm=
+2025-08-11 13:07:04 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130704.csv
+2025-08-11 13:07:05 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:05 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130705.csv
+2025-08-11 13:07:05 INFO: window_000.wav: environment prob=0.8 Normal dB=55.4 ocsvm=
+2025-08-11 13:07:05 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130705.csv
+2025-08-11 13:07:06 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:06 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130706.csv
+2025-08-11 13:07:06 INFO: window_000.wav: environment prob=1.0 Normal dB=55.0 ocsvm=
+2025-08-11 13:07:06 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130706.csv
+2025-08-11 13:07:07 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:07 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130707.csv
+2025-08-11 13:07:07 INFO: window_000.wav: environment prob=1.0 Normal dB=54.0 ocsvm=
+2025-08-11 13:07:07 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130707.csv
+2025-08-11 13:07:08 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:08 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130708.csv
+2025-08-11 13:07:08 INFO: window_000.wav: environment prob=0.7 Normal dB=61.6 ocsvm=
+2025-08-11 13:07:08 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130708.csv
+2025-08-11 13:07:09 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:09 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130709.csv
+2025-08-11 13:07:09 INFO: window_000.wav: environment prob=1.0 Normal dB=70.0 ocsvm=
+2025-08-11 13:07:09 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130709.csv
+2025-08-11 13:07:10 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:10 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130710.csv
+2025-08-11 13:07:10 INFO: window_000.wav: environment prob=1.0 Normal dB=69.6 ocsvm=
+2025-08-11 13:07:10 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130710.csv
+2025-08-11 13:07:11 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:11 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130711.csv
+2025-08-11 13:07:11 INFO: window_000.wav: environment prob=1.0 Normal dB=57.3 ocsvm=
+2025-08-11 13:07:11 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130711.csv
+2025-08-11 13:07:12 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:12 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130712.csv
+2025-08-11 13:07:12 INFO: window_000.wav: environment prob=1.0 Normal dB=57.1 ocsvm=
+2025-08-11 13:07:12 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130712.csv
+2025-08-11 13:07:13 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:13 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130713.csv
+2025-08-11 13:07:13 INFO: window_000.wav: environment prob=0.9 Normal dB=67.7 ocsvm=
+2025-08-11 13:07:14 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130713.csv
+2025-08-11 13:07:14 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:14 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130714.csv
+2025-08-11 13:07:14 INFO: window_000.wav: environment prob=1.0 Normal dB=68.1 ocsvm=
+2025-08-11 13:07:15 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130714.csv
+2025-08-11 13:07:15 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:15 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130715.csv
+2025-08-11 13:07:16 INFO: window_000.wav: environment prob=1.0 Normal dB=63.1 ocsvm=
+2025-08-11 13:07:16 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130715.csv
+2025-08-11 13:07:17 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:17 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130717.csv
+2025-08-11 13:07:17 INFO: window_000.wav: environment prob=1.0 Normal dB=74.4 ocsvm=
+2025-08-11 13:07:17 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130717.csv
+2025-08-11 13:07:18 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:18 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130718.csv
+2025-08-11 13:07:18 INFO: window_000.wav: environment prob=1.0 Normal dB=76.6 ocsvm=
+2025-08-11 13:07:18 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130718.csv
+2025-08-11 13:07:19 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:19 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130719.csv
+2025-08-11 13:07:19 INFO: window_000.wav: environment prob=1.0 Normal dB=73.1 ocsvm=
+2025-08-11 13:07:19 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130719.csv
+2025-08-11 13:07:20 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:20 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130720.csv
+2025-08-11 13:07:20 INFO: window_000.wav: environment prob=1.0 Normal dB=58.6 ocsvm=
+2025-08-11 13:07:20 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130720.csv
+2025-08-11 13:07:21 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:21 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130721.csv
+2025-08-11 13:07:21 INFO: window_000.wav: environment prob=1.0 Normal dB=57.3 ocsvm=
+2025-08-11 13:07:21 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130721.csv
+2025-08-11 13:07:22 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:22 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130722.csv
+2025-08-11 13:07:22 INFO: window_000.wav: environment prob=1.0 Normal dB=56.3 ocsvm=
+2025-08-11 13:07:22 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130722.csv
+2025-08-11 13:07:23 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:23 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130723.csv
+2025-08-11 13:07:23 INFO: window_000.wav: environment prob=1.0 Normal dB=54.4 ocsvm=
+2025-08-11 13:07:23 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130723.csv
+2025-08-11 13:07:24 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:24 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130724.csv
+2025-08-11 13:07:24 INFO: window_000.wav: environment prob=1.0 Normal dB=54.0 ocsvm=
+2025-08-11 13:07:24 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130724.csv
+2025-08-11 13:07:25 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:25 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130725.csv
+2025-08-11 13:07:25 INFO: window_000.wav: environment prob=1.0 Normal dB=55.1 ocsvm=
+2025-08-11 13:07:25 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130725.csv
+2025-08-11 13:07:26 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:26 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130726.csv
+2025-08-11 13:07:26 INFO: window_000.wav: environment prob=1.0 Normal dB=55.4 ocsvm=
+2025-08-11 13:07:26 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130726.csv
+2025-08-11 13:07:27 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:27 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130727.csv
+2025-08-11 13:07:27 INFO: window_000.wav: environment prob=1.0 Normal dB=54.2 ocsvm=
+2025-08-11 13:07:27 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130727.csv
+2025-08-11 13:07:28 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:28 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130728.csv
+2025-08-11 13:07:28 INFO: window_000.wav: environment prob=1.0 Normal dB=55.4 ocsvm=
+2025-08-11 13:07:28 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130728.csv
+2025-08-11 13:07:29 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:29 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130729.csv
+2025-08-11 13:07:29 INFO: window_000.wav: environment prob=1.0 Normal dB=55.3 ocsvm=
+2025-08-11 13:07:29 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130729.csv
+2025-08-11 13:07:30 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:30 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130730.csv
+2025-08-11 13:07:30 INFO: window_000.wav: environment prob=1.0 Normal dB=54.8 ocsvm=
+2025-08-11 13:07:30 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130730.csv
+2025-08-11 13:07:31 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:31 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130731.csv
+2025-08-11 13:07:31 INFO: window_000.wav: environment prob=1.0 Normal dB=55.1 ocsvm=
+2025-08-11 13:07:31 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130731.csv
+2025-08-11 13:07:32 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:32 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130732.csv
+2025-08-11 13:07:32 INFO: window_000.wav: environment prob=1.0 Normal dB=54.8 ocsvm=
+2025-08-11 13:07:32 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130732.csv
+2025-08-11 13:07:33 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:33 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130733.csv
+2025-08-11 13:07:33 INFO: window_000.wav: environment prob=1.0 Normal dB=54.6 ocsvm=
+2025-08-11 13:07:33 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130733.csv
+2025-08-11 13:07:34 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:34 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130734.csv
+2025-08-11 13:07:34 INFO: window_000.wav: environment prob=1.0 Normal dB=53.8 ocsvm=
+2025-08-11 13:07:34 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130734.csv
+2025-08-11 13:07:35 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:35 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130735.csv
+2025-08-11 13:07:35 INFO: window_000.wav: environment prob=1.0 Normal dB=54.7 ocsvm=
+2025-08-11 13:07:35 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130735.csv
+2025-08-11 13:07:36 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:36 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130736.csv
+2025-08-11 13:07:36 INFO: window_000.wav: environment prob=1.0 Normal dB=54.5 ocsvm=
+2025-08-11 13:07:36 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130736.csv
+2025-08-11 13:07:37 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:37 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130737.csv
+2025-08-11 13:07:37 INFO: window_000.wav: environment prob=1.0 Normal dB=53.8 ocsvm=
+2025-08-11 13:07:37 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130737.csv
+2025-08-11 13:07:38 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:38 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130738.csv
+2025-08-11 13:07:38 INFO: window_000.wav: environment prob=1.0 Normal dB=53.6 ocsvm=
+2025-08-11 13:07:38 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130738.csv
+2025-08-11 13:07:39 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:39 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130739.csv
+2025-08-11 13:07:39 INFO: window_000.wav: environment prob=1.0 Normal dB=53.2 ocsvm=
+2025-08-11 13:07:39 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130739.csv
+2025-08-11 13:07:40 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:40 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130740.csv
+2025-08-11 13:07:40 INFO: window_000.wav: environment prob=1.0 Normal dB=53.8 ocsvm=
+2025-08-11 13:07:40 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130740.csv
+2025-08-11 13:07:41 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:41 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130741.csv
+2025-08-11 13:07:41 INFO: window_000.wav: environment prob=1.0 Normal dB=53.7 ocsvm=
+2025-08-11 13:07:41 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130741.csv
+2025-08-11 13:07:42 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:42 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130742.csv
+2025-08-11 13:07:42 INFO: window_000.wav: environment prob=1.0 Normal dB=53.3 ocsvm=
+2025-08-11 13:07:42 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130742.csv
+2025-08-11 13:07:43 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:43 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130743.csv
+2025-08-11 13:07:43 INFO: window_000.wav: environment prob=1.0 Normal dB=54.0 ocsvm=
+2025-08-11 13:07:43 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130743.csv
+2025-08-11 13:07:44 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:44 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130744.csv
+2025-08-11 13:07:44 INFO: window_000.wav: environment prob=1.0 Normal dB=53.8 ocsvm=
+2025-08-11 13:07:44 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130744.csv
+2025-08-11 13:07:45 INFO: Saving wave file 1 / 1
+2025-08-11 13:07:45 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130745.csv
+2025-08-11 13:07:45 INFO: window_000.wav: environment prob=1.0 Normal dB=55.7 ocsvm=
+2025-08-11 13:07:45 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_3.2\Logs\IPC1_20250811_130745.csv
+2025-08-11 13:07:45 INFO: Shutting down
+2025-08-11 13:07:45 INFO: Serial closed
