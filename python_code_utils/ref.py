@@ -223,6 +223,314 @@ class SPLCalibrator:
             json.dump({"calib_offset_db": 0.0}, f)
         print("🔄 Calibration reset to 0.0 dB")
 
+    def monitor_and_collect(self, duration=None):
+        """
+        Real-time monitoring with data collection
+        Press Ctrl+C to stop
+        """
+        print("🎤 Real-time SPL Monitoring & Data Collection")
+        print("=" * 50)
+        print("Press Ctrl+C to stop monitoring")
+        print("=" * 50)
+        
+        self.start_continuous_monitoring()
+        start_time = time.time()
+        
+        try:
+            while True:
+                spl = self.get_current_spl()
+                if spl is not None:
+                    elapsed = time.time() - start_time
+                    readings_count = len(self.readings_history)
+                    print(f"\r📊 SPL: {spl:6.1f} dB | Readings: {readings_count:4d} | Time: {elapsed:6.1f}s", end="", flush=True)
+                
+                # Check duration limit
+                if duration and (time.time() - start_time) >= duration:
+                    print(f"\n⏰ Duration limit reached ({duration}s)")
+                    break
+                
+                time.sleep(0.5)
+                
+        except KeyboardInterrupt:
+            print("\n⏹️ Monitoring stopped by user")
+        
+        finally:
+            self.stop_continuous_monitoring()
+            self._save_collected_data()
+            self._show_collection_summary()
+
+    def _save_collected_data(self):
+        """Save collected data to file"""
+        if not self.readings_history:
+            print("⚠️ No data to save!")
+            return
+        
+        timestamp = time.strftime("%Y%m%d_%H%M%S")
+        filename = f"spl_data_{timestamp}.json"
+        
+        data_to_save = {
+            "collection_info": {
+                "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
+                "total_readings": len(self.readings_history),
+                "calibration_offset": self.calib_offset_db
+            },
+            "readings": self.readings_history,
+            "statistics": self._calculate_statistics()
+        }
+        
+        with open(filename, "w", encoding="utf-8") as f:
+            json.dump(data_to_save, f, indent=2)
+        
+        print(f"💾 Data saved to: {filename}")
+
+    def _calculate_statistics(self):
+        """Calculate statistics from collected data"""
+        if not self.readings_history:
+            return {}
+        
+        spl_values = [r['spl'] for r in self.readings_history]
+        
+        return {
+            "mean_spl": float(np.mean(spl_values)),
+            "median_spl": float(np.median(spl_values)),
+            "std_dev_spl": float(np.std(spl_values)),
+            "min_spl": float(np.min(spl_values)),
+            "max_spl": float(np.max(spl_values))
+        }
+
+    def _show_collection_summary(self):
+        """Show summary of collected data"""
+        if not self.readings_history:
+            print("📊 No data collected")
+            return
+        
+        stats = self._calculate_statistics()
+        
+        print("\n📊 Collection Summary:")
+        print("=" * 30)
+        print(f"Readings: {len(self.readings_history)}")
+        print(f"Mean SPL: {stats['mean_spl']:.1f} dB")
+        print(f"Median SPL: {stats['median_spl']:.1f} dB")
+        print(f"Std Dev: {stats['std_dev_spl']:.1f} dB")
+        print(f"Range: {stats['min_spl']:.1f} - {stats['max_spl']:.1f} dB")
+        print(f"Calibration Offset: {self.calib_offset_db:+.2f} dB")
+
+    def simple_monitor(self, update_interval=1.0):
+        """
+        Simple continuous monitoring without data collection
+        Press Ctrl+C to stop
+        """
+        print("🎤 Simple SPL Monitoring (Press Ctrl+C to stop)")
+        print("=" * 40)
+        
+        try:
+            while True:
+                spl = self.get_current_spl()
+                if spl is not None:
+                    timestamp = time.strftime("%H:%M:%S")
+                    print(f"[{timestamp}] Current SPL: {spl:6.1f} dB")
+                time.sleep(update_interval)
+                
+        except KeyboardInterrupt:
+            print("\n⏹️ Monitoring stopped")
+
+    def collect_data_for_duration(self, duration_seconds, filename=None):
+        """
+        Collect data for a specific duration and save to file
+        """
+        print(f"📊 Collecting data for {duration_seconds} seconds...")
+        
+        self.start_continuous_monitoring()
+        time.sleep(duration_seconds)
+        self.stop_continuous_monitoring()
+        
+        if not filename:
+            timestamp = time.strftime("%Y%m%d_%H%M%S")
+            filename = f"spl_collection_{duration_seconds}s_{timestamp}.json"
+        
+        self._save_collected_data()
+        self._show_collection_summary()
+        
+        return filename
+
+    def monitor_and_collect(self, duration=None, save_to_file=True):
+        """
+        Real-time monitoring with data collection
+        Press 'q' to quit, 's' to save current data, 'c' to clear history
+        """
+        print("🎤 Real-time SPL Monitoring & Data Collection")
+        print("=" * 50)
+        print("Controls:")
+        print("  'q' - Quit monitoring")
+        print("  's' - Save current data to file")
+        print("  'c' - Clear data history")
+        print("  'i' - Show current calibration info")
+        print("  'r' - Reset calibration")
+        print("=" * 50)
+        
+        self.start_continuous_monitoring()
+        
+        start_time = time.time()
+        last_display = 0
+        
+        try:
+            while True:
+                current_time = time.time()
+                
+                # Update display every 0.5 seconds
+                if current_time - last_display >= 0.5:
+                    spl = self.get_current_spl()
+                    if spl is not None:
+                        # Clear line and show current reading
+                        print(f"\r📊 Current SPL: {spl:6.1f} dB | Readings: {len(self.readings_history):4d} | Time: {current_time - start_time:6.1f}s", end="", flush=True)
+                    last_display = current_time
+                
+                # Check for user input (non-blocking)
+                if self._check_key_press():
+                    key = input("\nEnter command (q/s/c/i/r): ").lower().strip()
+                    
+                    if key == 'q':
+                        print("\n⏹️ Stopping monitoring...")
+                        break
+                    elif key == 's':
+                        self._save_collected_data()
+                    elif key == 'c':
+                        self.readings_history.clear()
+                        print("🗑️ Data history cleared!")
+                    elif key == 'i':
+                        self.get_calibration_info()
+                    elif key == 'r':
+                        self.reset_calibration()
+                    else:
+                        print("❓ Unknown command. Use: q/s/c/i/r")
+                
+                # Check duration limit
+                if duration and (current_time - start_time) >= duration:
+                    print(f"\n⏰ Duration limit reached ({duration}s)")
+                    break
+                
+                time.sleep(0.1)
+                
+        except KeyboardInterrupt:
+            print("\n⏹️ Monitoring stopped by user")
+        
+        finally:
+            self.stop_continuous_monitoring()
+            
+            # Auto-save if we have data
+            if save_to_file and self.readings_history:
+                self._save_collected_data()
+            
+            # Show summary
+            self._show_collection_summary()
+
+    def _check_key_press(self):
+        """Simple non-blocking key check (Windows compatible)"""
+        try:
+            import msvcrt
+            return msvcrt.kbhit()
+        except ImportError:
+            # For non-Windows systems, we'll use a different approach
+            return False
+
+    def _save_collected_data(self):
+        """Save collected data to file"""
+        if not self.readings_history:
+            print("⚠️ No data to save!")
+            return
+        
+        timestamp = time.strftime("%Y%m%d_%H%M%S")
+        filename = f"spl_data_{timestamp}.json"
+        
+        data_to_save = {
+            "collection_info": {
+                "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
+                "duration_seconds": self.readings_history[-1]['timestamp'] - self.readings_history[0]['timestamp'],
+                "total_readings": len(self.readings_history),
+                "calibration_offset": self.calib_offset_db
+            },
+            "readings": self.readings_history,
+            "statistics": self._calculate_statistics()
+        }
+        
+        with open(filename, "w", encoding="utf-8") as f:
+            json.dump(data_to_save, f, indent=2)
+        
+        print(f"💾 Data saved to: {filename}")
+
+    def _calculate_statistics(self):
+        """Calculate statistics from collected data"""
+        if not self.readings_history:
+            return {}
+        
+        spl_values = [r['spl'] for r in self.readings_history]
+        
+        return {
+            "mean_spl": float(np.mean(spl_values)),
+            "median_spl": float(np.median(spl_values)),
+            "std_dev_spl": float(np.std(spl_values)),
+            "min_spl": float(np.min(spl_values)),
+            "max_spl": float(np.max(spl_values)),
+            "range_spl": float(np.max(spl_values) - np.min(spl_values))
+        }
+
+    def _show_collection_summary(self):
+        """Show summary of collected data"""
+        if not self.readings_history:
+            print("📊 No data collected")
+            return
+        
+        stats = self._calculate_statistics()
+        duration = self.readings_history[-1]['timestamp'] - self.readings_history[0]['timestamp']
+        
+        print("\n📊 Collection Summary:")
+        print("=" * 30)
+        print(f"Duration: {duration:.1f} seconds")
+        print(f"Readings: {len(self.readings_history)}")
+        print(f"Mean SPL: {stats['mean_spl']:.1f} dB")
+        print(f"Median SPL: {stats['median_spl']:.1f} dB")
+        print(f"Std Dev: {stats['std_dev_spl']:.1f} dB")
+        print(f"Range: {stats['min_spl']:.1f} - {stats['max_spl']:.1f} dB")
+        print(f"Calibration Offset: {self.calib_offset_db:+.2f} dB")
+
+    def simple_monitor(self, update_interval=1.0):
+        """
+        Simple continuous monitoring without data collection
+        Press Ctrl+C to stop
+        """
+        print("🎤 Simple SPL Monitoring (Press Ctrl+C to stop)")
+        print("=" * 40)
+        
+        try:
+            while True:
+                spl = self.get_current_spl()
+                if spl is not None:
+                    timestamp = time.strftime("%H:%M:%S")
+                    print(f"[{timestamp}] Current SPL: {spl:6.1f} dB")
+                time.sleep(update_interval)
+                
+        except KeyboardInterrupt:
+            print("\n⏹️ Monitoring stopped")
+
+    def collect_data_for_duration(self, duration_seconds, filename=None):
+        """
+        Collect data for a specific duration and save to file
+        """
+        print(f"📊 Collecting data for {duration_seconds} seconds...")
+        
+        self.start_continuous_monitoring()
+        time.sleep(duration_seconds)
+        self.stop_continuous_monitoring()
+        
+        if not filename:
+            timestamp = time.strftime("%Y%m%d_%H%M%S")
+            filename = f"spl_collection_{duration_seconds}s_{timestamp}.json"
+        
+        self._save_collected_data()
+        self._show_collection_summary()
+        
+        return filename
+
 # Example usage functions
 def demo_calibration():
     """Demo function showing how to use the calibrator"""
@@ -260,5 +568,68 @@ def demo_calibration():
     else:
         print("\n❌ Calibration failed!")
 
+def demo_monitoring():
+    """Demo function showing monitoring and data collection"""
+    calibrator = SPLCalibrator()
+    
+    print("📊 SPL Monitoring & Data Collection Demo")
+    print("=" * 50)
+    
+    print("Choose monitoring mode:")
+    print("1. Simple monitoring (just watch dB levels)")
+    print("2. Data collection with monitoring")
+    print("3. Collect data for specific duration")
+    
+    choice = input("Enter choice (1-3): ").strip()
+    
+    # Simulate audio data (replace with real audio input)
+    print("🎤 Simulating audio data...")
+    
+    if choice == "1":
+        # Simple monitoring
+        print("Starting simple monitoring...")
+        # In real usage, you would add audio data continuously here
+        for i in range(50):
+            fake_audio = np.random.normal(0, 0.1, 1024)
+            calibrator.add_audio_data(fake_audio)
+            time.sleep(0.1)
+        calibrator.simple_monitor(update_interval=1.0)
+        
+    elif choice == "2":
+        # Data collection with monitoring
+        print("Starting data collection monitoring...")
+        # In real usage, you would add audio data continuously here
+        for i in range(50):
+            fake_audio = np.random.normal(0, 0.1, 1024)
+            calibrator.add_audio_data(fake_audio)
+            time.sleep(0.1)
+        calibrator.monitor_and_collect(duration=30)  # 30 seconds
+        
+    elif choice == "3":
+        # Collect for specific duration
+        duration = float(input("Enter duration in seconds: ") or "10")
+        print(f"Collecting data for {duration} seconds...")
+        # In real usage, you would add audio data continuously here
+        for i in range(50):
+            fake_audio = np.random.normal(0, 0.1, 1024)
+            calibrator.add_audio_data(fake_audio)
+            time.sleep(0.1)
+        filename = calibrator.collect_data_for_duration(duration)
+        print(f"Data saved to: {filename}")
+    
+    else:
+        print("Invalid choice!")
+
 if __name__ == "__main__":
-    demo_calibration()
+    print("Choose demo mode:")
+    print("1. Calibration demo")
+    print("2. Monitoring demo")
+    
+    mode = input("Enter choice (1-2): ").strip()
+    
+    if mode == "1":
+        demo_calibration()
+    elif mode == "2":
+        demo_monitoring()
+    else:
+        print("Invalid choice!")
