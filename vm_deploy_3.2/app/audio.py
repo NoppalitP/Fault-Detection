@@ -63,7 +63,7 @@ def compute_db(
     if clamp_min is not None:
         db = max(db, float(clamp_min))
 
-    return float(db + float(calib_offset))
+    return  float(1.177 * db - 38.506)
 
 
 
