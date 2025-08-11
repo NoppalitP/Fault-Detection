@@ -306,3 +306,26 @@
 2025-08-11 13:06:13 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250811_130326.csv
 2025-08-11 13:06:13 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
 2025-08-11 13:06:13 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250811_130538.csv
+2025-08-11 13:13:46 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-11 13:13:46 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250811_130359.csv
+2025-08-11 13:13:46 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-11 13:13:46 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250811_130432.csv
+2025-08-11 13:13:46 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-11 13:13:46 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250811_130505.csv
+2025-08-11 13:13:46 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-11 13:13:46 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250811_130611.csv
+2025-08-11 13:13:46 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-11 13:13:46 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250811_130644.csv
+2025-08-11 13:13:46 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-11 13:13:46 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250811_130717.csv
+2025-08-11 13:13:46 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-11 13:13:46 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250811_130750.csv
+2025-08-11 13:13:46 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-11 13:13:46 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250811_130823.csv
+2025-08-11 13:13:46 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-11 13:13:46 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250811_131035.csv
+2025-08-11 13:13:46 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-11 13:13:46 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250811_131108.csv
+2025-08-11 13:13:48 | INFO     | __main__             | start                | Service interrupted by user
+2025-08-11 13:13:48 | INFO     | __main__             | close                | Connection pool closed
+2025-08-11 13:13:48 | INFO     | __main__             | cleanup              | Service cleanup completed
