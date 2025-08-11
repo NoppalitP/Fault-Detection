@@ -16,6 +16,7 @@ table_name: measurements
 interval_minutes: 5
 export_directory: D:\NOPPALIT\History\Saturn_Acc_Logs
 retention_days: 30
+delete_after_export: true
 
 # Logging Configuration
 log_level: INFO

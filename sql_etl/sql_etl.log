@@ -14,3 +14,26 @@
 2025-08-11 08:59:48,849 - __main__ - INFO - Deleted 163 rows older than 5 minutes
 2025-08-11 09:04:48,859 - __main__ - INFO - Exported 162 rows to D:\NOPPALIT\History\Saturn_Acc_Logs\export_20250811_020448.csv
 2025-08-11 09:04:48,860 - __main__ - INFO - Deleted 162 rows older than 5 minutes
+2025-08-11 10:18:22,377 - __main__ - INFO - Connection pool initialized successfully
+2025-08-11 10:18:22,411 - __main__ - INFO - Database initialized successfully
+2025-08-11 10:18:22,411 - __main__ - INFO - Starting data rotation service every 5 minutes...
+2025-08-11 10:18:22,412 - __main__ - INFO - Export directory: D:\NOPPALIT\History\Saturn_Acc_Logs
+2025-08-11 10:18:22,466 - __main__ - INFO - Exported 2522 rows to D:\NOPPALIT\History\Saturn_Acc_Logs\export_20250811_031822.csv
+2025-08-11 10:18:22,467 - __main__ - INFO - Deleted 2522 rows older than 5 minutes
+2025-08-11 10:23:22,478 - __main__ - INFO - Exported 161 rows to D:\NOPPALIT\History\Saturn_Acc_Logs\export_20250811_032322.csv
+2025-08-11 10:28:15,770 - __main__ - INFO - Deleted 161 rows older than 5 minutes
+2025-08-11 10:28:20,249 - __main__ - INFO - Service interrupted by user
+2025-08-11 10:28:20,250 - __main__ - INFO - Connection pool closed
+2025-08-11 10:28:20,251 - __main__ - INFO - Service cleanup completed
+2025-08-11 10:28:39,203 - export_sql - INFO - Connection pool initialized successfully
+2025-08-11 10:28:39,216 - export_sql - INFO - Database initialized successfully
+2025-08-11 10:28:39,227 - export_sql - INFO - Exported 180 rows to D:\NOPPALIT\History\Saturn_Acc_Logs\export_20250811_032839.sql
+2025-08-11 10:28:39,228 - export_sql - INFO - Deleted 180 rows older than 5 minutes from database
+2025-08-11 10:28:39,229 - export_sql - INFO - Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\export_20250811_032839.sql
+2025-08-11 10:28:39,229 - export_sql - INFO - Deleted exported file: D:\NOPPALIT\History\Saturn_Acc_Logs\export_20250811_032839.sql
+2025-08-11 10:28:53,770 - __main__ - INFO - Connection pool initialized successfully
+2025-08-11 10:28:53,778 - __main__ - INFO - Database initialized successfully
+2025-08-11 10:28:53,779 - __main__ - INFO - Starting data rotation service every 5 minutes...
+2025-08-11 10:28:53,779 - __main__ - INFO - Export directory: D:\NOPPALIT\History\Saturn_Acc_Logs
+2025-08-11 10:28:53,780 - __main__ - INFO - Delete after export: True
+2025-08-11 10:28:53,787 - __main__ - INFO - No rows to export

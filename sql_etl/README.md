@@ -1,6 +1,6 @@
 # SQL ETL Data Export and Rotation Service
 
-This optimized version of the data export script provides a robust, production-ready solution for managing TimescaleDB data with automatic export and rotation capabilities.
+This optimized version of the data export script provides a robust, production-ready solution for managing TimescaleDB data with automatic export and rotation capabilities. The service exports data to SQL format and includes comprehensive file management features.
 
 ## Features
 
@@ -8,6 +8,8 @@ This optimized version of the data export script provides a robust, production-r
 - **Configuration Management**: Environment variables and YAML config file support
 - **Error Handling**: Comprehensive error handling and logging
 - **Batch Operations**: Optimized database operations for better performance
+- **SQL Export**: Exports data to SQL format with INSERT statements
+- **File Management**: Comprehensive file deletion and management capabilities
 - **Automatic Cleanup**: File retention management and cleanup
 - **Type Hints**: Full type annotations for better code clarity
 - **Logging**: Structured logging with file and console output
@@ -30,6 +32,7 @@ export DB_PASSWORD=your_password
 export INTERVAL_MINUTES=5
 export EXPORT_DIR=exports
 export RETENTION_DAYS=30
+export DELETE_AFTER_EXPORT=true
 ```
 
 3. Or create a `config.yaml` file (see `config.yaml` template)
@@ -38,12 +41,33 @@ export RETENTION_DAYS=30
 
 ### Basic Usage
 ```bash
-python export_csv.py
+python export_sql.py
 ```
 
 ### With Custom Config
 ```bash
-python export_csv.py --config custom_config.yaml
+python export_sql.py --config custom_config.yaml
+```
+
+### File Management
+```bash
+# List exported files
+python file_manager.py --list
+
+# Show detailed file information
+python file_manager.py --list --details
+
+# Delete specific file
+python file_manager.py --delete export_20231201_120000.sql
+
+# Clean up old files (older than 7 days)
+python file_manager.py --cleanup 7
+
+# Show file summary
+python file_manager.py --summary
+
+# Get info about specific file
+python file_manager.py --info export_20231201_120000.sql
 ```
 
 ## Configuration
@@ -67,8 +91,9 @@ The service can be configured through:
 | `max_connections` | Max connection pool size | 10 |
 | `table_name` | Target table name | measurements |
 | `interval_minutes` | Export interval in minutes | 5 |
-| `export_directory` | CSV export directory | exports |
+| `export_directory` | SQL export directory | exports |
 | `retention_days` | File retention period | 30 |
+| `delete_after_export` | Delete file after export | false |
 
 ## Architecture
 
@@ -79,6 +104,7 @@ The code is organized into several classes:
 - **`SQLQueries`**: SQL query definitions
 - **`DataExporter`**: Data export and rotation logic
 - **`DataRotationService`**: Main service orchestration
+- **`FileManager`**: File management utilities (separate script)
 
 ## Performance Improvements
 
@@ -117,8 +143,9 @@ The service provides several monitoring points:
 
 - **Export Counts**: Number of rows exported
 - **Deletion Counts**: Number of rows removed
-- **File Management**: Export file creation and cleanup
+- **File Management**: Export file creation, cleanup, and deletion
 - **Performance Metrics**: Database operation timing
+- **SQL Export**: SQL file generation with proper formatting
 
 ## Troubleshooting
 
