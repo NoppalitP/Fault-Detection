@@ -7,8 +7,8 @@ import yaml
 import joblib
 import librosa
 
-from model import extract_features
-from audio import compute_db, compute_top_frequencies
+from app.model import extract_features
+from app.audio import compute_db, compute_top_frequencies
 
 
 def load_cfg(base: Path):

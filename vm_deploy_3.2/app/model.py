@@ -124,7 +124,7 @@ def batch_predict(
         ocsvm_out[need_oc] = np.where(ocsvm_scores >= ocsvm_threshold, 1, -1)
     # ------------------------------------------------
 
-    f1 = "{:.1f}".format
+    f1 = "{:.2f}".format
     rows = []
     for k, i in enumerate(valid_idx):
         # ตัดสินสถานะตามกติกา dB ก่อนเสมอ
@@ -161,7 +161,7 @@ def batch_predict(
             prob_str = ""
 
         logging.info(
-            "%s: %s prob=%s %s dB=%s ocsvm=%s",
+            "%s: %s prob=%s %s dB=%s prob_ocsvm=%s",
             files[i].name,
             components[cls_out[k]],
             prob_str,
