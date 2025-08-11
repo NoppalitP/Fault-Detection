@@ -8,3 +8,9 @@
 2025-08-11 08:49:46,376 - __main__ - INFO - Export directory: D:\NOPPALIT\History\Saturn_Acc_Logs
 2025-08-11 08:49:48,782 - __main__ - INFO - Exported 224542 rows to D:\NOPPALIT\History\Saturn_Acc_Logs\export_20250811_014947.csv
 2025-08-11 08:49:48,783 - __main__ - INFO - Deleted 224542 rows older than 5 minutes
+2025-08-11 08:54:48,837 - __main__ - INFO - Exported 214 rows to D:\NOPPALIT\History\Saturn_Acc_Logs\export_20250811_015448.csv
+2025-08-11 08:54:48,838 - __main__ - INFO - Deleted 214 rows older than 5 minutes
+2025-08-11 08:59:48,848 - __main__ - INFO - Exported 163 rows to D:\NOPPALIT\History\Saturn_Acc_Logs\export_20250811_015948.csv
+2025-08-11 08:59:48,849 - __main__ - INFO - Deleted 163 rows older than 5 minutes
+2025-08-11 09:04:48,859 - __main__ - INFO - Exported 162 rows to D:\NOPPALIT\History\Saturn_Acc_Logs\export_20250811_020448.csv
+2025-08-11 09:04:48,860 - __main__ - INFO - Deleted 162 rows older than 5 minutes

@@ -26,7 +26,7 @@ def compute_db(sig: np.ndarray, calib_offset: float = 0.0) -> float:
     dbfs = librosa.amplitude_to_db(rms, ref=1.0)  # 20*log10(rms/1.0)
 
     # Convert to approx dB SPL using mic sensitivity + optional calibration
-    dbspl = np.max(dbfs) + 116.0 + float(calib_offset)  # use peak frame in the window
+    dbspl = np.max(dbfs)  + float(calib_offset)  # use peak frame in the window
     return float(dbspl)
 
 

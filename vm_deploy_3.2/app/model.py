@@ -1,7 +1,7 @@
 import joblib , librosa
 from pathlib import Path
 from typing import Tuple, List
-from app.audio import save_wave_file
+from audio import save_wave_file
 import numpy as np
 def load_models(base: Path, cfg: dict):
     """Load OCSVM, classifier, and optional scaler (if configured)."""
@@ -56,7 +56,7 @@ def batch_predict(
     calib_offset: float,
     scaler=None  # optional
 ):
-    from .audio import compute_db, compute_top_frequencies
+    from audio import compute_db, compute_top_frequencies
     import csv, logging
     import numpy as np
 
