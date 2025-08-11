@@ -37,3 +37,18 @@
 2025-08-11 10:28:53,779 - __main__ - INFO - Export directory: D:\NOPPALIT\History\Saturn_Acc_Logs
 2025-08-11 10:28:53,780 - __main__ - INFO - Delete after export: True
 2025-08-11 10:28:53,787 - __main__ - INFO - No rows to export
+2025-08-11 10:33:53,802 - __main__ - INFO - Exported 166 rows to D:\NOPPALIT\History\Saturn_Acc_Logs\export_20250811_033353.sql
+2025-08-11 10:33:53,803 - __main__ - INFO - Deleted 166 rows older than 5 minutes from database
+2025-08-11 10:33:53,803 - __main__ - INFO - Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\export_20250811_033353.sql
+2025-08-11 10:33:53,804 - __main__ - INFO - Deleted exported file: D:\NOPPALIT\History\Saturn_Acc_Logs\export_20250811_033353.sql
+2025-08-11 10:38:53,814 - __main__ - INFO - Exported 160 rows to D:\NOPPALIT\History\Saturn_Acc_Logs\export_20250811_033853.sql
+2025-08-11 11:07:19,755 - __main__ - INFO - Deleted 160 rows older than 5 minutes from database
+2025-08-11 11:07:19,837 - __main__ - INFO - Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\export_20250811_033853.sql
+2025-08-11 11:07:19,837 - __main__ - INFO - Deleted exported file: D:\NOPPALIT\History\Saturn_Acc_Logs\export_20250811_033853.sql
+2025-08-11 11:12:20,185 - __main__ - INFO - Exported 1072 rows to D:\NOPPALIT\History\Saturn_Acc_Logs\export_20250811_041220.sql
+2025-08-11 11:18:13,135 - __main__ - INFO - Deleted 1072 rows older than 5 minutes from database
+2025-08-11 11:18:13,138 - __main__ - INFO - Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\export_20250811_041220.sql
+2025-08-11 11:18:13,138 - __main__ - INFO - Deleted exported file: D:\NOPPALIT\History\Saturn_Acc_Logs\export_20250811_041220.sql
+2025-08-11 11:18:14,992 - __main__ - INFO - Service interrupted by user
+2025-08-11 11:18:14,998 - __main__ - INFO - Connection pool closed
+2025-08-11 11:18:15,011 - __main__ - INFO - Service cleanup completed

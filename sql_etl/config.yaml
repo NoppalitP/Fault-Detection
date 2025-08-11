@@ -13,8 +13,9 @@ max_connections: 10
 table_name: measurements
 
 # Service Configuration
-interval_minutes: 5
+interval_minutes: 1
 export_directory: D:\NOPPALIT\History\Saturn_Acc_Logs
+csv_source_directory: D:\NOPPALIT\History\Saturn_Acc_Logs
 retention_days: 30
 delete_after_export: true
 

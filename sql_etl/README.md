@@ -1,6 +1,6 @@
-# SQL ETL Data Export and Rotation Service
+# CSV ETL Data Import and Processing Service
 
-This optimized version of the data export script provides a robust, production-ready solution for managing TimescaleDB data with automatic export and rotation capabilities. The service exports data to SQL format and includes comprehensive file management features.
+This optimized version of the data import script provides a robust, production-ready solution for managing CSV data with automatic import and processing capabilities. The service imports data from CSV files to TimescaleDB and includes comprehensive file management features.
 
 ## Features
 
@@ -8,7 +8,7 @@ This optimized version of the data export script provides a robust, production-r
 - **Configuration Management**: Environment variables and YAML config file support
 - **Error Handling**: Comprehensive error handling and logging
 - **Batch Operations**: Optimized database operations for better performance
-- **SQL Export**: Exports data to SQL format with INSERT statements
+- **CSV Import**: Imports data from CSV files to TimescaleDB
 - **File Management**: Comprehensive file deletion and management capabilities
 - **Automatic Cleanup**: File retention management and cleanup
 - **Type Hints**: Full type annotations for better code clarity
@@ -33,6 +33,7 @@ export INTERVAL_MINUTES=5
 export EXPORT_DIR=exports
 export RETENTION_DAYS=30
 export DELETE_AFTER_EXPORT=true
+export CSV_SOURCE_DIR=csv_files
 ```
 
 3. Or create a `config.yaml` file (see `config.yaml` template)
@@ -51,14 +52,20 @@ python export_sql.py --config custom_config.yaml
 
 ### File Management
 ```bash
-# List exported files
+# List CSV source files (default)
 python file_manager.py --list
+
+# List export directory files
+python file_manager.py --list --export
 
 # Show detailed file information
 python file_manager.py --list --details
 
-# Delete specific file
-python file_manager.py --delete export_20231201_120000.sql
+# Delete specific file from source directory
+python file_manager.py --delete data_batch_1.csv
+
+# Delete specific file from export directory
+python file_manager.py --delete old_export.csv --export
 
 # Clean up old files (older than 7 days)
 python file_manager.py --cleanup 7
@@ -67,7 +74,7 @@ python file_manager.py --cleanup 7
 python file_manager.py --summary
 
 # Get info about specific file
-python file_manager.py --info export_20231201_120000.sql
+python file_manager.py --info data_batch_1.csv
 ```
 
 ## Configuration
@@ -91,9 +98,10 @@ The service can be configured through:
 | `max_connections` | Max connection pool size | 10 |
 | `table_name` | Target table name | measurements |
 | `interval_minutes` | Export interval in minutes | 5 |
-| `export_directory` | SQL export directory | exports |
+| `csv_source_directory` | CSV source directory for import | csv_files |
+| `export_directory` | Export directory for processed files | exports |
 | `retention_days` | File retention period | 30 |
-| `delete_after_export` | Delete file after export | false |
+| `delete_after_export` | Delete file after processing | false |
 
 ## Architecture
 
@@ -102,7 +110,7 @@ The code is organized into several classes:
 - **`DatabaseConfig`**: Configuration management
 - **`DatabaseManager`**: Connection pool and database operations
 - **`SQLQueries`**: SQL query definitions
-- **`DataExporter`**: Data export and rotation logic
+- **`CSVProcessor`**: CSV import and processing logic
 - **`DataRotationService`**: Main service orchestration
 - **`FileManager`**: File management utilities (separate script)
 
@@ -143,9 +151,9 @@ The service provides several monitoring points:
 
 - **Export Counts**: Number of rows exported
 - **Deletion Counts**: Number of rows removed
-- **File Management**: Export file creation, cleanup, and deletion
+- **File Management**: CSV file processing, cleanup, and deletion
 - **Performance Metrics**: Database operation timing
-- **SQL Export**: SQL file generation with proper formatting
+- **CSV Import**: CSV file parsing and database import
 
 ## Troubleshooting
 
