@@ -1,0 +1,11 @@
+Timestamp,Component,Status,dB,TopFreq1,TopFreq2,TopFreq3,Tester_id
+2025-08-11T16:45:36,environment,Anomaly,78.8,1413.5,677.0,1407.0,IPC1
+2025-08-11T16:45:37,environment,Anomaly,78.8,677.0,1410.5,1407.0,IPC1
+2025-08-11T16:45:38,environment,Anomaly,67.0,607.5,447.5,479.5,IPC1
+2025-08-11T16:45:39,environment,Anomaly,67.1,405.0,447.5,400.5,IPC1
+2025-08-11T16:45:40,environment,Anomaly,66.6,405.0,445.0,513.0,IPC1
+2025-08-11T16:45:41,environment,Anomaly,67.0,404.5,405.0,499.0,IPC1
+2025-08-11T16:45:42,environment,Anomaly,67.3,405.0,441.5,607.0,IPC1
+2025-08-11T16:45:43,environment,Anomaly,66.7,405.0,507.5,439.0,IPC1
+2025-08-11T16:45:44,environment,Anomaly,66.8,438.0,444.5,405.0,IPC1
+2025-08-11T16:45:45,environment,Anomaly,67.0,405.0,451.0,454.0,IPC1

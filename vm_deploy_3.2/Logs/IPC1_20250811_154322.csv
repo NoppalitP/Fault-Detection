@@ -1,0 +1,2 @@
+Timestamp,Component,Status,dB,TopFreq1,TopFreq2,TopFreq3,Tester_id
+2025-08-11T15:43:21,environment,Anomaly,78.4,675.0,579.5,580.5,IPC1
