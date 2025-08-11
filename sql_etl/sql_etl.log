@@ -1,0 +1,10 @@
+2025-08-11 08:46:49,564 - __main__ - ERROR - Failed to initialize connection pool: ThreadedConnectionPool.__init__() missing 2 required positional arguments: 'minconn' and 'maxconn'
+2025-08-11 08:46:49,565 - __main__ - ERROR - Failed to start service: ThreadedConnectionPool.__init__() missing 2 required positional arguments: 'minconn' and 'maxconn'
+2025-08-11 08:48:12,167 - __main__ - ERROR - Failed to initialize connection pool: ThreadedConnectionPool.__init__() missing 2 required positional arguments: 'minconn' and 'maxconn'
+2025-08-11 08:48:12,168 - __main__ - ERROR - Failed to start service: ThreadedConnectionPool.__init__() missing 2 required positional arguments: 'minconn' and 'maxconn'
+2025-08-11 08:49:45,395 - __main__ - INFO - Connection pool initialized successfully
+2025-08-11 08:49:46,374 - __main__ - INFO - Database initialized successfully
+2025-08-11 08:49:46,376 - __main__ - INFO - Starting data rotation service every 5 minutes...
+2025-08-11 08:49:46,376 - __main__ - INFO - Export directory: D:\NOPPALIT\History\Saturn_Acc_Logs
+2025-08-11 08:49:48,782 - __main__ - INFO - Exported 224542 rows to D:\NOPPALIT\History\Saturn_Acc_Logs\export_20250811_014947.csv
+2025-08-11 08:49:48,783 - __main__ - INFO - Deleted 224542 rows older than 5 minutes
