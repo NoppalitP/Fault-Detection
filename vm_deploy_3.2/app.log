@@ -24956,3 +24956,11 @@
 2025-08-11 16:59:14 INFO: window_006.wav: environment prob=1.0 Anomaly dB=67.0 ocsvm=-0.9
 2025-08-11 16:59:14 INFO: window_007.wav: environment prob=1.0 Anomaly dB=67.1 ocsvm=-0.9
 2025-08-11 16:59:14 INFO: Serial closed
+2025-08-11 21:41:54 INFO: Starting monitoring
+2025-08-11 21:41:54 INFO: Serial=COM5 @ 500000 | SR=22050 | Window=44100 Step=22050 | Batch=10 | MFCC=13
+2025-08-11 21:41:54 WARNING: Attempt 1/5 - Failed to open serial port: could not open port 'COM5': FileNotFoundError(2, 'The system cannot find the file specified.', None, 2)
+2025-08-11 21:41:57 WARNING: Attempt 2/5 - Failed to open serial port: could not open port 'COM5': FileNotFoundError(2, 'The system cannot find the file specified.', None, 2)
+2025-08-11 21:42:00 WARNING: Attempt 3/5 - Failed to open serial port: could not open port 'COM5': FileNotFoundError(2, 'The system cannot find the file specified.', None, 2)
+2025-08-11 21:42:03 WARNING: Attempt 4/5 - Failed to open serial port: could not open port 'COM5': FileNotFoundError(2, 'The system cannot find the file specified.', None, 2)
+2025-08-11 21:42:06 WARNING: Attempt 5/5 - Failed to open serial port: could not open port 'COM5': FileNotFoundError(2, 'The system cannot find the file specified.', None, 2)
+2025-08-11 21:42:09 ERROR: Exceeded maximum retry attempts to open serial port.

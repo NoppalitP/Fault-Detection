@@ -1,10 +1,6 @@
 import numpy as np
-import librosa
 import wave
 import sys
-
-
-import numpy as np
 
 def calcDecibell(athiwat: float) -> float:
     """
@@ -47,10 +43,11 @@ def compute_db(
 ) -> float:
     """
     คำนวณ dB จากสัญญาณหนึ่งหน้าต่าง (window)
-    - method="ref": dB = 20*log10(rms / ref_rms)  (เทียบกับตัวอย่าง measure_dB)
-    - method="ln" : dB = calcDecibell(rms)        (เทียบกับฟังก์ชัน calcDecibell)
-    ทั้งสองแบบบวก calib_offset ภายหลังสำหรับคาลิเบรตภาคสนาม
+    - method="ref": dB = 20*log10(rms / ref_rms)
+    - method="ln" : dB = calcDecibell(rms)
+    จากนั้นบวก calib_offset และแปลงเชิงเส้นเป็นค่าที่รายงาน; สุดท้าย clamp ขั้นต่ำหากกำหนด
     """
+    sig = np.ravel(sig)
     rms = _rms_counts(sig, gain_factor=gain_factor, subtract_dc=subtract_dc)
 
     if method == "ref":
@@ -60,10 +57,14 @@ def compute_db(
     else:
         raise ValueError("method ต้องเป็น 'ref' หรือ 'ln'")
 
+    # คาลิเบรตภาคสนามด้วยออฟเซ็ต
+    db += float(calib_offset)
+    # แปลงเชิงเส้นเป็นค่าที่รายงาน
+    db = float(1.177 * db - 38.506)
+    # Clamp ขั้นต่ำถ้าต้องการ (กับค่าหลังแปลง)
     if clamp_min is not None:
         db = max(db, float(clamp_min))
-
-    return  float(1.177 * db - 38.506)
+    return db
 
 
 
@@ -73,6 +74,9 @@ def compute_top_frequencies(sig: np.ndarray, sr: int, top_n: int = 3, min_freq: 
     คืนค่า array ของความถี่ (Hz) ที่มี magnitude สูงสุด จำนวน top_n
     แต่จะพิจารณาเฉพาะความถี่ >= min_freq เท่านั้น
     """
+    sig = np.ravel(sig)
+    if sig.size == 0:
+        return np.array([], dtype=float)
     S = np.fft.rfft(sig)
     f = np.fft.rfftfreq(len(sig), 1 / sr)
     mags = np.abs(S)
