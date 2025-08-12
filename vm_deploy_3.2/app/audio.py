@@ -30,6 +30,16 @@ def _rms_counts(
     x *= float(gain_factor)
     rms = float(np.sqrt(np.mean(np.maximum(x * x, 0.0))))
     return max(rms, 1e-12)
+def signal_rms(signal: np.ndarray, subtract_dc: bool = False) -> float:
+    """
+    คำนวณ RMS แบบสากล
+    - signal: np.ndarray (float หรือ int ก็ได้)
+    - subtract_dc: ถ้า True จะลบค่าเฉลี่ย (DC offset) ก่อน
+    """
+    x = signal.astype(np.float64, copy=False)  # ใช้ float64 เพื่อความแม่น
+    if subtract_dc:
+        x -= np.mean(x)
+    return np.sqrt(np.mean(x**2))
 
 def compute_db(
     sig: np.ndarray,
@@ -47,13 +57,13 @@ def compute_db(
     - method="ln" : dB = calcDecibell(rms)
     จากนั้นบวก calib_offset และแปลงเชิงเส้นเป็นค่าที่รายงาน; สุดท้าย clamp ขั้นต่ำหากกำหนด
     """
-    sig = np.ravel(sig)
-    rms = _rms_counts(sig, gain_factor=gain_factor, subtract_dc=subtract_dc)
+    sig_ravel = np.ravel(sig)
+    rms_counts = _rms_counts(sig_ravel, gain_factor=gain_factor, subtract_dc=subtract_dc)
 
     if method == "ref":
-        db = 20.0 * np.log10(rms / float(ref_rms))
+        db = 20.0 * np.log10(rms_counts / float(ref_rms)) +116
     elif method == "ln":
-        db = calcDecibell(rms)
+        db = calcDecibell(rms_counts)
     else:
         raise ValueError("method ต้องเป็น 'ref' หรือ 'ln'")
 
