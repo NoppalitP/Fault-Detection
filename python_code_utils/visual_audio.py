@@ -1,39 +1,59 @@
 # -*- coding: utf-8 -*-
 """
-This script reads audio data from a serial port and displays
-real-time frequency domain analysis using FFT.
-Continuously shows frequency spectrum and dominant frequencies.
+Real-time frequency analysis, aligned with vm_deploy_3.2 runtime:
+- Reads config from vm_deploy_3.2/config/config.yaml
+- Opens serial via app.serial_handler.open_serial_with_retry
+- Uses app.logger for consistent console output
+- Uses app.utils spinner for connect/wait UX and stderr logs to avoid interleaving
 """
-import serial
 import numpy as np
 from datetime import datetime
 from collections import deque
 import time
 import sys
+import threading
+import queue
+from pathlib import Path
+import yaml
+import logging
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 from scipy import signal
-import threading
-import queue
+from contextlib import nullcontext
 
-# === CONFIGURATION ==========================================================
+# Resolve vm_deploy_3.2 package for shared utilities
+BASE = Path(__file__).resolve().parent.parent / "vm_deploy_3.2"
+sys.path.insert(0, str(BASE))
+
+from app.logger import setup_logging
+from app.serial_handler import open_serial_with_retry
+from app.utils import spinner, start_spinner, stop_spinner
+
+# === CONFIGURATION (from vm_deploy_3.2/config/config.yaml) ==================
+CFG = yaml.safe_load(open(BASE / "config" / "config.yaml", "r"))
+
 # --- Serial Port Settings ---
-SERIAL_PORT = 'COM3'  # ตั้งค่าพอร์ตอนุกรมที่ต้องการ
-BAUD_RATE = 500000     # ตั้งค่า Baud Rate ให้ตรงกับอุปกรณ์
+SERIAL_PORT = CFG['serial']['port']
+BAUD_RATE = CFG['serial']['baud_rate']
 
 # --- Audio Settings ---
-SAMPLE_RATE = 16000    # 22,050 samples per second
-CHANNELS = 1           # Mono audio
-SAMPLE_WIDTH = 2       # 2 bytes per sample (for 16-bit audio)
+SAMPLE_RATE = CFG['audio']['sample_rate']
+CHANNELS = 1
+SAMPLE_WIDTH = 2
 
 # --- Recording Loop Settings ---
-BLOCK_SIZE = 512       # จำนวน sample ที่อ่านในแต่ละครั้ง
+BLOCK_SIZE = CFG['audio']['block_size']
 
 # --- Frequency Analysis Settings ---
-WINDOW_DURATION = 2.0  # ความยาวของข้อมูลที่ใช้วิเคราะห์ (วินาที)
-UPDATE_INTERVAL = 50   # อัพเดทหน้าจอทุก ms
-FFT_SIZE = 2048        # ขนาดของ FFT (ต้องเป็นเลขยกกำลัง 2)
-FREQ_RANGE = (0, SAMPLE_RATE/2) # ช่วงความถี่ที่แสดงผล (Hz)
+WINDOW_DURATION = 1.0
+UPDATE_INTERVAL = 50
+FFT_SIZE = 2048
+FREQ_RANGE = (0, SAMPLE_RATE / 2)
+
+# UI options
+UI_CFG = CFG.get('ui', {})
+SPINNER_ENABLED = bool(UI_CFG.get('spinner_enabled', True))
+SPINNER_INTERVAL = float(UI_CFG.get('spinner_interval', 0.3))
 
 # === DERIVED CONSTANTS ======================================================
 WINDOW_SIZE_SAMPLES = int(SAMPLE_RATE * WINDOW_DURATION)
@@ -47,6 +67,11 @@ class FrequencyMonitor:
         self.data_queue = queue.Queue()
         self.running = False
         
+        # Setup logging and matplotlib for real-time plotting
+        setup_logging(BASE / "app.log")
+        logging.info("Starting frequency monitoring")
+        logging.info(f"Serial={SERIAL_PORT} @ {BAUD_RATE} | SR={SAMPLE_RATE} | Block={BLOCK_SIZE}")
+
         # Setup matplotlib for real-time plotting
         self.fig, (self.ax1, self.ax2) = plt.subplots(2, 1, figsize=(12, 8))
         self.fig.suptitle('Real-time Audio Frequency Analysis', fontsize=14)
@@ -74,27 +99,35 @@ class FrequencyMonitor:
                                       facecolor='wheat', alpha=0.8))
 
     def connect_serial(self):
-        """Connect to serial port"""
+        """Connect to serial port using shared open/retry helper"""
         try:
-            print(f"🔌 Connecting to serial port {SERIAL_PORT} at {BAUD_RATE} baud...")
-            self.ser = serial.Serial(SERIAL_PORT, BAUD_RATE, timeout=0.1)
-            print("✅ Connection successful.")
-            self.ser.flushInput()
+            with (spinner("Connecting to serial...", interval_seconds=SPINNER_INTERVAL) if SPINNER_ENABLED else nullcontext()):
+                self.ser = open_serial_with_retry(SERIAL_PORT, BAUD_RATE)
+            if not self.ser:
+                logging.error("Could not open serial port %s", SERIAL_PORT)
+                return False
+            try:
+                self.ser.flushInput()
+            except Exception:
+                pass
+            logging.info("Serial connected")
             return True
-        except serial.SerialException as e:
-            print(f"❌ Critical Error: Could not open serial port {SERIAL_PORT}. {e}")
-            print("Please check the port name, permissions, and ensure no other program is using it.")
+        except Exception:
+            logging.exception("Critical: Could not open serial port %s", SERIAL_PORT)
             return False
 
     def read_serial_data(self):
         """Thread function to continuously read serial data with header sync"""
-        print("\n" + "="*60)
-        print(f"🎙️  Starting frequency domain monitoring with header sync")
-        print("="*60 + "\n")
+        logging.info("Starting frequency domain monitoring (header sync)")
         
         packet_size = BLOCK_SIZE * SAMPLE_WIDTH  # 1024
         checksum_size = 1
-        total_packet_size = packet_size + checksum_size        
+        total_packet_size = packet_size + checksum_size
+        wait_stop_event = None
+        wait_thread = None
+        first_packet_received = False
+        if SPINNER_ENABLED:
+            wait_stop_event, wait_thread = start_spinner("Waiting for data...", interval_seconds=SPINNER_INTERVAL)
         while self.running:
             try:
                 # 1) หา header 0xAA55
@@ -105,6 +138,9 @@ class FrequencyMonitor:
                 b2 = self.ser.read(1)
                 if not b2 or b2[0] != 0x55:
                     continue
+                if not first_packet_received and SPINNER_ENABLED:
+                    first_packet_received = True
+                    stop_spinner(wait_stop_event, wait_thread)
 
                 # 2) อ่าน PCM data ตามขนาด packet_size
                 raw = self.ser.read(packet_size)
@@ -114,7 +150,7 @@ class FrequencyMonitor:
 
                 # 3) แปลงเป็น int16 array
                 samples = np.frombuffer(raw, dtype=np.int16)
-                
+                samples = samples / 32768.0
                 # 4) เก็บลง buffer และคิว
                 self.audio_buffer.extend(samples)
                 if len(self.audio_buffer) >= WINDOW_SIZE_SAMPLES:
@@ -122,8 +158,10 @@ class FrequencyMonitor:
                     self.data_queue.put(buffer_copy)
 
             except Exception as e:
-                print(f"❌ Error reading serial data: {e}")
+                logging.exception("Error reading serial data")
                 break
+        if SPINNER_ENABLED:
+            stop_spinner(wait_stop_event, wait_thread)
 
 
     def analyze_frequency(self, audio_data):
@@ -132,7 +170,7 @@ class FrequencyMonitor:
         windowed_data = audio_data * signal.windows.hann(len(audio_data))
         
         # Perform FFT
-        fft = np.fft.fft(windowed_data, FFT_SIZE)
+        fft = np.fft.rfft(windowed_data, FFT_SIZE)
         fft_magnitude = np.abs(fft[:FFT_SIZE//2])
         
         # Convert to dB raw scale
@@ -142,7 +180,7 @@ class FrequencyMonitor:
         fft_db_spl = 1.0497 * fft_db_raw + 120.1897 -79 
         
         # Create frequency axis
-        freqs = np.fft.fftfreq(FFT_SIZE, 1/SAMPLE_RATE)[:FFT_SIZE//2]
+        freqs = np.fft.rfftfreq(FFT_SIZE, 1/SAMPLE_RATE)[:FFT_SIZE//2]
         
         # Find dominant frequencies
         # Only consider frequencies within our display range
@@ -209,7 +247,7 @@ class FrequencyMonitor:
             return self.time_line, self.freq_line
             
         except Exception as e:
-            print(f"❌ Error updating plot: {e}")
+            logging.exception("Error updating plot")
             return self.time_line, self.freq_line
 
     def start_monitoring(self):
@@ -231,22 +269,22 @@ class FrequencyMonitor:
             plt.tight_layout()
             plt.show()
         except KeyboardInterrupt:
-            print("\n🛑 User pressed Ctrl+C.")
+            logging.info("User pressed Ctrl+C.")
         except Exception as e:
-            print(f"❌ Plot error: {e}")
+            logging.exception("Plot error")
         finally:
             self.stop_monitoring()
 
     def stop_monitoring(self):
         """Stop monitoring and cleanup"""
-        print("\n🛑 Stopping frequency monitoring...")
+        logging.info("Stopping frequency monitoring...")
         self.running = False
         
         if self.ser and self.ser.is_open:
             self.ser.close()
-            print("🔌 Serial port closed.")
+            logging.info("Serial port closed.")
         
-        print("👋 Program finished.")
+        logging.info("Program finished.")
 
 def main():
     """Main function"""
@@ -255,9 +293,9 @@ def main():
     try:
         monitor.start_monitoring()
     except KeyboardInterrupt:
-        print("\n🛑 User interrupted.")
-    except Exception as e:
-        print(f"❌ Unexpected error: {e}")
+        logging.info("User interrupted.")
+    except Exception:
+        logging.exception("Unexpected error")
     finally:
         monitor.stop_monitoring()
 

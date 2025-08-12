@@ -84,7 +84,7 @@ def predict_files(input_dir: Path, base: Path):
             prob = float('nan')
 
         # db and frequencies
-        db = compute_db(y, calib_offset)
+        db = compute_db(y, method='ln', calib_offset=0)
         freqs = compute_top_frequencies(y, sr)
 
         # gating with ocsvm

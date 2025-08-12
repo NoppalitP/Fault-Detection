@@ -1,6 +1,0 @@
-Timestamp,Component,Status,dB,TopFreq1,TopFreq2,TopFreq3,Tester_id
-2025-08-12T11:25:58,environment,Anomaly,67.53,462.00,461.50,429.00,IPC1
-2025-08-12T11:25:59,environment,Anomaly,67.43,421.50,428.50,436.50,IPC1
-2025-08-12T11:26:00,environment,Normal,48.75,462.00,10050.00,412.00,IPC1
-2025-08-12T11:26:01,environment,Normal,51.66,411.00,458.00,408.50,IPC1
-2025-08-12T11:26:02,environment,Normal,50.07,526.50,525.00,526.00,IPC1

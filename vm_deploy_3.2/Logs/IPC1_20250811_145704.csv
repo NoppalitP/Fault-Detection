@@ -1,5 +1,0 @@
-Timestamp,Component,Status,dB,TopFreq1,TopFreq2,TopFreq3,Tester_id
-2025-08-11T14:57:00,mast,Normal,77.6,1000.0,567.5,2125.0,IPC1
-2025-08-11T14:57:01,mast,Normal,77.7,1000.0,999.5,1000.5,IPC1
-2025-08-11T14:57:03,mast,Normal,69.7,1000.0,1000.5,999.5,IPC1
-2025-08-11T14:57:04,mast,Normal,69.6,1000.0,1000.5,999.5,IPC1

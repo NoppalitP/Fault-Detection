@@ -68,7 +68,7 @@ def compute_db(
         raise ValueError("method ต้องเป็น 'ref' หรือ 'ln'")
 
     # คาลิเบรตภาคสนามด้วยออฟเซ็ต
-    db += float(calib_offset)
+    db += calib_offset
     # แปลงเชิงเส้นเป็นค่าที่รายงาน
     db = float(1.177 * db - 38.506)
     # Clamp ขั้นต่ำถ้าต้องการ (กับค่าหลังแปลง)
@@ -77,39 +77,64 @@ def compute_db(
     return db
 
 
+import numpy as np
+from typing import Optional
 
-
-def compute_top_frequencies(sig: np.ndarray, sr: int, top_n: int = 3, min_freq: float = 400.0) -> np.ndarray:
-    """
-    คืนค่า array ของความถี่ (Hz) ที่มี magnitude สูงสุด จำนวน top_n
-    แต่จะพิจารณาเฉพาะความถี่ >= min_freq เท่านั้น
-    """
-    sig = np.ravel(sig)
-    if sig.size == 0:
-        return np.array([], dtype=float)
-    S = np.fft.rfft(sig)
-    f = np.fft.rfftfreq(len(sig), 1 / sr)
-    mags = np.abs(S)
-
-    # เลือกเฉพาะความถี่ที่ >= min_freq
-    mask = f >= min_freq
-    if not np.any(mask):
+def compute_top_frequencies(
+    sig: np.ndarray,
+    sr: int,
+    top_n: int = 3,
+    min_freq: float = 400.0,
+    min_separation_hz: float = 100,
+    nfft: int = 8192,   # <-- เพิ่มตัวเลือก NFFT
+) -> np.ndarray:
+    x = np.ravel(sig).astype(float)
+    if x.size == 0:
         return np.array([], dtype=float)
 
-    masked_idx = np.where(mask)[0]
-    masked_mags = mags[masked_idx]
+    # เลือก NFFT: ถ้าไม่กำหนด ใช้ความยาวสัญญาณ
+    N = x.size
+    nfft = int(nfft or N)
 
-    # ถ้าจำนวนที่ผ่านเงื่อนไข <= top_n ให้คืนทั้งหมด (เรียงจากมากไปน้อย)
-    if len(masked_idx) <= top_n:
-        order = np.argsort(masked_mags)[::-1]
-        top_idx = masked_idx[order]
-    else:
-        # เลือก top_n แบบมีประสิทธิภาพ แล้วเรียงจากมากไปน้อย
-        part = np.argpartition(masked_mags, -top_n)[-top_n:]
-        order = part[np.argsort(masked_mags[part])[::-1]]
-        top_idx = masked_idx[order]
+    # DC remove + Hann
+    x = x - x.mean()
+    w = np.hanning(N)
+    # ถ้า nfft > N จะเป็น zero-padding (ละเอียดขึ้นเฉพาะ grid ไม่เพิ่ม true resolution)
+    X = np.fft.rfft(x * w, n=nfft)
+    mags = np.abs(X)
+    f = np.fft.rfftfreq(nfft, 1 / sr)
 
-    return f[top_idx]
+    # เลือกเฉพาะ f >= min_freq และกันขอบ (ต้องมี k-1,k+1)
+    idx = np.where((f >= min_freq))[0]
+    idx = idx[(idx > 0) & (idx < len(f) - 1)]
+    if idx.size == 0:
+        return np.array([], dtype=float)
+
+    # default การกันพีกติดกัน: อย่างน้อย 1 bin
+    if min_separation_hz is None:
+        min_separation_hz = sr / nfft
+
+    # candidates มากกว่าที่ต้องการ แล้วคัดด้วย NMS
+    take = min(top_n * 8, idx.size)
+    cand = idx[np.argpartition(mags[idx], -take)[-take:]]
+    cand = cand[np.argsort(mags[cand])[::-1]]
+
+    def interp_freq(k: int) -> float:
+        m1, m0, p1 = mags[k-1], mags[k], mags[k+1]
+        denom = (m1 - 2.0*m0 + p1)
+        delta = 0.0 if denom == 0.0 else 0.5 * (m1 - p1) / denom
+        return (k + delta) * sr / nfft
+
+    pick_freqs = []
+    for k in cand:
+        f_hat = interp_freq(k)
+        if all(abs(f_hat - pf) >= min_separation_hz for pf in pick_freqs):
+            pick_freqs.append(f_hat)
+        if len(pick_freqs) >= top_n:
+            break
+
+    return np.array(pick_freqs, dtype=float)
+
 
 
 def save_wave_file(filepath: str, audio_data: bytes, sample_rate: int, sample_width: int):
