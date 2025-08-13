@@ -10,7 +10,7 @@ min_connections: 1
 max_connections: 10
 
 # Table Configuration
-table_name: measurements
+table_name: measurements_v2
 
 # Service Configuration
 interval_minutes: 1

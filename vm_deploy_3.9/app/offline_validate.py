@@ -53,13 +53,12 @@ def predict_files(input_dir: Path, base: Path):
 
     files = sorted([p for p in Path(input_dir).glob("*.wav")])
     # Original columns (removed OCSVMScore since it's the same as status_proba)
-    base_columns = ["File","Timestamp","Component","Prob","Status","dB","TopFreq1","TopFreq2","TopFreq3"]
+    base_columns = ["File","Timestamp","Component","Component_proba","Status","Status_proba","dB","TopFreq1","TopFreq2","TopFreq3","TopFreq4","TopFreq5"]
     # New columns
-    new_columns = ["Component_proba","Status_proba","TopFreq4","TopFreq5"]
     # MFCC feature columns (13 columns)
     mfcc_columns = [f"MFCC{i+1}" for i in range(13)]
     # Combine all columns
-    all_columns = base_columns + new_columns + mfcc_columns
+    all_columns = base_columns  + mfcc_columns
     rows = [all_columns]
 
     for p in files:
@@ -120,17 +119,18 @@ def predict_files(input_dir: Path, base: Path):
             p.name,
             _parse_timestamp_from_filename(p.name),
             label,
-            f"{prob:.1f}" if np.isfinite(prob) else "",
-            status, f"{db:.1f}" if np.isfinite(db) else "",
-            *[f"{f:.1f}" for f in (freqs if len(freqs) else [np.nan, np.nan, np.nan])][:3],
+            component_proba,
+            status,
+            status_proba,
+            f"{db:.1f}" if np.isfinite(db) else "",
+            *[f"{f:.1f}" for f in (freqs if len(freqs) else [np.nan, np.nan, np.nan])][:5],
         ]
         # New columns data
-        new_data = [component_proba, status_proba, freq4, freq5]
         # MFCC features data
         mfcc_data = mfcc_features
         
         # Combine all data
-        row = base_row + new_data + mfcc_data
+        row = base_row  + mfcc_data
         rows.append(row)
 
     return rows

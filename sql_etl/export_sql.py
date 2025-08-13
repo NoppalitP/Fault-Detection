@@ -129,7 +129,7 @@ class DatabaseConfig:
             'password': os.getenv('DB_PASSWORD', ''),
             'min_connections': int(os.getenv('DB_MIN_CONNECTIONS', '1')),
             'max_connections': int(os.getenv('DB_MAX_CONNECTIONS', '10')),
-            'table_name': os.getenv('DB_TABLE_NAME', 'measurements'),
+            'table_name': os.getenv('DB_TABLE_NAME', 'measurements_v2'),
             'interval_minutes': int(os.getenv('INTERVAL_MINUTES', '5')),
             'export_directory': os.getenv('EXPORT_DIR', 'exports'),
             'retention_days': int(os.getenv('RETENTION_DAYS', '30')),
@@ -242,15 +242,15 @@ class SQLQueries:
         CREATE TABLE IF NOT EXISTS {self.table_name} (
             timestamp TIMESTAMPTZ NOT NULL,
             component TEXT,
+            component_proba REAL,
             status TEXT,
+            status_proba REAL,
             db REAL,
             topfreq1 REAL,
             topfreq2 REAL,
             topfreq3 REAL,
             topfreq4 REAL,
             topfreq5 REAL,
-            component_proba REAL,
-            status_proba REAL,
             mfcc_1 REAL,
             mfcc_2 REAL,
             mfcc_3 REAL,
@@ -274,10 +274,9 @@ class SQLQueries:
         
         self.insert_sql = f"""
         INSERT INTO {self.table_name} 
-        (timestamp, component, status, db, topfreq1, topfreq2, topfreq3, topfreq4, topfreq5, 
-         component_proba, status_proba, mfcc_1, mfcc_2, mfcc_3, mfcc_4, mfcc_5, mfcc_6, mfcc_7, 
-         mfcc_8, mfcc_9, mfcc_10, mfcc_11, mfcc_12, mfcc_13, tester_id) 
-        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+        (timestamp, component, component_proba, status, status_proba, db, topfreq1, topfreq2, topfreq3, topfreq4, topfreq5, 
+         mfcc_1, mfcc_2, mfcc_3, mfcc_4, mfcc_5, mfcc_6, mfcc_7, mfcc_8, mfcc_9, mfcc_10, mfcc_11, mfcc_12, mfcc_13, tester_id) 
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
         """
         
         self.select_old_rows = f"SELECT * FROM {self.table_name} WHERE timestamp <= %s"
@@ -291,10 +290,14 @@ class SQLQueries:
         
         # Migration queries to add new columns to existing tables
         self.migration_queries = [
-            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS topfreq4 REAL;",
-            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS topfreq5 REAL;",
             f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS component_proba REAL;",
             f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS status_proba REAL;",
+            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS db REAL;",
+            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS topfreq1 REAL;",
+            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS topfreq2 REAL;",
+            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS topfreq3 REAL;",
+            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS topfreq4 REAL;",
+            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS topfreq5 REAL;",
             f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS mfcc_1 REAL;",
             f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS mfcc_2 REAL;",
             f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS mfcc_3 REAL;",
@@ -446,15 +449,15 @@ class CSVProcessor:
             # Total: 25 columns (0-24)
             timestamp_str = row[0] if len(row) > 0 else None
             component = row[1] if len(row) > 1 else None
-            status = row[2] if len(row) > 2 else None
-            db_val = float(row[3]) if len(row) > 3 and row[3] else None
-            topfreq1 = float(row[4]) if len(row) > 4 and row[4] else None
-            topfreq2 = float(row[5]) if len(row) > 5 and row[5] else None
-            topfreq3 = float(row[6]) if len(row) > 6 and row[6] else None
-            topfreq4 = float(row[7]) if len(row) > 7 and row[7] else None
-            topfreq5 = float(row[8]) if len(row) > 8 and row[8] else None
-            component_proba = float(row[9]) if len(row) > 9 and row[9] else None
-            status_proba = float(row[10]) if len(row) > 10 and row[10] else None
+            component_proba = float(row[2]) if len(row) > 2 and row[2] else None
+            status = row[3] if len(row) > 3 else None
+            status_proba = float(row[4]) if len(row) > 4 and row[4] else None
+            db_val = float(row[5]) if len(row) > 5 and row[5] else None
+            topfreq1 = float(row[6]) if len(row) > 6 and row[6] else None
+            topfreq2 = float(row[7]) if len(row) > 7 and row[7] else None
+            topfreq3 = float(row[8]) if len(row) > 8 and row[8] else None
+            topfreq4 = float(row[9]) if len(row) > 9 and row[9] else None
+            topfreq5 = float(row[10]) if len(row) > 10 and row[10] else None
             
             # Parse MFCC features (13 columns)
             mfcc_features = []
@@ -482,8 +485,8 @@ class CSVProcessor:
             except Exception:
                 timestamp = datetime.now()
             
-            return (timestamp, component, status, db_val, topfreq1, topfreq2, topfreq3, topfreq4, topfreq5,
-                    component_proba, status_proba, *mfcc_features, tester_id)
+            return (timestamp, component,component_proba, status, status_proba, db_val, topfreq1, topfreq2, topfreq3, topfreq4, topfreq5,
+                     *mfcc_features, tester_id)
             
         except Exception as e:
             logger.warning(f"Failed to parse CSV row: {e}")
