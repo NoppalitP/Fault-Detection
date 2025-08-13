@@ -251,6 +251,7 @@ class SQLQueries:
             topfreq3 REAL,
             topfreq4 REAL,
             topfreq5 REAL,
+            tester_id TEXT,
             mfcc_1 REAL,
             mfcc_2 REAL,
             mfcc_3 REAL,
@@ -263,8 +264,7 @@ class SQLQueries:
             mfcc_10 REAL,
             mfcc_11 REAL,
             mfcc_12 REAL,
-            mfcc_13 REAL,
-            tester_id TEXT
+            mfcc_13 REAL
         );
         """
         
@@ -274,9 +274,9 @@ class SQLQueries:
         
         self.insert_sql = f"""
         INSERT INTO {self.table_name} 
-        (timestamp, component, component_proba, status, status_proba, db, topfreq1, topfreq2, topfreq3, topfreq4, topfreq5, 
-         mfcc_1, mfcc_2, mfcc_3, mfcc_4, mfcc_5, mfcc_6, mfcc_7, mfcc_8, mfcc_9, mfcc_10, mfcc_11, mfcc_12, mfcc_13, tester_id) 
-        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+        (timestamp, component, component_proba, status, status_proba, db, topfreq1, topfreq2, topfreq3, topfreq4, topfreq5,tester_id, 
+         mfcc_1, mfcc_2, mfcc_3, mfcc_4, mfcc_5, mfcc_6, mfcc_7, mfcc_8, mfcc_9, mfcc_10, mfcc_11, mfcc_12, mfcc_13) 
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
         """
         
         self.select_old_rows = f"SELECT * FROM {self.table_name} WHERE timestamp <= %s"
@@ -298,6 +298,7 @@ class SQLQueries:
             f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS topfreq3 REAL;",
             f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS topfreq4 REAL;",
             f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS topfreq5 REAL;",
+            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS tester_id REAL;",
             f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS mfcc_1 REAL;",
             f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS mfcc_2 REAL;",
             f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS mfcc_3 REAL;",
@@ -443,9 +444,9 @@ class CSVProcessor:
                 return None
             
             # Map CSV columns to database columns
-            # Expected CSV format: timestamp, component, status, db, topfreq1, topfreq2, topfreq3, topfreq4, topfreq5,
+            # Expected CSV format: timestamp, component, status, db, topfreq1, topfreq2, topfreq3, topfreq4, topfreq5,tester_id
             # component_proba, status_proba, mfcc_1, mfcc_2, mfcc_3, mfcc_4, mfcc_5, mfcc_6, mfcc_7, mfcc_8, mfcc_9, 
-            # mfcc_10, mfcc_11, mfcc_12, mfcc_13, tester_id
+            # mfcc_10, mfcc_11, mfcc_12, mfcc_13
             # Total: 25 columns (0-24)
             timestamp_str = row[0] if len(row) > 0 else None
             component = row[1] if len(row) > 1 else None
@@ -458,14 +459,14 @@ class CSVProcessor:
             topfreq3 = float(row[8]) if len(row) > 8 and row[8] else None
             topfreq4 = float(row[9]) if len(row) > 9 and row[9] else None
             topfreq5 = float(row[10]) if len(row) > 10 and row[10] else None
-            
+            tester_id = row[11] if len(row) > 11 and row[11] else None
             # Parse MFCC features (13 columns)
             mfcc_features = []
             for i in range(13):
-                mfcc_val = float(row[11 + i]) if len(row) > 11 + i and row[11 + i] else None
+                mfcc_val = float(row[12 + i]) if len(row) > 12 + i and row[12 + i] else None
                 mfcc_features.append(mfcc_val)
             
-            tester_id = row[24] if len(row) > 24 else None
+            
             
             # Parse timestamp
             try:
@@ -485,8 +486,8 @@ class CSVProcessor:
             except Exception:
                 timestamp = datetime.now()
             
-            return (timestamp, component,component_proba, status, status_proba, db_val, topfreq1, topfreq2, topfreq3, topfreq4, topfreq5,
-                     *mfcc_features, tester_id)
+            return (timestamp, component,component_proba, status, status_proba, db_val, topfreq1, topfreq2, topfreq3, topfreq4, topfreq5,tester_id,
+                     *mfcc_features)
             
         except Exception as e:
             logger.warning(f"Failed to parse CSV row: {e}")
