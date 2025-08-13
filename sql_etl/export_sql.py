@@ -247,6 +247,23 @@ class SQLQueries:
             topfreq1 REAL,
             topfreq2 REAL,
             topfreq3 REAL,
+            topfreq4 REAL,
+            topfreq5 REAL,
+            component_proba REAL,
+            status_proba REAL,
+            mfcc_1 REAL,
+            mfcc_2 REAL,
+            mfcc_3 REAL,
+            mfcc_4 REAL,
+            mfcc_5 REAL,
+            mfcc_6 REAL,
+            mfcc_7 REAL,
+            mfcc_8 REAL,
+            mfcc_9 REAL,
+            mfcc_10 REAL,
+            mfcc_11 REAL,
+            mfcc_12 REAL,
+            mfcc_13 REAL,
             tester_id TEXT
         );
         """
@@ -257,8 +274,10 @@ class SQLQueries:
         
         self.insert_sql = f"""
         INSERT INTO {self.table_name} 
-        (timestamp, component, status, db, topfreq1, topfreq2, topfreq3, tester_id) 
-        VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+        (timestamp, component, status, db, topfreq1, topfreq2, topfreq3, topfreq4, topfreq5, 
+         component_proba, status_proba, mfcc_1, mfcc_2, mfcc_3, mfcc_4, mfcc_5, mfcc_6, mfcc_7, 
+         mfcc_8, mfcc_9, mfcc_10, mfcc_11, mfcc_12, mfcc_13, tester_id) 
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
         """
         
         self.select_old_rows = f"SELECT * FROM {self.table_name} WHERE timestamp <= %s"
@@ -269,6 +288,27 @@ class SQLQueries:
         CREATE INDEX IF NOT EXISTS idx_{self.table_name}_timestamp 
         ON {self.table_name} (timestamp);
         """
+        
+        # Migration queries to add new columns to existing tables
+        self.migration_queries = [
+            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS topfreq4 REAL;",
+            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS topfreq5 REAL;",
+            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS component_proba REAL;",
+            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS status_proba REAL;",
+            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS mfcc_1 REAL;",
+            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS mfcc_2 REAL;",
+            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS mfcc_3 REAL;",
+            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS mfcc_4 REAL;",
+            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS mfcc_5 REAL;",
+            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS mfcc_6 REAL;",
+            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS mfcc_7 REAL;",
+            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS mfcc_8 REAL;",
+            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS mfcc_9 REAL;",
+            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS mfcc_10 REAL;",
+            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS mfcc_11 REAL;",
+            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS mfcc_12 REAL;",
+            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS mfcc_13 REAL;"
+        ]
 
 class CSVProcessor:
     """Handles CSV file processing and database operations."""
@@ -305,6 +345,11 @@ class CSVProcessor:
                     # Create index
                     console.print_progress("Creating performance indexes...")
                     cur.execute(self.queries.create_index)
+                    
+                    # Run migration queries to add new columns if they don't exist
+                    console.print_progress("Running schema migration...")
+                    for migration_query in self.queries.migration_queries:
+                        cur.execute(migration_query)
                     
                     conn.commit()
                     logger.info("Database initialized successfully")
@@ -395,7 +440,10 @@ class CSVProcessor:
                 return None
             
             # Map CSV columns to database columns
-            # Assuming CSV has: timestamp, component, status, db, topfreq1, topfreq2, topfreq3, tester_id
+            # Expected CSV format: timestamp, component, status, db, topfreq1, topfreq2, topfreq3, topfreq4, topfreq5,
+            # component_proba, status_proba, mfcc_1, mfcc_2, mfcc_3, mfcc_4, mfcc_5, mfcc_6, mfcc_7, mfcc_8, mfcc_9, 
+            # mfcc_10, mfcc_11, mfcc_12, mfcc_13, tester_id
+            # Total: 25 columns (0-24)
             timestamp_str = row[0] if len(row) > 0 else None
             component = row[1] if len(row) > 1 else None
             status = row[2] if len(row) > 2 else None
@@ -403,7 +451,18 @@ class CSVProcessor:
             topfreq1 = float(row[4]) if len(row) > 4 and row[4] else None
             topfreq2 = float(row[5]) if len(row) > 5 and row[5] else None
             topfreq3 = float(row[6]) if len(row) > 6 and row[6] else None
-            tester_id = row[7] if len(row) > 7 else None
+            topfreq4 = float(row[7]) if len(row) > 7 and row[7] else None
+            topfreq5 = float(row[8]) if len(row) > 8 and row[8] else None
+            component_proba = float(row[9]) if len(row) > 9 and row[9] else None
+            status_proba = float(row[10]) if len(row) > 10 and row[10] else None
+            
+            # Parse MFCC features (13 columns)
+            mfcc_features = []
+            for i in range(13):
+                mfcc_val = float(row[11 + i]) if len(row) > 11 + i and row[11 + i] else None
+                mfcc_features.append(mfcc_val)
+            
+            tester_id = row[24] if len(row) > 24 else None
             
             # Parse timestamp
             try:
@@ -423,7 +482,8 @@ class CSVProcessor:
             except Exception:
                 timestamp = datetime.now()
             
-            return (timestamp, component, status, db_val, topfreq1, topfreq2, topfreq3, tester_id)
+            return (timestamp, component, status, db_val, topfreq1, topfreq2, topfreq3, topfreq4, topfreq5,
+                    component_proba, status_proba, *mfcc_features, tester_id)
             
         except Exception as e:
             logger.warning(f"Failed to parse CSV row: {e}")
