@@ -123,7 +123,7 @@ def batch_predict(
         ocsvm_score[need_oc] = ocsvm_scores
         ocsvm_out[need_oc] = np.where(ocsvm_scores >= ocsvm_threshold, 1, -1)
     # ------------------------------------------------
-
+    ocsvm_scores = ocsvm.decision_function(X[need_oc])
     f1 = "{:.2f}".format
     rows = []
     for k, i in enumerate(valid_idx):
@@ -152,7 +152,8 @@ def batch_predict(
         
         # Get frequencies (ensure we have at least 5 frequencies)
         freqs = freqs_all[k]
-
+        
+        freqs = list(freqs[:5]) + [0.0] * (5 - len(freqs))
         
         # Get MFCC features (all 13 coefficients)
         mfcc_features = [f1(feat) for feat in feats[i][:13]]  # Take first 13 MFCC coefficients
