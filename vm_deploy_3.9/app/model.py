@@ -112,23 +112,23 @@ def batch_predict(
     # --- เลือกเฉพาะแถวที่ "ต้องรัน" OCSVM ---
     db_arr   = np.asarray(dbs, dtype=float)
     finite   = np.isfinite(db_arr)
-    lt_mask  = finite & (db_arr < DB_NORMAL_MAX)     # < 78  => Normal (ไม่รัน OCSVM)
+    lt_mask  = finite & (db_arr < DB_ANOMALY_MIN)     # < 78  => Normal (ไม่รัน OCSVM)
     gt_mask  = finite & (db_arr > DB_ANOMALY_MIN)    # > 88  => Anomaly (ไม่รัน OCSVM)
     need_oc  = ~(lt_mask | gt_mask)                  # ช่วง 78–88 หรือ dB ไม่ finite
 
     ocsvm_out = np.zeros(len(valid_idx), dtype=int)  # เตรียมที่ไว้ (0 เป็นค่า placeholder)
     ocsvm_score = np.full(len(valid_idx), np.nan, dtype=float)
-    if np.any(need_oc):
-        ocsvm_scores = ocsvm.decision_function(X[need_oc])  # shape = (n_need,)
-        ocsvm_score[need_oc] = ocsvm_scores
-        ocsvm_out[need_oc] = np.where(ocsvm_scores >= ocsvm_threshold, 1, -1)
+    if np.any(lt_mask):
+        ocsvm_scores = ocsvm.decision_function(X[lt_mask])  # shape = (n_need,)
+        ocsvm_score[lt_mask] = ocsvm_scores
+        ocsvm_out[lt_mask] = np.where(ocsvm_scores >= ocsvm_threshold, 1, -1)
     # ------------------------------------------------
-    ocsvm_scores = ocsvm.decision_function(X[need_oc])
+    
     f1 = "{:.2f}".format
     rows = []
     for k, i in enumerate(valid_idx):
         # ตัดสินสถานะตามกติกา dB ก่อนเสมอ
-        isnormal_str = "Normal" if ocsvm_out[k] == 1 else "Anomaly"
+        #isnormal_str = "Normal" if ocsvm_out[k] == 1 else "Anomaly"
         if lt_mask[k]:
             isnormal_str = "Normal"
         elif gt_mask[k]:
@@ -152,7 +152,6 @@ def batch_predict(
         
         # Get frequencies (ensure we have at least 5 frequencies)
         freqs = freqs_all[k]
-        
         freqs = list(freqs[:5]) + [0.0] * (5 - len(freqs))
         
         # Get MFCC features (all 13 coefficients)
