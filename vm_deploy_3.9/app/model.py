@@ -128,13 +128,14 @@ def batch_predict(
     rows = []
     for k, i in enumerate(valid_idx):
         # ตัดสินสถานะตามกติกา dB ก่อนเสมอ
+        isnormal_str = "Normal" if ocsvm_out[k] == 1 else "Anomaly"
         if lt_mask[k]:
             isnormal_str = "Normal"
         elif gt_mask[k]:
             isnormal_str = "Anomaly"
-        else:
+        #else:
             # ช่วงกำกวม => ใช้ผล OCSVM
-            isnormal_str = "Normal" if ocsvm_out[k] == 1 else "Anomaly"
+            #isnormal_str = "Normal" if ocsvm_out[k] == 1 else "Anomaly"
 
         label = components[cls_out[k]]
         
@@ -173,12 +174,13 @@ def batch_predict(
 
     # logging ต่อแถว (ออปชัน)
     for k, i in enumerate(valid_idx):
+        isnormal_str = "Normal" if ocsvm_out[k] == 1 else "Anomaly"
         if lt_mask[k]:
             isnormal_str = "Normal"
         elif gt_mask[k]:
             isnormal_str = "Anomaly"
-        else:
-            isnormal_str = "Normal" if ocsvm_out[k] == 1 else "Anomaly"
+        #else:
+            #isnormal_str = "Normal" if ocsvm_out[k] == 1 else "Anomaly"
 
         # probability for predicted class if available
         if probs_all is not None and 0 <= cls_out[k] < probs_all.shape[1]:

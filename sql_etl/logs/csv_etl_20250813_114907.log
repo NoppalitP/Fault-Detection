@@ -9445,3 +9445,57 @@
 2025-08-13 12:49:34 | ERROR    | __main__             | _import_rows_to_db   | Failed to import rows to database: tuple index out of range
 2025-08-13 12:49:34 | ERROR    | __main__             | _process_single_csv  | Failed to process CSV file D:\NOPPALIT\History\Saturn_Acc_Logs\offline_results.csv: tuple index out of range
 2025-08-13 12:49:34 | ERROR    | __main__             | process_all_csv_files | Failed to process offline_results.csv: tuple index out of range
+2025-08-13 12:56:26 | WARNING  | __main__             | _parse_csv_row       | Failed to parse CSV row: could not convert string to float: 'Normal'
+2025-08-13 12:56:26 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250813_125328.csv
+2025-08-13 12:56:26 | WARNING  | __main__             | _parse_csv_row       | Failed to parse CSV row: could not convert string to float: 'Normal'
+2025-08-13 12:56:26 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250813_125329.csv
+2025-08-13 12:56:26 | WARNING  | __main__             | _parse_csv_row       | Failed to parse CSV row: could not convert string to float: 'Normal'
+2025-08-13 12:56:26 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250813_125330.csv
+2025-08-13 12:56:26 | WARNING  | __main__             | _parse_csv_row       | Failed to parse CSV row: could not convert string to float: 'Normal'
+2025-08-13 12:56:26 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250813_125331.csv
+2025-08-13 12:56:26 | WARNING  | __main__             | _parse_csv_row       | Failed to parse CSV row: could not convert string to float: 'Normal'
+2025-08-13 12:56:26 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250813_125332.csv
+2025-08-13 12:56:26 | WARNING  | __main__             | _parse_csv_row       | Failed to parse CSV row: could not convert string to float: 'Normal'
+2025-08-13 12:56:26 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250813_125333.csv
+2025-08-13 12:56:26 | WARNING  | __main__             | _parse_csv_row       | Failed to parse CSV row: could not convert string to float: 'Normal'
+2025-08-13 12:56:26 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250813_125335.csv
+2025-08-13 12:56:26 | WARNING  | __main__             | _parse_csv_row       | Failed to parse CSV row: could not convert string to float: 'Normal'
+2025-08-13 12:56:26 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250813_125336.csv
+2025-08-13 12:56:26 | WARNING  | __main__             | _parse_csv_row       | Failed to parse CSV row: could not convert string to float: 'Normal'
+2025-08-13 12:56:26 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250813_125337.csv
+2025-08-13 12:56:26 | WARNING  | __main__             | _parse_csv_row       | Failed to parse CSV row: could not convert string to float: 'Normal'
+2025-08-13 12:56:26 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250813_125338.csv
+2025-08-13 12:56:26 | WARNING  | __main__             | _parse_csv_row       | Failed to parse CSV row: could not convert string to float: 'Normal'
+2025-08-13 12:56:26 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250813_125339.csv
+2025-08-13 12:56:26 | WARNING  | __main__             | _parse_csv_row       | Failed to parse CSV row: could not convert string to float: 'Normal'
+2025-08-13 12:56:26 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250813_125340.csv
+2025-08-13 12:56:26 | WARNING  | __main__             | _parse_csv_row       | Failed to parse CSV row: could not convert string to float: 'Normal'
+2025-08-13 12:56:26 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250813_125342.csv
+2025-08-13 12:56:26 | WARNING  | __main__             | _parse_csv_row       | Failed to parse CSV row: could not convert string to float: 'Normal'
+2025-08-13 12:56:26 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250813_125343.csv
+2025-08-13 12:56:26 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250813_125344.csv
+2025-08-13 12:56:26 | WARNING  | __main__             | _parse_csv_row       | Failed to parse CSV row: could not convert string to float: 'Normal'
+2025-08-13 12:56:26 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250813_125345.csv
+2025-08-13 12:56:26 | WARNING  | __main__             | _parse_csv_row       | Failed to parse CSV row: could not convert string to float: 'Normal'
+2025-08-13 12:56:26 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250813_125346.csv
+2025-08-13 12:56:26 | WARNING  | __main__             | _parse_csv_row       | Failed to parse CSV row: could not convert string to float: 'Normal'
+2025-08-13 12:56:26 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250813_125347.csv
+2025-08-13 12:56:26 | WARNING  | __main__             | _parse_csv_row       | Failed to parse CSV row: could not convert string to float: 'Normal'
+2025-08-13 12:56:26 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250813_125348.csv
+2025-08-13 12:56:26 | WARNING  | __main__             | _parse_csv_row       | Failed to parse CSV row: could not convert string to float: 'Normal'
+2025-08-13 12:56:26 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250813_125350.csv
+2025-08-13 12:56:26 | WARNING  | __main__             | _parse_csv_row       | Failed to parse CSV row: could not convert string to float: 'Normal'
+2025-08-13 12:56:26 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250813_125351.csv
+2025-08-13 12:56:26 | WARNING  | __main__             | _parse_csv_row       | Failed to parse CSV row: could not convert string to float: 'Normal'
+2025-08-13 12:56:26 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250813_125352.csv
+2025-08-13 12:56:26 | WARNING  | __main__             | _parse_csv_row       | Failed to parse CSV row: could not convert string to float: 'Normal'
+2025-08-13 12:56:26 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250813_125353.csv
+2025-08-13 12:56:26 | WARNING  | __main__             | _parse_csv_row       | Failed to parse CSV row: could not convert string to float: 'Normal'
+2025-08-13 12:56:26 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250813_125354.csv
+2025-08-13 12:56:26 | WARNING  | __main__             | _parse_csv_row       | Failed to parse CSV row: could not convert string to float: 'Normal'
+2025-08-13 12:56:26 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250813_125356.csv
+2025-08-13 12:56:26 | WARNING  | __main__             | _parse_csv_row       | Failed to parse CSV row: could not convert string to float: 'Normal'
+2025-08-13 12:56:26 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250813_125357.csv
+2025-08-13 12:56:54 | INFO     | __main__             | start                | Service interrupted by user
+2025-08-13 12:56:54 | INFO     | __main__             | close                | Connection pool closed
+2025-08-13 12:56:54 | INFO     | __main__             | cleanup              | Service cleanup completed
