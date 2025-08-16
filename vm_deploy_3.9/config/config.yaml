@@ -1,5 +1,8 @@
 # config.yaml
 
+testers:
+  name: "RPB1"
+
 # === SERIAL PORT SETTINGS ===
 serial:
   port: "COM5"
@@ -37,16 +40,21 @@ models:
 
 # === DB/OCSVM THRESHOLDS ===
 db:
-  calib_offset:         # additional field calibration offset (dB)
-  normal_max: 50         # dB < normal_max => Normal (skip OCSVM)
-  anomaly_min: 88.0        # dB > anomaly_min => Anomaly (skip OCSVM)
+  normal_max: 50.0          # Below this dB → “Normal”
+  anomaly_min: 70.0         # Above this dB → “Anomaly”
+  calib_offset: -30.0       # Calibration offset applied before thresholding
 
 ocsvm:
   threshold: -0.8   # decision_function score threshold
 
+fft:
+  nfft: 8192                # FFT length for spectral analysis
 
-testers:
-  name: "RPB1"
+peaks:
+  top_n: 5                  # Spectral peaks per window
+  min_freq: 300.0           # Lowest frequency considered (Hz)
+  min_separation_hz: 50.0   # Minimum separation between peaks (Hz)
+
 
 batch:
   size: 10
