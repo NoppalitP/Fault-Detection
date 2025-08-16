@@ -44,7 +44,7 @@ def main():
     nfft      = cfg['fft']['nfft']
 
     win_sec = win_sz / float(sr)
-    hop_sec = step_sz / float(sr)
+    hop_secs = step_sz / float(sr)
     overlap = 1.0 - (step_sz / float(win_sz))
     delta_f = sr / float(nfft)
 
@@ -65,8 +65,8 @@ def main():
     setup_logging(base/"app.log")
     logging.info("Starting monitoring")
     logging.info(f"[RUN] SR={sr} Hz | Window={win_sz} samples ({win_sec:.3f}s) | "
-      f"Step={step_sz} ({hop_sec:.3f}s, overlap={overlap:.1%}) | "
-      f"NFFT={nfft} (Δf={delta_f:.3f} Hz) | "
+      f"Step={step_sz} ({hop_secs:.3f}s, overlap={overlap:.1%}) | "
+      f"NFFT={nfft} (Δf={delta_f:.3f} Hz, min_freq={cfg['audio']['min_freq']} Hz) | "
       f"Batch={batch_sz} | dB gates: normal_max={cfg['db']['normal_max']}, "
       f"anomaly_min={cfg['db']['anomaly_min']}, calib_offset={cfg['db']['calib_offset']} | "
       f"OCSVM τ={cfg['ocsvm']['threshold']}")
