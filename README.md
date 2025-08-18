@@ -1,6 +1,6 @@
 ## Fault-Detection
 
-Audio-based fault and component detection for industrial equipment. The runtime app (`vm_deploy_3.2`) listens to streamed PCM audio from a microcontroller over serial, windows the signal, saves temporary WAVs, performs classification (component type) and anomaly gating (OCSVM + dB rules), and logs results to CSV.
+Audio-based fault and component detection for industrial equipment. The runtime app (`vm_deploy_3.9`) listens to streamed PCM audio from a microcontroller over serial, windows the signal, saves temporary WAVs, performs classification (component type) and anomaly gating (OCSVM + dB rules), and logs results to CSV.
 
 ### Key features
 
@@ -13,7 +13,7 @@ Audio-based fault and component detection for industrial equipment. The runtime 
 
 ## Repository structure
 
-- `vm_deploy_3.2/`
+- `vm_deploy_3.9/`
   - `app/`
     - `main.py`: Real-time entry point (serial → window → WAV temp → batch predict → CSV log)
     - `offline_validate.py`: Offline CLI to evaluate a folder of WAVs into a CSV
@@ -36,17 +36,17 @@ Audio-based fault and component detection for industrial equipment. The runtime 
 
 ### Option A: Use bundled Python (Windows)
 
-1. Verify models exist in `vm_deploy_3.2/model_files/`:
+1. Verify models exist in `vm_deploy_3.9/model_files/`:
    - `ocsvm_model.joblib`
    - `log_reg_model.joblib`
-2. Set your serial port in `vm_deploy_3.2/config/config.yaml` at `serial.port` (e.g., `COM5`).
+2. Set your serial port in `vm_deploy_3.9/config/config.yaml` at `serial.port` (e.g., `COM5`).
 3. Real-time run:
    ```powershell
-   .\vm_deploy_3.2\myenv\Scripts\python.exe vm_deploy_3.2\app\main.py
+   .\vm_deploy_3.9\myenv\Scripts\python.exe vm_deploy_3.9\app\main.py
    ```
 4. Offline validation:
    ```powershell
-   .\vm_deploy_3.2\myenv\Scripts\python.exe vm_deploy_3.2\app\offline_validate.py data\component_data_train_test\test --out offline_results.csv
+   .\vm_deploy_3.9\myenv\Scripts\python.exe vm_deploy_3.9\app\offline_validate.py data\component_data_train_test\test --out offline_results.csv
    ```
 
 ### Option B: Use your own environment
@@ -66,14 +66,14 @@ Audio-based fault and component detection for industrial equipment. The runtime 
 
 ---
 
-## Configuration (`vm_deploy_3.2/config/config.yaml`)
+## Configuration (`vm_deploy_3.9/config/config.yaml`)
 
 - **serial**: `port` (e.g., `COM5`), `baud_rate`
 - **audio**: `sample_rate`, `block_size` (bytes read per frame)
 - **window**: `size`, `step` (in samples; typically `size = sr * duration`, `step = sr * hop`)
 - **logging**: `log_dir` for CSV logs (auto-created)
 - **components**: ordered list of labels for classifier outputs
-- **models**: paths to `ocsvm` and `log_reg` joblib files (relative to `vm_deploy_3.2`)
+- **models**: paths to `ocsvm` and `log_reg` joblib files (relative to `vm_deploy_3.9`)
 - **db**: `calib_offset`, `normal_max`, `anomaly_min` (dB gating thresholds)
 - **ocsvm**: `threshold` for decision_function
 - **testers**: `name` used in log filenames
@@ -102,15 +102,15 @@ Tip: Ensure `window.size` and `window.step` are consistent with `audio.sample_ra
 ### Real-time
 
 ```powershell
-./vm_deploy_3.2/myenv/Scripts/python.exe vm_deploy_3.2/app/main.py
+./vm_deploy_3.9/myenv/Scripts/python.exe vm_deploy_3.9/app/main.py
 ```
 
-Logs are written to `vm_deploy_3.2/Logs/TESTER_YYYYMMDD_HHMMSS.csv`.
+Logs are written to `vm_deploy_3.9/Logs/TESTER_YYYYMMDD_HHMMSS.csv`.
 
 ### Offline
 
 ```powershell
-./vm_deploy_3.2/myenv/Scripts/python.exe vm_deploy_3.2/app/offline_validate.py <wav_folder> --out offline_results.csv
+./vm_deploy_3.9/myenv/Scripts/python.exe vm_deploy_3.9/app/offline_validate.py <wav_folder> --out offline_results.csv
 ```
 
 Input folder should contain `.wav` files (mono implied by the runtime pipeline).
@@ -150,7 +150,7 @@ Input folder should contain `.wav` files (mono implied by the runtime pipeline).
 ## Troubleshooting
 
 - Cannot open serial: verify `serial.port` (e.g., `COMx`) and permissions; device connected; baud matches firmware.
-- Missing models: check `vm_deploy_3.2/model_files/` paths in `config.yaml`.
+- Missing models: check `vm_deploy_3.9/model_files/` paths in `config.yaml`.
 - Librosa/NumPy/Sklearn mismatch: prefer the bundled `myenv` or match versions in `requirements.txt`/`environment.yml`.
 - No WAVs processed in batch: ensure `window.size/step` align with `audio.sample_rate` and streaming actually delivers frames.
 

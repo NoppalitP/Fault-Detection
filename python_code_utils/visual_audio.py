@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Real-time frequency analysis, aligned with vm_deploy_3.2 runtime:
-- Reads config from vm_deploy_3.2/config/config.yaml
+Real-time frequency analysis, aligned with vm_deploy_3.9 runtime:
+- Reads config from vm_deploy_3.9/config/config.yaml
 - Opens serial via app.serial_handler.open_serial_with_retry
 - Uses app.logger for consistent console output
 - Uses app.utils spinner for connect/wait UX and stderr logs to avoid interleaving
@@ -21,15 +21,15 @@ from matplotlib.animation import FuncAnimation
 from scipy import signal
 from contextlib import nullcontext
 
-# Resolve vm_deploy_3.2 package for shared utilities
-BASE = Path(__file__).resolve().parent.parent / "vm_deploy_3.2"
+# Resolve vm_deploy_3.9 package for shared utilities
+BASE = Path(__file__).resolve().parent.parent / "vm_deploy_3.9"
 sys.path.insert(0, str(BASE))
 
 from app.logger import setup_logging
 from app.serial_handler import open_serial_with_retry
 from app.utils import spinner, start_spinner, stop_spinner
 
-# === CONFIGURATION (from vm_deploy_3.2/config/config.yaml) ==================
+# === CONFIGURATION (from vm_deploy_3.9/config/config.yaml) ==================
 CFG = yaml.safe_load(open(BASE / "config" / "config.yaml", "r"))
 
 # --- Serial Port Settings ---

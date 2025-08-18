@@ -5,6 +5,9 @@ from app.audio import save_wave_file
 import numpy as np
 from app.audio import compute_db, compute_top_frequencies
 import csv, logging
+
+
+    
 def load_models(base: Path, cfg: dict):
     """Load OCSVM, classifier, and optional scaler (if configured)."""
     ocsvm = joblib.load(base / cfg['models']['ocsvm'])
@@ -106,7 +109,8 @@ def batch_predict(
     dbs = []
     freqs_all = []
     for i in valid_idx:
-        dbs.append(compute_db(sigs[i],method='ln' ,calib_offset=-30,clamp_min=0))
+        dbs.append(compute_db(sigs[i],method='ln' ,calib_offset= calib_offset,clamp_min=0))
+        #dbs.append(compute_db(sigs[i'],clamp_min=0))
         freqs_all.append(compute_top_frequencies(sigs[i], sample_rate))
 
     # --- เลือกเฉพาะแถวที่ "ต้องรัน" OCSVM ---

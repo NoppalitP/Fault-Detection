@@ -41,6 +41,14 @@ def main():
     tester    = cfg['testers']['name']
     comps     = cfg['components']
     n_mfcc    = cfg['mfcc']['n_mfcc']
+    nfft      = cfg['fft']['nfft']
+
+    win_sec = win_sz / float(sr)
+    hop_secs = step_sz / float(sr)
+    overlap = 1.0 - (step_sz / float(win_sz))
+    delta_f = sr / float(nfft)
+
+
 
     ui_cfg = cfg.get('ui', {})
     spinner_enabled = bool(ui_cfg.get('spinner_enabled', True))
@@ -56,9 +64,12 @@ def main():
     wav_dir = base / cfg['batch']['wav_dir'];   wav_dir.mkdir(exist_ok=True, parents=True)
     setup_logging(base/"app.log")
     logging.info("Starting monitoring")
-    logging.info(
-        f"Serial={sp_port} @ {baud} | SR={sr} | Window={win_sz} Step={step_sz} | Batch={batch_sz} | MFCC={n_mfcc}"
-    )
+    logging.info(f"[RUN] SR={sr} Hz | Window={win_sz} samples ({win_sec:.3f}s) | "
+      f"Step={step_sz} ({hop_secs:.3f}s, overlap={overlap:.1%}) | "
+      f"NFFT={nfft} (Δf={delta_f:.3f} Hz, min_freq={cfg['audio']['min_freq']} Hz) | "
+      f"Batch={batch_sz} | dB gates: normal_max={cfg['db']['normal_max']}, "
+      f"anomaly_min={cfg['db']['anomaly_min']}, calib_offset={cfg['db']['calib_offset']} | "
+      f"OCSVM τ={cfg['ocsvm']['threshold']}")
 
     with spinner_ctx("Connecting to serial...", interval_seconds=spinner_interval):
         ser = open_serial_with_retry(sp_port, baud)
