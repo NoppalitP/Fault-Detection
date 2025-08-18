@@ -33,7 +33,7 @@ STEP_DURATION = 30.0    # ความถี่ในการบันทึก
 #============================================================================
 
 OUTPUT_DIRECTORY = r"record"
-NAME_COMPONENT= "envir_lab"  # ชื่อของ component ที่บันทึก
+NAME_COMPONENT= "1K"  # ชื่อของ component ที่บันทึก
 
 
 # === DERIVED CONSTANTS (DO NOT CHANGE) ======================================
