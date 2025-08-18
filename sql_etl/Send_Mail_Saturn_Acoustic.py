@@ -11,10 +11,10 @@ smtp_port = 25  # Standard SMTP port without TLS/SSL
 sender_email = "PDL-PRB-TEE-Automatic-Report@wdc.com"
 receiver_emails = [
     # "chaiwat.chantana@wdc.com",
-    #"nobpharit.phosrithat@wdc.com",
+    "nobpharit.phosrithat@wdc.com",
     # "kittisak.boo@wdc.com",
      #"ratchanon.nooraksa@wdc.com",
-     "siwat.ninlachat@wdc.com"
+     #"siwat.ninlachat@wdc.com"
 ]
 
 # Email content
@@ -36,65 +36,72 @@ d = {
     "Sound Level (dB)": ["90"],
     "Timestamp": ["2025-06-07 17:00:00"]
 }
-df = pd.DataFrame(data=d)
+def Alert(row_data):
+  """
+  row_data = [timestamp, component, status, db_val, tester_id]
+  """
+  columns = ["Timestamp", "Component", "Status", "Sound Level (dB)", "Tester ID"]
 
-# Style the HTML table with CSS
-styled_table = df.to_html(index=False, classes="styled-table", border=0)
+    # แปลง list ให้เป็น DataFrame 1 แถว
+  df = pd.DataFrame([row_data], columns=columns)
 
-# Full HTML content
-html = f"""\
-<html>
-  <head>
-    <style>
-      body {{
-        font-family: Arial, sans-serif;
-        font-size: 14px;
-        color: #333333;
-      }}
-      .styled-table {{
-        border-collapse: collapse;
-        margin: 20px 0;
-        font-size: 14px;
-        min-width: 400px;
-        border: 1px solid #dddddd;
-      }}
-      .styled-table thead tr {{
-        background-color: #009879;
-        color: #ffffff;
-        text-align: left;
-      }}
-      .styled-table th,
-      .styled-table td {{
-        padding: 12px 15px;
-        border: 1px solid #dddddd;
-      }}
-      .styled-table tbody tr:nth-child(even) {{
-        background-color: #f3f3f3;
-      }}
-    </style>
-  </head>
-  <body>
-    {body}
-    <h3>📋 Acoustic Monitoring Data</h3>
-    {styled_table}
-  </body>
-</html>
-"""
+  # Style the HTML table with CSS
+  styled_table = df.to_html(index=False, classes="styled-table", border=0)
 
-# Create MIME message
-message = MIMEMultipart("alternative")
-message["From"] = sender_email
-message["To"] = ", ".join(receiver_emails)
-message["Subject"] = subject
-message.attach(MIMEText(html, "html"))
-i = 1
-# Send email
-while True:
-  try:
-      with smtplib.SMTP(smtp_server, smtp_port) as server:
-          server.sendmail(sender_email, receiver_emails, message.as_string())
-          time.sleep(2)
-      print(f"{i} Email sent successfully.")
-      i+=1
-  except Exception as e:
-      print(f"❌ An error occurred: {e}")
+  # Full HTML content
+  html = f"""\
+  <html>
+    <head>
+      <style>
+        body {{
+          font-family: Arial, sans-serif;
+          font-size: 14px;
+          color: #333333;
+        }}
+        .styled-table {{
+          border-collapse: collapse;
+          margin: 20px 0;
+          font-size: 14px;
+          min-width: 400px;
+          border: 1px solid #dddddd;
+        }}
+        .styled-table thead tr {{
+          background-color: #009879;
+          color: #ffffff;
+          text-align: left;
+        }}
+        .styled-table th,
+        .styled-table td {{
+          padding: 12px 15px;
+          border: 1px solid #dddddd;
+        }}
+        .styled-table tbody tr:nth-child(even) {{
+          background-color: #f3f3f3;
+        }}
+      </style>
+    </head>
+    <body>
+      {body}
+      <h3>📋Acoustic Monitoring Data</h3>
+      {styled_table}
+    </body>
+  </html>
+  """
+
+  # Create MIME message
+  message = MIMEMultipart("alternative")
+  message["From"] = sender_email
+  message["To"] = ", ".join(receiver_emails)
+  message["Subject"] = subject
+  message.attach(MIMEText(html, "html"))
+  i = 1
+  # Send email
+  while True:
+    try:
+        with smtplib.SMTP(smtp_server, smtp_port) as server:
+            server.sendmail(sender_email, receiver_emails, message.as_string())
+            time.sleep(2)
+        print(f"{i} Email sent successfully.")
+        i+=1
+    except Exception as e:
+        print(f"❌ An error occurred: {e}")

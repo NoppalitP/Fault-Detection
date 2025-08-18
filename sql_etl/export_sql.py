@@ -10,7 +10,7 @@ from typing import List, Tuple, Optional, Dict, Any
 from contextlib import contextmanager
 import yaml
 from pathlib import Path
-
+from Send_Mail_Saturn_Acoustic import Alert
 # Configure logging with improved formatting
 def setup_logging():
     """Setup enhanced logging configuration."""
@@ -417,7 +417,11 @@ class CSVProcessor:
                     try:
                         # Parse the row data
                         parsed_row = self._parse_csv_row(row, headers)
+                
                         if parsed_row:
+                            db_val = parsed_row[5]  # ตำแหน่ง db_val หลัง parse
+                            if db_val is not None and db_val > 90:
+                                Alert([parsed_row[0], parsed_row[1], parsed_row[3], db_val, parsed_row[11]])
                             rows.append(parsed_row)
                     except Exception as e:
                         logger.warning(f"Failed to parse row {row_num} in {csv_file.name}: {e}")
