@@ -42,7 +42,7 @@ def predict_files(input_dir: Path, base: Path):
     except Exception:
         scaler = None
 
-    sr = cfg['audio']['sample_rate']
+    sr = 22050
     n_mfcc = cfg['mfcc']['n_mfcc']
     components = cfg['components']
 
@@ -88,10 +88,7 @@ def predict_files(input_dir: Path, base: Path):
             prob = float('nan')
 
         # db and frequencies
-        db = compute_db(y,
-                method='ln',
-                calib_offset=cfg['db']['calib_offset'],
-                clamp_min=0)
+        db = compute_db(y, method='ln', calib_offset=0)
         freqs = compute_top_frequencies(y, sr)
 
         # gating with ocsvm

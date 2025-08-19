@@ -27,13 +27,13 @@ SAMPLE_WIDTH = 2       # 2 bytes per sample (for 16-bit audio)
 BLOCK_SIZE = 512       # จำนวน sample ที่อ่านในแต่ละครั้ง
 
 # --- File Saving Settings ---
-WINDOW_DURATION = 30 # ความยาวของเสียงแต่ละไฟล์ (วินาที)
-STEP_DURATION = 30.0    # ความถี่ในการบันทึกไฟล์ใหม่ (วินาที)
+WINDOW_DURATION = 2 # ความยาวของเสียงแต่ละไฟล์ (วินาที)
+STEP_DURATION = 1    # ความถี่ในการบันทึกไฟล์ใหม่ (วินาที)
 
 #============================================================================
 
-OUTPUT_DIRECTORY = r"record"
-NAME_COMPONENT= "1K"  # ชื่อของ component ที่บันทึก
+OUTPUT_DIRECTORY = r"RP26"
+NAME_COMPONENT= "elevator"  # ชื่อของ component ที่บันทึก
 
 
 # === DERIVED CONSTANTS (DO NOT CHANGE) ======================================

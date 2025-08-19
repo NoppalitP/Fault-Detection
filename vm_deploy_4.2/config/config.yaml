@@ -57,7 +57,7 @@ peaks:
 
 
 batch:
-  size: 10
+  size: 1
   wav_dir: "wav_file_temp"
 
 mfcc:
