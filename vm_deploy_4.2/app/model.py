@@ -125,6 +125,7 @@ def batch_predict(
     # ------------------------------------------------
     
     f1 = "{:.2f}".format
+    db_arr = []
     rows = []
     for k, i in enumerate(valid_idx):
         # ตัดสินสถานะตามกติกา dB ก่อนเสมอ
@@ -200,6 +201,9 @@ def batch_predict(
             prob_str = f1(prob_for_label)
         else:
             prob_str = ""
+        db_val = f1(db_arr[k]) 
+        if label == "environment":
+            db_val = f1(db_arr[k] - 5)
 
         logging.info(
             "%s: %s prob=%s %s dB=%s prob_ocsvm=%s",
@@ -207,7 +211,7 @@ def batch_predict(
             components[cls_out[k]],
             prob_str,
             isnormal_str,
-            f1(db_arr[k]),
+            db_val,
             f1(ocsvm_score[k]) if np.isfinite(ocsvm_score[k]) else "",
         )
 
