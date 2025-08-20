@@ -107,16 +107,16 @@ def batch_predict(
     # Threshold masks (arrays aligned to valid_idx → index with k)
     db_arr  = np.asarray(dbs, dtype=float)
     finite  = np.isfinite(db_arr)
-    lt_mask = finite & (db_arr < DB_NORMAL_MAX)   # below lower bound → Normal
+    lt_mask = finite & (db_arr < DB_ANOMALY_MIN)   # below lower bound → Normal
     gt_mask = finite & (db_arr > DB_ANOMALY_MIN)  # above upper bound → Anomaly
     need_oc = finite & ~(lt_mask | gt_mask)       # only middle band needs OCSVM
 
     # Run OCSVM only where needed
     ocsvm_out   = np.zeros(len(valid_idx), dtype=int)
     ocsvm_score = np.full(len(valid_idx), np.nan, float)
-    if np.any(need_oc):
-        idx_need = np.where(need_oc)[0]                 # positions k
-        oc_scores = ocsvm.decision_function(X[lt_mask])
+    if np.any(lt_mask):
+        idx_need = np.where(lt_mask)[0]                 # positions k
+        oc_scores = ocsvm.decision_function(X[idx_need])
         ocsvm_score[idx_need] = oc_scores
         ocsvm_out[idx_need]   = np.where(oc_scores >= ocsvm_threshold, 1, -1)
 

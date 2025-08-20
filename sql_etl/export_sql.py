@@ -129,7 +129,7 @@ class DatabaseConfig:
             'password': os.getenv('DB_PASSWORD', ''),
             'min_connections': int(os.getenv('DB_MIN_CONNECTIONS', '1')),
             'max_connections': int(os.getenv('DB_MAX_CONNECTIONS', '10')),
-            'table_name': os.getenv('DB_TABLE_NAME', 'measurements_v2'),
+            'table_name': os.getenv('DB_TABLE_NAME', 'measurements_v4'),
             'interval_minutes': int(os.getenv('INTERVAL_MINUTES', '5')),
             'export_directory': os.getenv('EXPORT_DIR', 'exports'),
             'retention_days': int(os.getenv('RETENTION_DAYS', '30')),
@@ -251,20 +251,7 @@ class SQLQueries:
             topfreq3 REAL,
             topfreq4 REAL,
             topfreq5 REAL,
-            tester_id TEXT,
-            mfcc_1 REAL,
-            mfcc_2 REAL,
-            mfcc_3 REAL,
-            mfcc_4 REAL,
-            mfcc_5 REAL,
-            mfcc_6 REAL,
-            mfcc_7 REAL,
-            mfcc_8 REAL,
-            mfcc_9 REAL,
-            mfcc_10 REAL,
-            mfcc_11 REAL,
-            mfcc_12 REAL,
-            mfcc_13 REAL
+            tester_id TEXT
         );
         """
         
@@ -274,9 +261,9 @@ class SQLQueries:
         
         self.insert_sql = f"""
         INSERT INTO {self.table_name} 
-        (timestamp, component, component_proba, status, status_proba, db, topfreq1, topfreq2, topfreq3, topfreq4, topfreq5,tester_id, 
-         mfcc_1, mfcc_2, mfcc_3, mfcc_4, mfcc_5, mfcc_6, mfcc_7, mfcc_8, mfcc_9, mfcc_10, mfcc_11, mfcc_12, mfcc_13) 
-        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+        (timestamp, component, component_proba, status, status_proba, db,
+        topfreq1, topfreq2, topfreq3, topfreq4, topfreq5, tester_id)
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
         """
         
         self.select_old_rows = f"SELECT * FROM {self.table_name} WHERE timestamp <= %s"
@@ -299,19 +286,6 @@ class SQLQueries:
             f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS topfreq4 REAL;",
             f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS topfreq5 REAL;",
             f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS tester_id REAL;",
-            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS mfcc_1 REAL;",
-            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS mfcc_2 REAL;",
-            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS mfcc_3 REAL;",
-            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS mfcc_4 REAL;",
-            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS mfcc_5 REAL;",
-            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS mfcc_6 REAL;",
-            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS mfcc_7 REAL;",
-            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS mfcc_8 REAL;",
-            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS mfcc_9 REAL;",
-            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS mfcc_10 REAL;",
-            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS mfcc_11 REAL;",
-            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS mfcc_12 REAL;",
-            f"ALTER TABLE {self.table_name} ADD COLUMN IF NOT EXISTS mfcc_13 REAL;"
         ]
 
 class CSVProcessor:
@@ -420,7 +394,7 @@ class CSVProcessor:
                 
                         if parsed_row:
                             db_val = parsed_row[5]  # ตำแหน่ง db_val หลัง parse
-                            if db_val is not None and db_val > 90:
+                            if db_val is not None and db_val > 88:
                                 send_alert([parsed_row[0], parsed_row[1], parsed_row[3], db_val, parsed_row[11]])
                             rows.append(parsed_row)
                     except Exception as e:
@@ -465,10 +439,10 @@ class CSVProcessor:
             topfreq5 = float(row[10]) if len(row) > 10 and row[10] else None
             tester_id = row[11] if len(row) > 11 and row[11] else None
             # Parse MFCC features (13 columns)
-            mfcc_features = []
-            for i in range(13):
-                mfcc_val = float(row[12 + i]) if len(row) > 12 + i and row[12 + i] else None
-                mfcc_features.append(mfcc_val)
+            # mfcc_features = []
+            # for i in range(13):
+            #     mfcc_val = float(row[12 + i]) if len(row) > 12 + i and row[12 + i] else None
+            #     mfcc_features.append(mfcc_val)
             
             
             
@@ -490,8 +464,8 @@ class CSVProcessor:
             except Exception:
                 timestamp = datetime.now()
             
-            return (timestamp, component,component_proba, status, status_proba, db_val, topfreq1, topfreq2, topfreq3, topfreq4, topfreq5,tester_id,
-                     *mfcc_features)
+            return (timestamp, component,component_proba, status, status_proba, db_val, topfreq1, topfreq2, topfreq3, topfreq4, topfreq5,tester_id
+                     )
             
         except Exception as e:
             logger.warning(f"Failed to parse CSV row: {e}")

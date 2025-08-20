@@ -1,0 +1,149 @@
+2025-08-20 16:35:41 | INFO     | __main__             | _load_config         | Configuration loaded from config.yaml
+2025-08-20 16:35:41 | INFO     | __main__             | _init_connection_pool | Connection pool initialized successfully
+2025-08-20 16:35:41 | INFO     | __main__             | __init__             | CSV source directory: D:\NOPPALIT\History\Saturn_Acc_Logs
+2025-08-20 16:35:41 | INFO     | __main__             | __init__             | Export directory: D:\NOPPALIT\History\Saturn_Acc_Logs
+2025-08-20 16:35:41 | INFO     | __main__             | init_db              | Database initialized successfully
+2025-08-20 16:35:41 | INFO     | __main__             | start                | Starting CSV processing service every 1 minutes...
+2025-08-20 16:35:41 | INFO     | __main__             | start                | CSV source directory: D:\NOPPALIT\History\Saturn_Acc_Logs
+2025-08-20 16:35:41 | INFO     | __main__             | start                | Delete after export: True
+2025-08-20 16:37:41 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:37:41 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250820_163021.csv
+2025-08-20 16:37:41 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:37:41 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250820_163054.csv
+2025-08-20 16:37:41 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:37:41 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250820_163126.csv
+2025-08-20 16:37:41 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:37:41 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250820_163305.csv
+2025-08-20 16:37:41 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:37:41 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250820_163338.csv
+2025-08-20 16:37:41 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:37:41 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250820_163411.csv
+2025-08-20 16:37:41 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:37:41 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250820_163444.csv
+2025-08-20 16:37:41 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:37:41 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250820_163516.csv
+2025-08-20 16:37:41 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:37:41 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250820_163655.csv
+2025-08-20 16:37:41 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:37:41 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250820_163728.csv
+2025-08-20 16:37:41 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:37:41 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RP26_20250820_163050.csv
+2025-08-20 16:37:41 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:37:41 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RP26_20250820_163125.csv
+2025-08-20 16:37:41 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:37:41 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RP26_20250820_163200.csv
+2025-08-20 16:37:41 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:37:41 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RP26_20250820_163234.csv
+2025-08-20 16:37:41 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:37:41 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RP26_20250820_163309.csv
+2025-08-20 16:37:41 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:37:41 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RP26_20250820_163344.csv
+2025-08-20 16:37:41 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:37:41 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RP26_20250820_163419.csv
+2025-08-20 16:37:41 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:37:41 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RP26_20250820_163454.csv
+2025-08-20 16:37:41 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:37:41 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RP26_20250820_163528.csv
+2025-08-20 16:38:41 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_163203.csv
+2025-08-20 16:38:41 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_163237.csv
+2025-08-20 16:38:41 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_163310.csv
+2025-08-20 16:38:41 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_163343.csv
+2025-08-20 16:38:41 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_163416.csv
+2025-08-20 16:38:41 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_163448.csv
+2025-08-20 16:38:41 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_163521.csv
+2025-08-20 16:38:41 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_163554.csv
+2025-08-20 16:38:41 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_163627.csv
+2025-08-20 16:42:41 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:42:41 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250820_163549.csv
+2025-08-20 16:42:41 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:42:41 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250820_163622.csv
+2025-08-20 16:42:41 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:42:41 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250820_163801.csv
+2025-08-20 16:42:41 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:42:41 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250820_163834.csv
+2025-08-20 16:42:41 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:42:41 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250820_163907.csv
+2025-08-20 16:42:41 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:42:41 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250820_163939.csv
+2025-08-20 16:42:41 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:42:41 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250820_164012.csv
+2025-08-20 16:42:41 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:42:41 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250820_164224.csv
+2025-08-20 16:42:42 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:42:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250820_164257.csv
+2025-08-20 16:42:42 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:42:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RP26_20250820_163603.csv
+2025-08-20 16:42:42 | WARNING  | __main__             | _process_single_csv  | Failed to parse row 30 in RP26_20250820_163638.csv: No recipients provided.
+2025-08-20 16:42:42 | INFO     | __main__             | _import_rows_to_db   | Imported 29 rows to database
+2025-08-20 16:42:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RP26_20250820_163638.csv
+2025-08-20 16:42:42 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:42:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RP26_20250820_163713.csv
+2025-08-20 16:42:42 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:42:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RP26_20250820_163748.csv
+2025-08-20 16:42:42 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:42:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RP26_20250820_163823.csv
+2025-08-20 16:42:42 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:42:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RP26_20250820_163858.csv
+2025-08-20 16:42:42 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:42:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RP26_20250820_163932.csv
+2025-08-20 16:42:42 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:42:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RP26_20250820_164007.csv
+2025-08-20 16:42:42 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:42:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RP26_20250820_164042.csv
+2025-08-20 16:43:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_163700.csv
+2025-08-20 16:43:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_163733.csv
+2025-08-20 16:43:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_163806.csv
+2025-08-20 16:43:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_163839.csv
+2025-08-20 16:43:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_163911.csv
+2025-08-20 16:43:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_163944.csv
+2025-08-20 16:43:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_164017.csv
+2025-08-20 16:43:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_164050.csv
+2025-08-20 16:43:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_164123.csv
+2025-08-20 16:43:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_164156.csv
+2025-08-20 16:43:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_164334.csv
+2025-08-20 16:47:42 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:47:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250820_164045.csv
+2025-08-20 16:47:42 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:47:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250820_164118.csv
+2025-08-20 16:47:42 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:47:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250820_164151.csv
+2025-08-20 16:47:42 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:47:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250820_164330.csv
+2025-08-20 16:47:42 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:47:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250820_164402.csv
+2025-08-20 16:47:42 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:47:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250820_164435.csv
+2025-08-20 16:47:42 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:47:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250820_164508.csv
+2025-08-20 16:47:42 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:47:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250820_164719.csv
+2025-08-20 16:47:42 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:47:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\IPC1_20250820_164752.csv
+2025-08-20 16:47:42 | WARNING  | __main__             | _process_single_csv  | Failed to parse row 8 in RP26_20250820_164116.csv: No recipients provided.
+2025-08-20 16:47:42 | INFO     | __main__             | _import_rows_to_db   | Imported 29 rows to database
+2025-08-20 16:47:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RP26_20250820_164116.csv
+2025-08-20 16:47:42 | WARNING  | __main__             | _process_single_csv  | Failed to parse row 27 in RP26_20250820_164151.csv: No recipients provided.
+2025-08-20 16:47:42 | INFO     | __main__             | _import_rows_to_db   | Imported 29 rows to database
+2025-08-20 16:47:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RP26_20250820_164151.csv
+2025-08-20 16:47:42 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:47:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RP26_20250820_164226.csv
+2025-08-20 16:47:42 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:47:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RP26_20250820_164301.csv
+2025-08-20 16:47:42 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:47:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RP26_20250820_164335.csv
+2025-08-20 16:47:42 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:47:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RP26_20250820_164410.csv
+2025-08-20 16:47:42 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:47:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RP26_20250820_164446.csv
+2025-08-20 16:47:42 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:47:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RP26_20250820_164520.csv
+2025-08-20 16:47:42 | INFO     | __main__             | _import_rows_to_db   | Imported 30 rows to database
+2025-08-20 16:47:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RP26_20250820_164555.csv
+2025-08-20 16:49:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_164228.csv
+2025-08-20 16:49:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_164301.csv
+2025-08-20 16:49:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_164407.csv
+2025-08-20 16:49:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_164440.csv
+2025-08-20 16:49:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_164513.csv
+2025-08-20 16:49:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_164546.csv
+2025-08-20 16:49:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_164619.csv
+2025-08-20 16:49:42 | INFO     | __main__             | _delete_file         | Successfully deleted file: D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_164652.csv
