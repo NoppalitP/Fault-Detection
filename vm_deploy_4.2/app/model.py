@@ -155,17 +155,29 @@ def batch_predict(
         freqs = list(freqs[:5]) + [0.0] * (5 - len(freqs))
         
         # Get MFCC features (all 13 coefficients)
-        mfcc_features = [f1(feat) for feat in feats[i][:13]]  # Take first 13 MFCC coefficients
-        
+        # ปรับค่า dB ถ้าเป็น environment
+        db_val = f1(db_arr[k]) 
+        if label == "environment":
+            db_val = f1(db_arr[k] - 5)
+
         # Original row data
-        base_row = [ts_array[i], label,component_proba, isnormal_str, status_proba, f1(db_arr[k]), *[f1(f) for f in freqs[:5]], tester_name]
+        base_row = [
+            ts_array[i],
+            label,
+            component_proba,
+            isnormal_str,
+            status_proba,
+            db_val,
+            *[f1(f) for f in freqs[:5]],
+            tester_name
+        ]
+
         # New columns data
         #new_data = [component_proba, status_proba, freq4, freq5]
         # MFCC features data
-        mfcc_data = mfcc_features
         
         # Combine all data
-        row = base_row  + mfcc_data
+        row = base_row  
         rows.append(row)
 
     # เขียนไฟล์ครั้งเดียว

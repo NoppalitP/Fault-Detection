@@ -67,7 +67,7 @@ def compute_db(
         scale = float(scale)
         rms_pa = max(rms * scale, 1e-12)
         ref_rms = float(ref_rms)
-        db = 20.0 * np.log10(rms_pa / ref_rms) -5
+        db = 20.0 * np.log10(rms_pa / ref_rms)
     elif method == "ln":
         rms_counts = _rms_counts(sig_ravel, gain_factor=gain_factor, subtract_dc=subtract_dc)
         db = calcDecibell(rms_counts)

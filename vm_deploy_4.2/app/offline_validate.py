@@ -56,9 +56,8 @@ def predict_files(input_dir: Path, base: Path):
     base_columns = ["File","Timestamp","Component","Component_proba","Status","Status_proba","dB","TopFreq1","TopFreq2","TopFreq3","TopFreq4","TopFreq5"]
     # New columns
     # MFCC feature columns (13 columns)
-    mfcc_columns = [f"MFCC{i+1}" for i in range(13)]
     # Combine all columns
-    all_columns = base_columns  + mfcc_columns
+    all_columns = base_columns  
     rows = [all_columns]
 
     for p in files:
@@ -113,7 +112,8 @@ def predict_files(input_dir: Path, base: Path):
         
         # Get MFCC features (all 13 coefficients)
         mfcc_features = [f"{feat:.2f}" for feat in feat[:13]]  # Take first 13 MFCC coefficients
-
+        if label == "environment":
+            db = db -5
         # Original row data
         base_row = [
             p.name,
