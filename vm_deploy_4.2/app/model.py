@@ -54,7 +54,7 @@ def batch_predict(
     wav_dir: Path, log_path: Path, ocsvm, log_reg, components: List[str],
     sample_rate: int, n_mfcc: int, tester_name: str, ts_array: List[str],
     db_normal_max: float, db_anomaly_min: float, ocsvm_threshold: float,
-    calib_offset: float,
+    calib_offset: float,method:str,ref_rms:float,
     scaler=None  # optional
 ):
 
@@ -106,7 +106,7 @@ def batch_predict(
     dbs = []
     freqs_all = []
     for i in valid_idx:
-        dbs.append(compute_db(sigs[i],method='ln' ,calib_offset=-30,clamp_min=0))
+        dbs.append(compute_db(sigs[i],method=method ,calib_offset=calib_offset,ref_rms=ref_rms))
         freqs_all.append(compute_top_frequencies(sigs[i], sample_rate))
 
     # --- เลือกเฉพาะแถวที่ "ต้องรัน" OCSVM ---

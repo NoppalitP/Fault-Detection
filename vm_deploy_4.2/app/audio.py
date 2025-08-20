@@ -45,9 +45,9 @@ def compute_db(
     sig: np.ndarray,
     calib_offset: float = 0.0,
     *,
-    method: str = "ln",           # "ref" หรือ "ln"
+    method: str = "ref",           # "ref" หรือ "ln"
     gain_factor: float = 3.0,      # ตรงกับ GAIN_FACTOR ในตัวอย่าง C++
-    ref_rms: float = 1000.0,       # ตรงกับ REF ในตัวอย่าง C++
+    ref_rms: float = 20e-6,       # ตรงกับ REF ในตัวอย่าง C++
     subtract_dc: bool = True,
     clamp_min: float  = 0.0, # เลือก clamp ขั้นต่ำ (เช่น 0 dB)
 ) -> float:
@@ -58,22 +58,29 @@ def compute_db(
     จากนั้นบวก calib_offset และแปลงเชิงเส้นเป็นค่าที่รายงาน; สุดท้าย clamp ขั้นต่ำหากกำหนด
     """
     sig_ravel = np.ravel(sig)
-    rms_counts = _rms_counts(sig_ravel, gain_factor=gain_factor, subtract_dc=subtract_dc)
+    
 
     if method == "ref":
-        db = 20.0 * np.log10(rms_counts / float(ref_rms)) +116
+        # === Calibration scale factor ===
+        scale = 1.002374467 / 0.33347884  # ค่านี้มาจากการวัด tone ที่รู้ SPL
+        rms = float(signal_rms(sig_ravel, subtract_dc=subtract_dc))
+        scale = float(scale)
+        rms_pa = max(rms * scale, 1e-12)
+        ref_rms = float(ref_rms)
+        db = 20.0 * np.log10(rms_pa / ref_rms) -5
     elif method == "ln":
+        rms_counts = _rms_counts(sig_ravel, gain_factor=gain_factor, subtract_dc=subtract_dc)
         db = calcDecibell(rms_counts)
+        db += calib_offset
+    # แปลงเชิงเส้นเป็นค่าที่รายงาน
+        db = float(1.177 * db - 38.506)
     else:
         raise ValueError("method ต้องเป็น 'ref' หรือ 'ln'")
 
     # คาลิเบรตภาคสนามด้วยออฟเซ็ต
-    db += calib_offset
-    # แปลงเชิงเส้นเป็นค่าที่รายงาน
-    db_spl = float(1.177 * db - 38.506)
     # Clamp ขั้นต่ำถ้าต้องการ (กับค่าหลังแปลง)
-    if clamp_min is not None:
-        db = max(db, float(clamp_min))
+    # if clamp_min is not None:
+    #     db = max(db, float(clamp_min))
     return db
 
 

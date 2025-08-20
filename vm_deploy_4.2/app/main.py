@@ -41,6 +41,7 @@ def main():
     tester    = cfg['testers']['name']
     comps     = cfg['components']
     n_mfcc    = cfg['mfcc']['n_mfcc']
+    ref_rms = cfg['db']['ref_rms']
 
     ui_cfg = cfg.get('ui', {})
     spinner_enabled = bool(ui_cfg.get('spinner_enabled', True))
@@ -121,7 +122,10 @@ def main():
                         wav_dir, curr_log, ocsvm, log_reg, comps,
                         sr, n_mfcc, tester, ts_arr[-batch_sz:],
                         cfg['db']['normal_max'], cfg['db']['anomaly_min'],
-                        cfg['ocsvm']['threshold'], cfg['db']['calib_offset'],
+                        cfg['ocsvm']['threshold'], 
+                        calib_offset=cfg['db']['calib_offset'],
+                        method=cfg['db']['method'],
+                        ref_rms = ref_rms,
                         scaler=scaler
                     )  # ส่งเฉพาะ timestamp 30 ตัวล่าสุด
                     batch_file_counter = 0  # รีเซ็ตตัวนับ batch

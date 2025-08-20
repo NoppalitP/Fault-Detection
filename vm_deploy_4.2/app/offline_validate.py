@@ -50,7 +50,7 @@ def predict_files(input_dir: Path, base: Path):
     db_anomaly_min = cfg['db']['anomaly_min']
     ocsvm_threshold = cfg['ocsvm']['threshold']
     calib_offset = cfg['db']['calib_offset']
-
+    method = cfg['db']['method']
     files = sorted([p for p in Path(input_dir).glob("*.wav")])
     # Original columns (removed OCSVMScore since it's the same as status_proba)
     base_columns = ["File","Timestamp","Component","Component_proba","Status","Status_proba","dB","TopFreq1","TopFreq2","TopFreq3","TopFreq4","TopFreq5"]
@@ -88,7 +88,7 @@ def predict_files(input_dir: Path, base: Path):
             prob = float('nan')
 
         # db and frequencies
-        db = compute_db(y, method='ln', calib_offset=0)
+        db = compute_db(y, method=method, calib_offset=calib_offset)
         freqs = compute_top_frequencies(y, sr)
 
         # gating with ocsvm

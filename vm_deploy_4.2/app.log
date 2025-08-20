@@ -3635,3 +3635,894 @@
 2025-08-13 15:19:39 INFO: window_000.wav: environment prob=0.69 Normal dB=61.77 prob_ocsvm=-0.92
 2025-08-13 15:19:39 INFO: window_001.wav: gripper prob=0.97 Normal dB=65.05 prob_ocsvm=-0.92
 2025-08-13 15:19:39 INFO: Serial closed
+2025-08-19 16:06:48 INFO: Starting monitoring
+2025-08-19 16:06:48 INFO: Serial=COM5 @ 500000 | SR=22050 | Window=44100 Step=22050 | Batch=1 | MFCC=13
+2025-08-19 16:06:48 INFO: Serial port opened successfully on attempt 1
+2025-08-19 16:06:51 INFO: Saving wave file 1 / 1
+2025-08-19 16:06:51 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_160651.csv
+2025-08-19 16:06:51 INFO: Serial closed
+2025-08-19 16:07:25 INFO: Starting monitoring
+2025-08-19 16:07:25 INFO: Serial=COM5 @ 500000 | SR=22050 | Window=44100 Step=22050 | Batch=1 | MFCC=13
+2025-08-19 16:07:25 INFO: Serial port opened successfully on attempt 1
+2025-08-19 16:07:28 INFO: Saving wave file 1 / 1
+2025-08-19 16:07:28 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_160728.csv
+2025-08-19 16:07:28 INFO: Serial closed
+2025-08-19 16:09:10 INFO: Starting monitoring
+2025-08-19 16:09:10 INFO: Serial=COM5 @ 500000 | SR=22050 | Window=44100 Step=22050 | Batch=1 | MFCC=13
+2025-08-19 16:09:10 INFO: Serial port opened successfully on attempt 1
+2025-08-19 16:09:13 INFO: Saving wave file 1 / 1
+2025-08-19 16:09:13 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_160913.csv
+2025-08-19 16:09:13 INFO: Serial closed
+2025-08-19 16:10:24 INFO: Starting monitoring
+2025-08-19 16:10:24 INFO: Serial=COM5 @ 500000 | SR=22050 | Window=44100 Step=22050 | Batch=1 | MFCC=13
+2025-08-19 16:10:24 INFO: Serial port opened successfully on attempt 1
+2025-08-19 16:10:27 INFO: Saving wave file 1 / 1
+2025-08-19 16:10:27 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161027.csv
+2025-08-19 16:10:27 INFO: Serial closed
+2025-08-19 16:12:09 INFO: Starting monitoring
+2025-08-19 16:12:09 INFO: Serial=COM5 @ 500000 | SR=22050 | Window=44100 Step=22050 | Batch=1 | MFCC=13
+2025-08-19 16:12:09 INFO: Serial port opened successfully on attempt 1
+2025-08-19 16:12:12 INFO: Saving wave file 1 / 1
+2025-08-19 16:12:12 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161212.csv
+2025-08-19 16:12:12 INFO: Serial closed
+2025-08-19 16:13:10 INFO: Starting monitoring
+2025-08-19 16:13:10 INFO: Serial=COM5 @ 500000 | SR=22050 | Window=44100 Step=22050 | Batch=1 | MFCC=13
+2025-08-19 16:13:10 INFO: Serial port opened successfully on attempt 1
+2025-08-19 16:13:13 INFO: Saving wave file 1 / 1
+2025-08-19 16:13:13 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161313.csv
+2025-08-19 16:13:13 INFO: window_000.wav: environment prob=0.95 Normal dB=80.52 prob_ocsvm=-0.92
+2025-08-19 16:13:13 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161313.csv
+2025-08-19 16:13:14 INFO: Saving wave file 1 / 1
+2025-08-19 16:13:14 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161314.csv
+2025-08-19 16:13:14 INFO: window_000.wav: environment prob=0.95 Normal dB=76.75 prob_ocsvm=-0.92
+2025-08-19 16:13:14 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161314.csv
+2025-08-19 16:13:15 INFO: Saving wave file 1 / 1
+2025-08-19 16:13:15 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161315.csv
+2025-08-19 16:13:15 INFO: window_000.wav: environment prob=0.99 Normal dB=79.19 prob_ocsvm=-0.92
+2025-08-19 16:13:15 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161315.csv
+2025-08-19 16:13:16 INFO: Saving wave file 1 / 1
+2025-08-19 16:13:16 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161316.csv
+2025-08-19 16:13:16 INFO: window_000.wav: environment prob=0.99 Normal dB=81.62 prob_ocsvm=-0.92
+2025-08-19 16:13:17 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161316.csv
+2025-08-19 16:13:17 INFO: Saving wave file 1 / 1
+2025-08-19 16:13:17 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161317.csv
+2025-08-19 16:13:18 INFO: window_000.wav: environment prob=1.00 Normal dB=81.38 prob_ocsvm=-0.92
+2025-08-19 16:13:18 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161317.csv
+2025-08-19 16:13:19 INFO: Saving wave file 1 / 1
+2025-08-19 16:13:19 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161319.csv
+2025-08-19 16:13:19 INFO: window_000.wav: environment prob=1.00 Normal dB=80.03 prob_ocsvm=-0.92
+2025-08-19 16:13:19 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161319.csv
+2025-08-19 16:13:20 INFO: Saving wave file 1 / 1
+2025-08-19 16:13:20 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161320.csv
+2025-08-19 16:13:20 INFO: window_000.wav: environment prob=1.00 Normal dB=82.29 prob_ocsvm=-0.92
+2025-08-19 16:13:20 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161320.csv
+2025-08-19 16:13:21 INFO: Saving wave file 1 / 1
+2025-08-19 16:13:21 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161321.csv
+2025-08-19 16:13:21 INFO: window_000.wav: environment prob=1.00 Normal dB=82.16 prob_ocsvm=-0.92
+2025-08-19 16:13:21 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161321.csv
+2025-08-19 16:13:22 INFO: Saving wave file 1 / 1
+2025-08-19 16:13:22 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161322.csv
+2025-08-19 16:13:22 INFO: window_000.wav: environment prob=1.00 Normal dB=78.41 prob_ocsvm=-0.92
+2025-08-19 16:13:22 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161322.csv
+2025-08-19 16:13:23 INFO: Saving wave file 1 / 1
+2025-08-19 16:13:23 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161323.csv
+2025-08-19 16:13:23 INFO: window_000.wav: environment prob=1.00 Normal dB=79.84 prob_ocsvm=-0.92
+2025-08-19 16:13:24 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161323.csv
+2025-08-19 16:13:24 INFO: Saving wave file 1 / 1
+2025-08-19 16:13:24 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161324.csv
+2025-08-19 16:13:25 INFO: window_000.wav: environment prob=1.00 Normal dB=79.80 prob_ocsvm=-0.92
+2025-08-19 16:13:25 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161324.csv
+2025-08-19 16:13:26 INFO: Saving wave file 1 / 1
+2025-08-19 16:13:26 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161326.csv
+2025-08-19 16:13:26 INFO: window_000.wav: environment prob=1.00 Normal dB=70.50 prob_ocsvm=-0.92
+2025-08-19 16:13:26 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161326.csv
+2025-08-19 16:13:27 INFO: Saving wave file 1 / 1
+2025-08-19 16:13:27 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161327.csv
+2025-08-19 16:13:27 INFO: window_000.wav: environment prob=1.00 Normal dB=70.56 prob_ocsvm=-0.92
+2025-08-19 16:13:27 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161327.csv
+2025-08-19 16:13:28 INFO: Saving wave file 1 / 1
+2025-08-19 16:13:28 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161328.csv
+2025-08-19 16:13:28 INFO: window_000.wav: environment prob=0.96 Normal dB=70.28 prob_ocsvm=-0.92
+2025-08-19 16:13:28 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161328.csv
+2025-08-19 16:13:29 INFO: Saving wave file 1 / 1
+2025-08-19 16:13:29 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161329.csv
+2025-08-19 16:13:29 INFO: window_000.wav: environment prob=0.98 Normal dB=70.65 prob_ocsvm=-0.92
+2025-08-19 16:13:29 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161329.csv
+2025-08-19 16:13:30 INFO: Saving wave file 1 / 1
+2025-08-19 16:13:30 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161330.csv
+2025-08-19 16:13:30 INFO: window_000.wav: environment prob=1.00 Normal dB=76.94 prob_ocsvm=-0.92
+2025-08-19 16:13:31 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161330.csv
+2025-08-19 16:13:32 INFO: Saving wave file 1 / 1
+2025-08-19 16:13:32 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161332.csv
+2025-08-19 16:13:32 INFO: window_000.wav: environment prob=0.99 Normal dB=76.89 prob_ocsvm=-0.92
+2025-08-19 16:13:32 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161332.csv
+2025-08-19 16:13:33 INFO: Saving wave file 1 / 1
+2025-08-19 16:13:33 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161333.csv
+2025-08-19 16:13:33 INFO: window_000.wav: environment prob=0.99 Normal dB=76.72 prob_ocsvm=-0.92
+2025-08-19 16:13:33 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161333.csv
+2025-08-19 16:13:34 INFO: Saving wave file 1 / 1
+2025-08-19 16:13:34 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161334.csv
+2025-08-19 16:13:34 INFO: window_000.wav: environment prob=1.00 Normal dB=79.32 prob_ocsvm=-0.92
+2025-08-19 16:13:34 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161334.csv
+2025-08-19 16:13:35 INFO: Saving wave file 1 / 1
+2025-08-19 16:13:35 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161335.csv
+2025-08-19 16:13:35 INFO: window_000.wav: environment prob=1.00 Normal dB=78.73 prob_ocsvm=-0.92
+2025-08-19 16:13:35 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161335.csv
+2025-08-19 16:13:36 INFO: Saving wave file 1 / 1
+2025-08-19 16:13:36 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161336.csv
+2025-08-19 16:13:36 INFO: window_000.wav: environment prob=1.00 Normal dB=77.89 prob_ocsvm=-0.92
+2025-08-19 16:13:36 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161336.csv
+2025-08-19 16:13:37 INFO: Saving wave file 1 / 1
+2025-08-19 16:13:37 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161337.csv
+2025-08-19 16:13:38 INFO: window_000.wav: environment prob=1.00 Normal dB=75.52 prob_ocsvm=-0.92
+2025-08-19 16:13:38 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161337.csv
+2025-08-19 16:13:39 INFO: Saving wave file 1 / 1
+2025-08-19 16:13:39 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161339.csv
+2025-08-19 16:13:39 INFO: window_000.wav: environment prob=1.00 Normal dB=78.57 prob_ocsvm=-0.92
+2025-08-19 16:13:39 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161339.csv
+2025-08-19 16:13:40 INFO: Saving wave file 1 / 1
+2025-08-19 16:13:40 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161340.csv
+2025-08-19 16:13:40 INFO: window_000.wav: environment prob=1.00 Normal dB=81.70 prob_ocsvm=-0.92
+2025-08-19 16:13:40 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161340.csv
+2025-08-19 16:13:41 INFO: Saving wave file 1 / 1
+2025-08-19 16:13:41 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161341.csv
+2025-08-19 16:13:41 INFO: window_000.wav: environment prob=1.00 Normal dB=80.18 prob_ocsvm=-0.92
+2025-08-19 16:13:41 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161341.csv
+2025-08-19 16:13:42 INFO: Shutting down
+2025-08-19 16:13:42 INFO: Serial closed
+2025-08-19 16:14:14 INFO: Starting monitoring
+2025-08-19 16:14:14 INFO: Serial=COM5 @ 500000 | SR=22050 | Window=44100 Step=22050 | Batch=1 | MFCC=13
+2025-08-19 16:14:14 INFO: Serial port opened successfully on attempt 1
+2025-08-19 16:14:16 INFO: Saving wave file 1 / 1
+2025-08-19 16:14:16 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161416.csv
+2025-08-19 16:14:16 INFO: window_000.wav: environment prob=1.00 Normal dB=73.12 prob_ocsvm=-0.92
+2025-08-19 16:14:16 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161416.csv
+2025-08-19 16:14:17 INFO: Saving wave file 1 / 1
+2025-08-19 16:14:17 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161417.csv
+2025-08-19 16:14:17 INFO: window_000.wav: environment prob=1.00 Normal dB=78.57 prob_ocsvm=-0.92
+2025-08-19 16:14:18 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161417.csv
+2025-08-19 16:14:18 INFO: Saving wave file 1 / 1
+2025-08-19 16:14:19 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161419.csv
+2025-08-19 16:14:19 INFO: window_000.wav: environment prob=1.00 Normal dB=78.49 prob_ocsvm=-0.92
+2025-08-19 16:14:19 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161419.csv
+2025-08-19 16:14:20 INFO: Saving wave file 1 / 1
+2025-08-19 16:14:20 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161420.csv
+2025-08-19 16:14:20 INFO: window_000.wav: environment prob=1.00 Normal dB=75.11 prob_ocsvm=-0.92
+2025-08-19 16:14:20 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161420.csv
+2025-08-19 16:14:21 INFO: Saving wave file 1 / 1
+2025-08-19 16:14:21 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161421.csv
+2025-08-19 16:14:21 INFO: window_000.wav: environment prob=1.00 Normal dB=79.93 prob_ocsvm=-0.92
+2025-08-19 16:14:21 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161421.csv
+2025-08-19 16:14:22 INFO: Saving wave file 1 / 1
+2025-08-19 16:14:22 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161422.csv
+2025-08-19 16:14:22 INFO: window_000.wav: environment prob=0.98 Normal dB=78.57 prob_ocsvm=-0.92
+2025-08-19 16:14:22 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161422.csv
+2025-08-19 16:14:23 INFO: Saving wave file 1 / 1
+2025-08-19 16:14:23 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161423.csv
+2025-08-19 16:14:23 INFO: window_000.wav: environment prob=1.00 Normal dB=67.72 prob_ocsvm=-0.92
+2025-08-19 16:14:23 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161423.csv
+2025-08-19 16:14:24 INFO: Saving wave file 1 / 1
+2025-08-19 16:14:24 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161424.csv
+2025-08-19 16:14:24 INFO: window_000.wav: environment prob=1.00 Normal dB=67.39 prob_ocsvm=-0.92
+2025-08-19 16:14:24 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161424.csv
+2025-08-19 16:14:25 INFO: Saving wave file 1 / 1
+2025-08-19 16:14:25 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161425.csv
+2025-08-19 16:14:25 INFO: window_000.wav: environment prob=1.00 Normal dB=67.47 prob_ocsvm=-0.92
+2025-08-19 16:14:25 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161425.csv
+2025-08-19 16:14:26 INFO: Saving wave file 1 / 1
+2025-08-19 16:14:26 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161426.csv
+2025-08-19 16:14:27 INFO: window_000.wav: environment prob=1.00 Normal dB=67.66 prob_ocsvm=-0.92
+2025-08-19 16:14:27 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161426.csv
+2025-08-19 16:14:28 INFO: Saving wave file 1 / 1
+2025-08-19 16:14:28 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161428.csv
+2025-08-19 16:14:28 INFO: window_000.wav: environment prob=1.00 Normal dB=68.13 prob_ocsvm=-0.92
+2025-08-19 16:14:28 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161428.csv
+2025-08-19 16:14:29 INFO: Saving wave file 1 / 1
+2025-08-19 16:14:29 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161429.csv
+2025-08-19 16:14:29 INFO: window_000.wav: environment prob=1.00 Normal dB=78.60 prob_ocsvm=-0.92
+2025-08-19 16:14:29 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161429.csv
+2025-08-19 16:14:30 INFO: Saving wave file 1 / 1
+2025-08-19 16:14:30 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161430.csv
+2025-08-19 16:14:30 INFO: window_000.wav: environment prob=1.00 Normal dB=78.55 prob_ocsvm=-0.92
+2025-08-19 16:14:30 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161430.csv
+2025-08-19 16:14:31 INFO: Saving wave file 1 / 1
+2025-08-19 16:14:31 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161431.csv
+2025-08-19 16:14:31 INFO: window_000.wav: environment prob=1.00 Normal dB=75.41 prob_ocsvm=-0.92
+2025-08-19 16:14:31 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161431.csv
+2025-08-19 16:14:32 INFO: Saving wave file 1 / 1
+2025-08-19 16:14:32 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161432.csv
+2025-08-19 16:14:32 INFO: window_000.wav: environment prob=0.95 Normal dB=75.50 prob_ocsvm=-0.92
+2025-08-19 16:14:32 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161432.csv
+2025-08-19 16:14:33 INFO: Saving wave file 1 / 1
+2025-08-19 16:14:33 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161433.csv
+2025-08-19 16:14:33 INFO: window_000.wav: environment prob=1.00 Normal dB=68.03 prob_ocsvm=-0.92
+2025-08-19 16:14:33 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161433.csv
+2025-08-19 16:14:34 INFO: Saving wave file 1 / 1
+2025-08-19 16:14:34 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161434.csv
+2025-08-19 16:14:34 INFO: window_000.wav: environment prob=1.00 Normal dB=75.08 prob_ocsvm=-0.92
+2025-08-19 16:14:35 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161434.csv
+2025-08-19 16:14:36 INFO: Saving wave file 1 / 1
+2025-08-19 16:14:36 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161436.csv
+2025-08-19 16:14:36 INFO: window_000.wav: environment prob=0.98 Normal dB=75.02 prob_ocsvm=-0.92
+2025-08-19 16:14:36 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161436.csv
+2025-08-19 16:14:37 INFO: Saving wave file 1 / 1
+2025-08-19 16:14:37 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161437.csv
+2025-08-19 16:14:37 INFO: window_000.wav: environment prob=0.99 Normal dB=67.07 prob_ocsvm=-0.92
+2025-08-19 16:14:37 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161437.csv
+2025-08-19 16:14:38 INFO: Saving wave file 1 / 1
+2025-08-19 16:14:38 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161438.csv
+2025-08-19 16:14:38 INFO: window_000.wav: environment prob=0.98 Normal dB=75.78 prob_ocsvm=-0.92
+2025-08-19 16:14:38 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161438.csv
+2025-08-19 16:14:39 INFO: Saving wave file 1 / 1
+2025-08-19 16:14:39 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161439.csv
+2025-08-19 16:14:39 INFO: window_000.wav: environment prob=0.97 Normal dB=78.72 prob_ocsvm=-0.92
+2025-08-19 16:14:39 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161439.csv
+2025-08-19 16:14:40 INFO: Saving wave file 1 / 1
+2025-08-19 16:14:40 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161440.csv
+2025-08-19 16:14:40 INFO: window_000.wav: environment prob=1.00 Normal dB=76.29 prob_ocsvm=-0.92
+2025-08-19 16:14:40 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161440.csv
+2025-08-19 16:14:41 INFO: Saving wave file 1 / 1
+2025-08-19 16:14:41 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161441.csv
+2025-08-19 16:14:41 INFO: window_000.wav: environment prob=1.00 Normal dB=78.60 prob_ocsvm=-0.92
+2025-08-19 16:14:41 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161441.csv
+2025-08-19 16:14:42 INFO: Saving wave file 1 / 1
+2025-08-19 16:14:42 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161442.csv
+2025-08-19 16:14:43 INFO: window_000.wav: environment prob=1.00 Normal dB=81.52 prob_ocsvm=-0.92
+2025-08-19 16:14:43 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161442.csv
+2025-08-19 16:14:44 INFO: Saving wave file 1 / 1
+2025-08-19 16:14:44 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161444.csv
+2025-08-19 16:14:44 INFO: window_000.wav: environment prob=0.99 Normal dB=80.73 prob_ocsvm=-0.92
+2025-08-19 16:14:44 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161444.csv
+2025-08-19 16:14:45 INFO: Saving wave file 1 / 1
+2025-08-19 16:14:45 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161445.csv
+2025-08-19 16:14:45 INFO: window_000.wav: environment prob=0.98 Normal dB=76.87 prob_ocsvm=-0.92
+2025-08-19 16:14:45 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161445.csv
+2025-08-19 16:14:46 INFO: Saving wave file 1 / 1
+2025-08-19 16:14:46 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161446.csv
+2025-08-19 16:14:46 INFO: window_000.wav: environment prob=0.99 Normal dB=67.73 prob_ocsvm=-0.92
+2025-08-19 16:14:46 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161446.csv
+2025-08-19 16:14:47 INFO: Saving wave file 1 / 1
+2025-08-19 16:14:47 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161447.csv
+2025-08-19 16:14:47 INFO: window_000.wav: environment prob=0.99 Normal dB=77.79 prob_ocsvm=-0.92
+2025-08-19 16:14:47 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161447.csv
+2025-08-19 16:14:48 INFO: Saving wave file 1 / 1
+2025-08-19 16:14:48 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161448.csv
+2025-08-19 16:14:48 INFO: window_000.wav: environment prob=1.00 Normal dB=79.03 prob_ocsvm=-0.92
+2025-08-19 16:14:48 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161448.csv
+2025-08-19 16:14:49 INFO: Saving wave file 1 / 1
+2025-08-19 16:14:49 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161449.csv
+2025-08-19 16:14:50 INFO: window_000.wav: environment prob=1.00 Normal dB=74.14 prob_ocsvm=-0.92
+2025-08-19 16:14:50 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161449.csv
+2025-08-19 16:14:51 INFO: Saving wave file 1 / 1
+2025-08-19 16:14:51 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161451.csv
+2025-08-19 16:14:51 INFO: window_000.wav: environment prob=0.98 Normal dB=75.92 prob_ocsvm=-0.92
+2025-08-19 16:14:51 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161451.csv
+2025-08-19 16:14:52 INFO: Saving wave file 1 / 1
+2025-08-19 16:14:52 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161452.csv
+2025-08-19 16:14:52 INFO: window_000.wav: environment prob=0.96 Normal dB=75.85 prob_ocsvm=-0.92
+2025-08-19 16:14:52 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161452.csv
+2025-08-19 16:14:53 INFO: Saving wave file 1 / 1
+2025-08-19 16:14:53 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161453.csv
+2025-08-19 16:14:53 INFO: window_000.wav: environment prob=1.00 Normal dB=78.85 prob_ocsvm=-0.92
+2025-08-19 16:14:53 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161453.csv
+2025-08-19 16:14:54 INFO: Saving wave file 1 / 1
+2025-08-19 16:14:54 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161454.csv
+2025-08-19 16:14:54 INFO: window_000.wav: environment prob=1.00 Normal dB=78.86 prob_ocsvm=-0.92
+2025-08-19 16:14:54 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161454.csv
+2025-08-19 16:14:55 INFO: Shutting down
+2025-08-19 16:14:55 INFO: Serial closed
+2025-08-19 16:15:00 INFO: Starting monitoring
+2025-08-19 16:15:00 INFO: Serial=COM5 @ 500000 | SR=22050 | Window=44100 Step=22050 | Batch=10 | MFCC=13
+2025-08-19 16:15:00 INFO: Serial port opened successfully on attempt 1
+2025-08-19 16:15:02 INFO: Saving wave file 1 / 10
+2025-08-19 16:15:03 INFO: Saving wave file 2 / 10
+2025-08-19 16:15:04 INFO: Saving wave file 3 / 10
+2025-08-19 16:15:05 INFO: Saving wave file 4 / 10
+2025-08-19 16:15:06 INFO: Saving wave file 5 / 10
+2025-08-19 16:15:07 INFO: Saving wave file 6 / 10
+2025-08-19 16:15:08 INFO: Saving wave file 7 / 10
+2025-08-19 16:15:09 INFO: Saving wave file 8 / 10
+2025-08-19 16:15:10 INFO: Saving wave file 9 / 10
+2025-08-19 16:15:12 INFO: Saving wave file 10 / 10
+2025-08-19 16:15:12 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161512.csv
+2025-08-19 16:15:12 INFO: window_000.wav: environment prob=0.99 Normal dB=78.30 prob_ocsvm=-0.92
+2025-08-19 16:15:12 INFO: window_001.wav: environment prob=1.00 Normal dB=77.66 prob_ocsvm=-0.92
+2025-08-19 16:15:12 INFO: window_002.wav: environment prob=0.98 Normal dB=77.64 prob_ocsvm=-0.92
+2025-08-19 16:15:12 INFO: window_003.wav: environment prob=1.00 Normal dB=67.68 prob_ocsvm=-0.92
+2025-08-19 16:15:12 INFO: window_004.wav: environment prob=1.00 Normal dB=67.44 prob_ocsvm=-0.92
+2025-08-19 16:15:12 INFO: window_005.wav: environment prob=1.00 Normal dB=67.26 prob_ocsvm=-0.92
+2025-08-19 16:15:12 INFO: window_006.wav: environment prob=0.98 Normal dB=67.23 prob_ocsvm=-0.92
+2025-08-19 16:15:12 INFO: window_007.wav: environment prob=1.00 Normal dB=67.37 prob_ocsvm=-0.92
+2025-08-19 16:15:12 INFO: window_008.wav: environment prob=1.00 Normal dB=67.75 prob_ocsvm=-0.92
+2025-08-19 16:15:12 INFO: window_009.wav: environment prob=1.00 Normal dB=67.99 prob_ocsvm=-0.92
+2025-08-19 16:15:12 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161512.csv
+2025-08-19 16:15:13 INFO: Saving wave file 1 / 10
+2025-08-19 16:15:14 INFO: Saving wave file 2 / 10
+2025-08-19 16:15:15 INFO: Saving wave file 3 / 10
+2025-08-19 16:15:16 INFO: Saving wave file 4 / 10
+2025-08-19 16:15:17 INFO: Saving wave file 5 / 10
+2025-08-19 16:15:18 INFO: Saving wave file 6 / 10
+2025-08-19 16:15:19 INFO: Saving wave file 7 / 10
+2025-08-19 16:15:20 INFO: Saving wave file 8 / 10
+2025-08-19 16:15:21 INFO: Saving wave file 9 / 10
+2025-08-19 16:15:22 INFO: Saving wave file 10 / 10
+2025-08-19 16:15:22 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161522.csv
+2025-08-19 16:15:23 INFO: window_000.wav: environment prob=1.00 Normal dB=67.81 prob_ocsvm=-0.92
+2025-08-19 16:15:23 INFO: window_001.wav: environment prob=1.00 Normal dB=67.53 prob_ocsvm=-0.92
+2025-08-19 16:15:23 INFO: window_002.wav: environment prob=0.99 Normal dB=67.49 prob_ocsvm=-0.92
+2025-08-19 16:15:23 INFO: window_003.wav: environment prob=1.00 Normal dB=67.64 prob_ocsvm=-0.92
+2025-08-19 16:15:23 INFO: window_004.wav: environment prob=1.00 Normal dB=67.85 prob_ocsvm=-0.92
+2025-08-19 16:15:23 INFO: window_005.wav: environment prob=1.00 Normal dB=67.99 prob_ocsvm=-0.92
+2025-08-19 16:15:23 INFO: window_006.wav: environment prob=1.00 Normal dB=67.87 prob_ocsvm=-0.92
+2025-08-19 16:15:23 INFO: window_007.wav: environment prob=1.00 Normal dB=68.25 prob_ocsvm=-0.92
+2025-08-19 16:15:23 INFO: window_008.wav: environment prob=1.00 Normal dB=68.52 prob_ocsvm=-0.92
+2025-08-19 16:15:23 INFO: window_009.wav: environment prob=1.00 Normal dB=68.18 prob_ocsvm=-0.92
+2025-08-19 16:15:23 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161522.csv
+2025-08-19 16:15:24 INFO: Saving wave file 1 / 10
+2025-08-19 16:15:25 INFO: Saving wave file 2 / 10
+2025-08-19 16:15:26 INFO: Saving wave file 3 / 10
+2025-08-19 16:15:27 INFO: Saving wave file 4 / 10
+2025-08-19 16:15:28 INFO: Saving wave file 5 / 10
+2025-08-19 16:15:29 INFO: Saving wave file 6 / 10
+2025-08-19 16:15:30 INFO: Saving wave file 7 / 10
+2025-08-19 16:15:31 INFO: Saving wave file 8 / 10
+2025-08-19 16:15:32 INFO: Saving wave file 9 / 10
+2025-08-19 16:15:33 INFO: Saving wave file 10 / 10
+2025-08-19 16:15:33 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161533.csv
+2025-08-19 16:15:34 INFO: window_000.wav: environment prob=1.00 Normal dB=77.65 prob_ocsvm=-0.92
+2025-08-19 16:15:34 INFO: window_001.wav: gripper prob=0.99 Normal dB=82.04 prob_ocsvm=-0.92
+2025-08-19 16:15:34 INFO: window_002.wav: gripper prob=1.00 Normal dB=82.82 prob_ocsvm=-0.92
+2025-08-19 16:15:34 INFO: window_003.wav: gripper prob=1.00 Normal dB=80.17 prob_ocsvm=-0.92
+2025-08-19 16:15:34 INFO: window_004.wav: environment prob=0.87 Normal dB=74.28 prob_ocsvm=-0.92
+2025-08-19 16:15:34 INFO: window_005.wav: environment prob=1.00 Normal dB=68.70 prob_ocsvm=-0.92
+2025-08-19 16:15:34 INFO: window_006.wav: environment prob=1.00 Normal dB=68.45 prob_ocsvm=-0.92
+2025-08-19 16:15:34 INFO: window_007.wav: environment prob=1.00 Normal dB=67.69 prob_ocsvm=-0.92
+2025-08-19 16:15:34 INFO: window_008.wav: environment prob=1.00 Normal dB=67.26 prob_ocsvm=-0.92
+2025-08-19 16:15:34 INFO: window_009.wav: environment prob=1.00 Normal dB=75.07 prob_ocsvm=-0.92
+2025-08-19 16:15:34 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161533.csv
+2025-08-19 16:15:35 INFO: Saving wave file 1 / 10
+2025-08-19 16:15:36 INFO: Saving wave file 2 / 10
+2025-08-19 16:15:37 INFO: Saving wave file 3 / 10
+2025-08-19 16:15:37 INFO: Shutting down
+2025-08-19 16:15:37 INFO: Processing remaining 3 files before shutdown
+2025-08-19 16:15:37 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161537.csv
+2025-08-19 16:18:05 INFO: Starting monitoring
+2025-08-19 16:18:05 INFO: Serial=COM5 @ 500000 | SR=22050 | Window=44100 Step=22050 | Batch=10 | MFCC=13
+2025-08-19 16:18:05 INFO: Serial port opened successfully on attempt 1
+2025-08-19 16:18:08 INFO: Saving wave file 1 / 10
+2025-08-19 16:18:09 INFO: Saving wave file 2 / 10
+2025-08-19 16:18:10 INFO: Saving wave file 3 / 10
+2025-08-19 16:18:11 INFO: Saving wave file 4 / 10
+2025-08-19 16:18:12 INFO: Saving wave file 5 / 10
+2025-08-19 16:18:13 INFO: Saving wave file 6 / 10
+2025-08-19 16:18:14 INFO: Saving wave file 7 / 10
+2025-08-19 16:18:15 INFO: Saving wave file 8 / 10
+2025-08-19 16:18:16 INFO: Saving wave file 9 / 10
+2025-08-19 16:18:17 INFO: Saving wave file 10 / 10
+2025-08-19 16:18:17 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161817.csv
+2025-08-19 16:18:18 INFO: window_000.wav: environment prob=1.00 Normal dB=79.84 prob_ocsvm=-0.92
+2025-08-19 16:18:18 INFO: window_001.wav: environment prob=1.00 Normal dB=67.25 prob_ocsvm=-0.92
+2025-08-19 16:18:18 INFO: window_002.wav: environment prob=1.00 Normal dB=67.38 prob_ocsvm=-0.92
+2025-08-19 16:18:18 INFO: window_003.wav: environment prob=1.00 Normal dB=67.46 prob_ocsvm=-0.92
+2025-08-19 16:18:18 INFO: window_004.wav: environment prob=1.00 Normal dB=67.91 prob_ocsvm=-0.92
+2025-08-19 16:18:18 INFO: window_005.wav: environment prob=1.00 Normal dB=67.90 prob_ocsvm=-0.92
+2025-08-19 16:18:18 INFO: window_006.wav: environment prob=1.00 Normal dB=67.42 prob_ocsvm=-0.92
+2025-08-19 16:18:18 INFO: window_007.wav: environment prob=1.00 Normal dB=66.99 prob_ocsvm=-0.92
+2025-08-19 16:18:18 INFO: window_008.wav: environment prob=1.00 Normal dB=66.87 prob_ocsvm=-0.92
+2025-08-19 16:18:18 INFO: window_009.wav: environment prob=1.00 Normal dB=67.23 prob_ocsvm=-0.92
+2025-08-19 16:18:18 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161817.csv
+2025-08-19 16:18:19 INFO: Saving wave file 1 / 10
+2025-08-19 16:18:20 INFO: Saving wave file 2 / 10
+2025-08-19 16:18:21 INFO: Saving wave file 3 / 10
+2025-08-19 16:18:22 INFO: Saving wave file 4 / 10
+2025-08-19 16:18:23 INFO: Saving wave file 5 / 10
+2025-08-19 16:18:24 INFO: Saving wave file 6 / 10
+2025-08-19 16:18:25 INFO: Saving wave file 7 / 10
+2025-08-19 16:18:26 INFO: Saving wave file 8 / 10
+2025-08-19 16:18:27 INFO: Saving wave file 9 / 10
+2025-08-19 16:18:28 INFO: Saving wave file 10 / 10
+2025-08-19 16:18:28 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161828.csv
+2025-08-19 16:18:29 INFO: window_000.wav: environment prob=1.00 Normal dB=75.86 prob_ocsvm=-0.92
+2025-08-19 16:18:29 INFO: window_001.wav: environment prob=1.00 Normal dB=75.89 prob_ocsvm=-0.92
+2025-08-19 16:18:29 INFO: window_002.wav: environment prob=1.00 Normal dB=67.70 prob_ocsvm=-0.92
+2025-08-19 16:18:29 INFO: window_003.wav: environment prob=1.00 Normal dB=67.44 prob_ocsvm=-0.92
+2025-08-19 16:18:29 INFO: window_004.wav: environment prob=0.67 Normal dB=67.13 prob_ocsvm=-0.92
+2025-08-19 16:18:29 INFO: window_005.wav: elevator prob=0.87 Normal dB=66.67 prob_ocsvm=-0.92
+2025-08-19 16:18:29 INFO: window_006.wav: elevator prob=0.90 Normal dB=66.21 prob_ocsvm=-0.92
+2025-08-19 16:18:29 INFO: window_007.wav: elevator prob=0.92 Normal dB=65.93 prob_ocsvm=-0.92
+2025-08-19 16:18:29 INFO: window_008.wav: elevator prob=0.98 Normal dB=65.93 prob_ocsvm=-0.92
+2025-08-19 16:18:29 INFO: window_009.wav: elevator prob=1.00 Normal dB=66.55 prob_ocsvm=-0.92
+2025-08-19 16:18:29 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161828.csv
+2025-08-19 16:18:30 INFO: Saving wave file 1 / 10
+2025-08-19 16:18:31 INFO: Saving wave file 2 / 10
+2025-08-19 16:18:32 INFO: Saving wave file 3 / 10
+2025-08-19 16:18:33 INFO: Saving wave file 4 / 10
+2025-08-19 16:18:34 INFO: Saving wave file 5 / 10
+2025-08-19 16:18:35 INFO: Saving wave file 6 / 10
+2025-08-19 16:18:36 INFO: Saving wave file 7 / 10
+2025-08-19 16:18:37 INFO: Saving wave file 8 / 10
+2025-08-19 16:18:38 INFO: Saving wave file 9 / 10
+2025-08-19 16:18:39 INFO: Saving wave file 10 / 10
+2025-08-19 16:18:39 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161839.csv
+2025-08-19 16:18:40 INFO: window_000.wav: elevator prob=1.00 Normal dB=73.69 prob_ocsvm=-0.92
+2025-08-19 16:18:40 INFO: window_001.wav: elevator prob=1.00 Normal dB=73.80 prob_ocsvm=-0.92
+2025-08-19 16:18:40 INFO: window_002.wav: elevator prob=0.95 Normal dB=66.88 prob_ocsvm=-0.92
+2025-08-19 16:18:40 INFO: window_003.wav: elevator prob=0.93 Normal dB=65.77 prob_ocsvm=-0.92
+2025-08-19 16:18:40 INFO: window_004.wav: elevator prob=0.97 Normal dB=65.78 prob_ocsvm=-0.92
+2025-08-19 16:18:40 INFO: window_005.wav: elevator prob=0.97 Normal dB=65.68 prob_ocsvm=-0.92
+2025-08-19 16:18:40 INFO: window_006.wav: elevator prob=0.94 Normal dB=65.99 prob_ocsvm=-0.92
+2025-08-19 16:18:40 INFO: window_007.wav: elevator prob=0.89 Normal dB=66.19 prob_ocsvm=-0.92
+2025-08-19 16:18:40 INFO: window_008.wav: elevator prob=0.97 Normal dB=66.04 prob_ocsvm=-0.92
+2025-08-19 16:18:40 INFO: window_009.wav: elevator prob=0.98 Normal dB=66.03 prob_ocsvm=-0.92
+2025-08-19 16:18:40 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161839.csv
+2025-08-19 16:18:41 INFO: Saving wave file 1 / 10
+2025-08-19 16:18:42 INFO: Saving wave file 2 / 10
+2025-08-19 16:18:43 INFO: Saving wave file 3 / 10
+2025-08-19 16:18:44 INFO: Saving wave file 4 / 10
+2025-08-19 16:18:45 INFO: Saving wave file 5 / 10
+2025-08-19 16:18:46 INFO: Saving wave file 6 / 10
+2025-08-19 16:18:47 INFO: Saving wave file 7 / 10
+2025-08-19 16:18:48 INFO: Saving wave file 8 / 10
+2025-08-19 16:18:49 INFO: Saving wave file 9 / 10
+2025-08-19 16:18:50 INFO: Saving wave file 10 / 10
+2025-08-19 16:18:50 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161850.csv
+2025-08-19 16:18:50 INFO: window_000.wav: elevator prob=1.00 Normal dB=74.52 prob_ocsvm=-0.92
+2025-08-19 16:18:50 INFO: window_001.wav: elevator prob=0.98 Normal dB=74.54 prob_ocsvm=-0.92
+2025-08-19 16:18:50 INFO: window_002.wav: elevator prob=0.92 Normal dB=66.51 prob_ocsvm=-0.92
+2025-08-19 16:18:50 INFO: window_003.wav: elevator prob=0.89 Normal dB=66.22 prob_ocsvm=-0.92
+2025-08-19 16:18:50 INFO: window_004.wav: elevator prob=0.72 Normal dB=65.67 prob_ocsvm=-0.92
+2025-08-19 16:18:50 INFO: window_005.wav: elevator prob=0.78 Normal dB=65.89 prob_ocsvm=-0.92
+2025-08-19 16:18:50 INFO: window_006.wav: elevator prob=0.98 Normal dB=66.17 prob_ocsvm=-0.92
+2025-08-19 16:18:50 INFO: window_007.wav: elevator prob=1.00 Normal dB=72.52 prob_ocsvm=-0.92
+2025-08-19 16:18:50 INFO: window_008.wav: elevator prob=1.00 Normal dB=72.97 prob_ocsvm=-0.92
+2025-08-19 16:18:50 INFO: window_009.wav: elevator prob=0.98 Normal dB=68.08 prob_ocsvm=-0.92
+2025-08-19 16:18:51 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161850.csv
+2025-08-19 16:18:52 INFO: Saving wave file 1 / 10
+2025-08-19 16:18:53 INFO: Saving wave file 2 / 10
+2025-08-19 16:18:54 INFO: Saving wave file 3 / 10
+2025-08-19 16:18:55 INFO: Saving wave file 4 / 10
+2025-08-19 16:18:56 INFO: Saving wave file 5 / 10
+2025-08-19 16:18:57 INFO: Saving wave file 6 / 10
+2025-08-19 16:18:58 INFO: Saving wave file 7 / 10
+2025-08-19 16:18:59 INFO: Saving wave file 8 / 10
+2025-08-19 16:19:00 INFO: Saving wave file 9 / 10
+2025-08-19 16:19:01 INFO: Saving wave file 10 / 10
+2025-08-19 16:19:01 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161901.csv
+2025-08-19 16:19:01 INFO: window_000.wav: elevator prob=0.99 Normal dB=66.69 prob_ocsvm=-0.92
+2025-08-19 16:19:01 INFO: window_001.wav: elevator prob=0.94 Normal dB=66.53 prob_ocsvm=-0.92
+2025-08-19 16:19:01 INFO: window_002.wav: elevator prob=0.79 Normal dB=66.28 prob_ocsvm=-0.92
+2025-08-19 16:19:01 INFO: window_003.wav: elevator prob=0.91 Normal dB=66.41 prob_ocsvm=-0.92
+2025-08-19 16:19:01 INFO: window_004.wav: elevator prob=0.85 Normal dB=66.76 prob_ocsvm=-0.92
+2025-08-19 16:19:01 INFO: window_005.wav: elevator prob=0.81 Normal dB=66.47 prob_ocsvm=-0.92
+2025-08-19 16:19:01 INFO: window_006.wav: elevator prob=0.98 Normal dB=66.75 prob_ocsvm=-0.92
+2025-08-19 16:19:01 INFO: window_007.wav: elevator prob=0.96 Normal dB=66.70 prob_ocsvm=-0.92
+2025-08-19 16:19:01 INFO: window_008.wav: elevator prob=0.87 Normal dB=66.11 prob_ocsvm=-0.92
+2025-08-19 16:19:01 INFO: window_009.wav: elevator prob=0.73 Normal dB=66.30 prob_ocsvm=-0.92
+2025-08-19 16:19:01 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161901.csv
+2025-08-19 16:19:02 INFO: Saving wave file 1 / 10
+2025-08-19 16:19:03 INFO: Saving wave file 2 / 10
+2025-08-19 16:19:04 INFO: Saving wave file 3 / 10
+2025-08-19 16:19:05 INFO: Saving wave file 4 / 10
+2025-08-19 16:19:06 INFO: Saving wave file 5 / 10
+2025-08-19 16:19:07 INFO: Saving wave file 6 / 10
+2025-08-19 16:19:08 INFO: Saving wave file 7 / 10
+2025-08-19 16:19:09 INFO: Saving wave file 8 / 10
+2025-08-19 16:19:10 INFO: Saving wave file 9 / 10
+2025-08-19 16:19:11 INFO: Saving wave file 10 / 10
+2025-08-19 16:19:11 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161911.csv
+2025-08-19 16:19:12 INFO: window_000.wav: elevator prob=0.96 Normal dB=75.04 prob_ocsvm=-0.92
+2025-08-19 16:19:12 INFO: window_001.wav: elevator prob=0.99 Normal dB=75.02 prob_ocsvm=-0.92
+2025-08-19 16:19:12 INFO: window_002.wav: elevator prob=0.91 Normal dB=66.42 prob_ocsvm=-0.92
+2025-08-19 16:19:12 INFO: window_003.wav: elevator prob=0.87 Normal dB=66.22 prob_ocsvm=-0.92
+2025-08-19 16:19:12 INFO: window_004.wav: elevator prob=0.79 Normal dB=65.69 prob_ocsvm=-0.92
+2025-08-19 16:19:12 INFO: window_005.wav: elevator prob=0.99 Normal dB=66.39 prob_ocsvm=-0.92
+2025-08-19 16:19:12 INFO: window_006.wav: elevator prob=0.56 Normal dB=66.65 prob_ocsvm=-0.92
+2025-08-19 16:19:12 INFO: window_007.wav: environment prob=0.38 Normal dB=66.29 prob_ocsvm=-0.92
+2025-08-19 16:19:12 INFO: window_008.wav: elevator prob=0.99 Normal dB=66.55 prob_ocsvm=-0.92
+2025-08-19 16:19:12 INFO: window_009.wav: elevator prob=0.99 Normal dB=66.90 prob_ocsvm=-0.92
+2025-08-19 16:19:12 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161911.csv
+2025-08-19 16:19:13 INFO: Saving wave file 1 / 10
+2025-08-19 16:19:14 INFO: Saving wave file 2 / 10
+2025-08-19 16:19:15 INFO: Saving wave file 3 / 10
+2025-08-19 16:19:16 INFO: Saving wave file 4 / 10
+2025-08-19 16:19:17 INFO: Saving wave file 5 / 10
+2025-08-19 16:19:18 INFO: Saving wave file 6 / 10
+2025-08-19 16:19:19 INFO: Saving wave file 7 / 10
+2025-08-19 16:19:20 INFO: Saving wave file 8 / 10
+2025-08-19 16:19:21 INFO: Saving wave file 9 / 10
+2025-08-19 16:19:22 INFO: Saving wave file 10 / 10
+2025-08-19 16:19:22 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161922.csv
+2025-08-19 16:19:23 INFO: window_000.wav: elevator prob=0.98 Normal dB=66.86 prob_ocsvm=-0.92
+2025-08-19 16:19:23 INFO: window_001.wav: elevator prob=0.95 Normal dB=66.24 prob_ocsvm=-0.92
+2025-08-19 16:19:23 INFO: window_002.wav: elevator prob=0.94 Normal dB=66.05 prob_ocsvm=-0.92
+2025-08-19 16:19:23 INFO: window_003.wav: elevator prob=0.98 Normal dB=66.19 prob_ocsvm=-0.92
+2025-08-19 16:19:23 INFO: window_004.wav: elevator prob=0.94 Normal dB=66.35 prob_ocsvm=-0.92
+2025-08-19 16:19:23 INFO: window_005.wav: elevator prob=0.86 Normal dB=66.54 prob_ocsvm=-0.92
+2025-08-19 16:19:23 INFO: window_006.wav: elevator prob=0.88 Normal dB=66.42 prob_ocsvm=-0.92
+2025-08-19 16:19:23 INFO: window_007.wav: elevator prob=0.82 Normal dB=66.57 prob_ocsvm=-0.92
+2025-08-19 16:19:23 INFO: window_008.wav: elevator prob=0.91 Normal dB=66.69 prob_ocsvm=-0.92
+2025-08-19 16:19:23 INFO: window_009.wav: elevator prob=0.80 Normal dB=66.65 prob_ocsvm=-0.92
+2025-08-19 16:19:23 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161922.csv
+2025-08-19 16:19:24 INFO: Saving wave file 1 / 10
+2025-08-19 16:19:25 INFO: Saving wave file 2 / 10
+2025-08-19 16:19:26 INFO: Saving wave file 3 / 10
+2025-08-19 16:19:27 INFO: Saving wave file 4 / 10
+2025-08-19 16:19:28 INFO: Saving wave file 5 / 10
+2025-08-19 16:19:29 INFO: Saving wave file 6 / 10
+2025-08-19 16:19:30 INFO: Saving wave file 7 / 10
+2025-08-19 16:19:31 INFO: Saving wave file 8 / 10
+2025-08-19 16:19:32 INFO: Saving wave file 9 / 10
+2025-08-19 16:19:33 INFO: Saving wave file 10 / 10
+2025-08-19 16:19:33 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161933.csv
+2025-08-19 16:19:34 INFO: window_000.wav: elevator prob=0.96 Normal dB=66.91 prob_ocsvm=-0.92
+2025-08-19 16:19:34 INFO: window_001.wav: elevator prob=0.99 Normal dB=66.71 prob_ocsvm=-0.92
+2025-08-19 16:19:34 INFO: window_002.wav: elevator prob=0.97 Normal dB=66.15 prob_ocsvm=-0.92
+2025-08-19 16:19:34 INFO: window_003.wav: elevator prob=0.96 Normal dB=66.07 prob_ocsvm=-0.92
+2025-08-19 16:19:34 INFO: window_004.wav: elevator prob=0.96 Normal dB=66.26 prob_ocsvm=-0.92
+2025-08-19 16:19:34 INFO: window_005.wav: elevator prob=0.98 Normal dB=66.45 prob_ocsvm=-0.92
+2025-08-19 16:19:34 INFO: window_006.wav: elevator prob=0.98 Normal dB=66.46 prob_ocsvm=-0.92
+2025-08-19 16:19:34 INFO: window_007.wav: elevator prob=0.90 Normal dB=66.11 prob_ocsvm=-0.92
+2025-08-19 16:19:34 INFO: window_008.wav: elevator prob=0.73 Normal dB=65.80 prob_ocsvm=-0.92
+2025-08-19 16:19:34 INFO: window_009.wav: elevator prob=0.98 Normal dB=66.39 prob_ocsvm=-0.92
+2025-08-19 16:19:34 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161933.csv
+2025-08-19 16:19:35 INFO: Saving wave file 1 / 10
+2025-08-19 16:19:36 INFO: Saving wave file 2 / 10
+2025-08-19 16:19:37 INFO: Saving wave file 3 / 10
+2025-08-19 16:19:38 INFO: Saving wave file 4 / 10
+2025-08-19 16:19:39 INFO: Saving wave file 5 / 10
+2025-08-19 16:19:40 INFO: Saving wave file 6 / 10
+2025-08-19 16:19:41 INFO: Saving wave file 7 / 10
+2025-08-19 16:19:42 INFO: Saving wave file 8 / 10
+2025-08-19 16:19:43 INFO: Saving wave file 9 / 10
+2025-08-19 16:19:44 INFO: Saving wave file 10 / 10
+2025-08-19 16:19:44 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161944.csv
+2025-08-19 16:19:45 INFO: window_000.wav: elevator prob=1.00 Normal dB=73.22 prob_ocsvm=-0.92
+2025-08-19 16:19:45 INFO: window_001.wav: elevator prob=1.00 Normal dB=73.25 prob_ocsvm=-0.92
+2025-08-19 16:19:45 INFO: window_002.wav: elevator prob=1.00 Normal dB=67.15 prob_ocsvm=-0.92
+2025-08-19 16:19:45 INFO: window_003.wav: elevator prob=0.98 Normal dB=66.89 prob_ocsvm=-0.92
+2025-08-19 16:19:45 INFO: window_004.wav: elevator prob=0.84 Normal dB=66.79 prob_ocsvm=-0.92
+2025-08-19 16:19:45 INFO: window_005.wav: elevator prob=0.90 Normal dB=66.88 prob_ocsvm=-0.92
+2025-08-19 16:19:45 INFO: window_006.wav: elevator prob=0.92 Normal dB=66.53 prob_ocsvm=-0.92
+2025-08-19 16:19:45 INFO: window_007.wav: elevator prob=0.79 Normal dB=66.07 prob_ocsvm=-0.92
+2025-08-19 16:19:45 INFO: window_008.wav: elevator prob=0.95 Normal dB=66.42 prob_ocsvm=-0.92
+2025-08-19 16:19:45 INFO: window_009.wav: elevator prob=0.98 Normal dB=66.74 prob_ocsvm=-0.92
+2025-08-19 16:19:45 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161944.csv
+2025-08-19 16:19:46 INFO: Saving wave file 1 / 10
+2025-08-19 16:19:47 INFO: Saving wave file 2 / 10
+2025-08-19 16:19:48 INFO: Saving wave file 3 / 10
+2025-08-19 16:19:49 INFO: Saving wave file 4 / 10
+2025-08-19 16:19:50 INFO: Saving wave file 5 / 10
+2025-08-19 16:19:51 INFO: Saving wave file 6 / 10
+2025-08-19 16:19:52 INFO: Saving wave file 7 / 10
+2025-08-19 16:19:53 INFO: Saving wave file 8 / 10
+2025-08-19 16:19:54 INFO: Saving wave file 9 / 10
+2025-08-19 16:19:55 INFO: Shutting down
+2025-08-19 16:19:55 INFO: Processing remaining 9 files before shutdown
+2025-08-19 16:19:55 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_161955.csv
+2025-08-19 16:20:02 INFO: Starting monitoring
+2025-08-19 16:20:02 INFO: Serial=COM5 @ 500000 | SR=22050 | Window=44100 Step=22050 | Batch=10 | MFCC=13
+2025-08-19 16:20:02 INFO: Serial port opened successfully on attempt 1
+2025-08-19 16:20:05 INFO: Saving wave file 1 / 10
+2025-08-19 16:20:06 INFO: Saving wave file 2 / 10
+2025-08-19 16:20:07 INFO: Saving wave file 3 / 10
+2025-08-19 16:20:08 INFO: Saving wave file 4 / 10
+2025-08-19 16:20:09 INFO: Saving wave file 5 / 10
+2025-08-19 16:20:10 INFO: Saving wave file 6 / 10
+2025-08-19 16:20:11 INFO: Saving wave file 7 / 10
+2025-08-19 16:20:12 INFO: Saving wave file 8 / 10
+2025-08-19 16:20:13 INFO: Saving wave file 9 / 10
+2025-08-19 16:20:14 INFO: Saving wave file 10 / 10
+2025-08-19 16:20:14 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_162014.csv
+2025-08-19 16:20:15 INFO: window_000.wav: elevator prob=0.99 Normal dB=67.81 prob_ocsvm=-0.92
+2025-08-19 16:20:15 INFO: window_001.wav: elevator prob=0.98 Normal dB=61.06 prob_ocsvm=-0.92
+2025-08-19 16:20:15 INFO: window_002.wav: elevator prob=0.96 Normal dB=61.07 prob_ocsvm=-0.92
+2025-08-19 16:20:15 INFO: window_003.wav: elevator prob=0.88 Normal dB=61.06 prob_ocsvm=-0.92
+2025-08-19 16:20:15 INFO: window_004.wav: elevator prob=0.99 Normal dB=61.80 prob_ocsvm=-0.92
+2025-08-19 16:20:15 INFO: window_005.wav: elevator prob=1.00 Normal dB=61.98 prob_ocsvm=-0.92
+2025-08-19 16:20:15 INFO: window_006.wav: elevator prob=0.92 Normal dB=61.50 prob_ocsvm=-0.92
+2025-08-19 16:20:15 INFO: window_007.wav: elevator prob=0.96 Normal dB=61.27 prob_ocsvm=-0.92
+2025-08-19 16:20:15 INFO: window_008.wav: elevator prob=0.90 Normal dB=61.28 prob_ocsvm=-0.92
+2025-08-19 16:20:15 INFO: window_009.wav: elevator prob=0.76 Normal dB=61.30 prob_ocsvm=-0.92
+2025-08-19 16:20:15 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_162014.csv
+2025-08-19 16:20:16 INFO: Saving wave file 1 / 10
+2025-08-19 16:20:17 INFO: Saving wave file 2 / 10
+2025-08-19 16:20:18 INFO: Saving wave file 3 / 10
+2025-08-19 16:20:19 INFO: Saving wave file 4 / 10
+2025-08-19 16:20:20 INFO: Saving wave file 5 / 10
+2025-08-19 16:20:21 INFO: Saving wave file 6 / 10
+2025-08-19 16:20:22 INFO: Saving wave file 7 / 10
+2025-08-19 16:20:23 INFO: Saving wave file 8 / 10
+2025-08-19 16:20:24 INFO: Saving wave file 9 / 10
+2025-08-19 16:20:25 INFO: Saving wave file 10 / 10
+2025-08-19 16:20:25 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_162025.csv
+2025-08-19 16:20:26 INFO: window_000.wav: elevator prob=0.91 Normal dB=70.65 prob_ocsvm=-0.92
+2025-08-19 16:20:26 INFO: window_001.wav: elevator prob=0.94 Normal dB=70.68 prob_ocsvm=-0.92
+2025-08-19 16:20:26 INFO: window_002.wav: elevator prob=0.89 Normal dB=61.44 prob_ocsvm=-0.92
+2025-08-19 16:20:26 INFO: window_003.wav: elevator prob=0.43 Normal dB=65.32 prob_ocsvm=-0.92
+2025-08-19 16:20:26 INFO: window_004.wav: environment prob=0.87 Normal dB=66.12 prob_ocsvm=-0.92
+2025-08-19 16:20:26 INFO: window_005.wav: environment prob=0.64 Normal dB=64.10 prob_ocsvm=-0.92
+2025-08-19 16:20:26 INFO: window_006.wav: elevator prob=0.51 Normal dB=63.96 prob_ocsvm=-0.92
+2025-08-19 16:20:26 INFO: window_007.wav: environment prob=0.49 Normal dB=64.54 prob_ocsvm=-0.92
+2025-08-19 16:20:26 INFO: window_008.wav: environment prob=0.48 Normal dB=63.84 prob_ocsvm=-0.92
+2025-08-19 16:20:26 INFO: window_009.wav: environment prob=0.60 Normal dB=62.96 prob_ocsvm=-0.92
+2025-08-19 16:20:26 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_162025.csv
+2025-08-19 16:20:27 INFO: Saving wave file 1 / 10
+2025-08-19 16:20:28 INFO: Saving wave file 2 / 10
+2025-08-19 16:20:29 INFO: Saving wave file 3 / 10
+2025-08-19 16:20:30 INFO: Saving wave file 4 / 10
+2025-08-19 16:20:31 INFO: Saving wave file 5 / 10
+2025-08-19 16:20:32 INFO: Saving wave file 6 / 10
+2025-08-19 16:20:33 INFO: Saving wave file 7 / 10
+2025-08-19 16:20:34 INFO: Saving wave file 8 / 10
+2025-08-19 16:20:35 INFO: Saving wave file 9 / 10
+2025-08-19 16:20:36 INFO: Saving wave file 10 / 10
+2025-08-19 16:20:36 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_162036.csv
+2025-08-19 16:20:36 INFO: window_000.wav: elevator prob=0.60 Normal dB=63.69 prob_ocsvm=-0.92
+2025-08-19 16:20:36 INFO: window_001.wav: elevator prob=0.94 Normal dB=62.45 prob_ocsvm=-0.92
+2025-08-19 16:20:36 INFO: window_002.wav: elevator prob=0.97 Normal dB=61.23 prob_ocsvm=-0.92
+2025-08-19 16:20:36 INFO: window_003.wav: elevator prob=0.91 Normal dB=60.92 prob_ocsvm=-0.92
+2025-08-19 16:20:36 INFO: window_004.wav: elevator prob=0.57 Normal dB=63.31 prob_ocsvm=-0.92
+2025-08-19 16:20:36 INFO: window_005.wav: mast prob=0.64 Normal dB=64.26 prob_ocsvm=-0.92
+2025-08-19 16:20:36 INFO: window_006.wav: elevator prob=0.95 Normal dB=62.97 prob_ocsvm=-0.92
+2025-08-19 16:20:36 INFO: window_007.wav: elevator prob=0.99 Normal dB=61.71 prob_ocsvm=-0.92
+2025-08-19 16:20:36 INFO: window_008.wav: elevator prob=0.96 Normal dB=61.64 prob_ocsvm=-0.92
+2025-08-19 16:20:36 INFO: window_009.wav: elevator prob=0.85 Normal dB=61.30 prob_ocsvm=-0.92
+2025-08-19 16:20:36 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_162036.csv
+2025-08-19 16:20:37 INFO: Saving wave file 1 / 10
+2025-08-19 16:20:39 INFO: Saving wave file 2 / 10
+2025-08-19 16:20:39 INFO: Saving wave file 3 / 10
+2025-08-19 16:20:41 INFO: Saving wave file 4 / 10
+2025-08-19 16:20:42 INFO: Saving wave file 5 / 10
+2025-08-19 16:20:43 INFO: Saving wave file 6 / 10
+2025-08-19 16:20:44 INFO: Saving wave file 7 / 10
+2025-08-19 16:20:45 INFO: Saving wave file 8 / 10
+2025-08-19 16:20:46 INFO: Saving wave file 9 / 10
+2025-08-19 16:20:47 INFO: Saving wave file 10 / 10
+2025-08-19 16:20:47 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_162047.csv
+2025-08-19 16:20:47 INFO: window_000.wav: elevator prob=0.94 Normal dB=71.51 prob_ocsvm=-0.92
+2025-08-19 16:20:47 INFO: window_001.wav: elevator prob=0.87 Normal dB=71.53 prob_ocsvm=-0.92
+2025-08-19 16:20:47 INFO: window_002.wav: mast prob=0.37 Normal dB=66.84 prob_ocsvm=-0.92
+2025-08-19 16:20:47 INFO: window_003.wav: environment prob=0.65 Normal dB=67.08 prob_ocsvm=-0.92
+2025-08-19 16:20:47 INFO: window_004.wav: elevator prob=0.61 Normal dB=62.14 prob_ocsvm=-0.92
+2025-08-19 16:20:47 INFO: window_005.wav: elevator prob=0.76 Normal dB=61.35 prob_ocsvm=-0.92
+2025-08-19 16:20:47 INFO: window_006.wav: elevator prob=0.84 Normal dB=61.38 prob_ocsvm=-0.92
+2025-08-19 16:20:47 INFO: window_007.wav: elevator prob=0.95 Normal dB=62.04 prob_ocsvm=-0.92
+2025-08-19 16:20:47 INFO: window_008.wav: environment prob=0.62 Normal dB=62.89 prob_ocsvm=-0.92
+2025-08-19 16:20:47 INFO: window_009.wav: environment prob=0.93 Normal dB=65.07 prob_ocsvm=-0.92
+2025-08-19 16:20:47 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_162047.csv
+2025-08-19 16:20:48 INFO: Saving wave file 1 / 10
+2025-08-19 16:20:49 INFO: Saving wave file 2 / 10
+2025-08-19 16:20:50 INFO: Saving wave file 3 / 10
+2025-08-19 16:20:51 INFO: Saving wave file 4 / 10
+2025-08-19 16:20:52 INFO: Saving wave file 5 / 10
+2025-08-19 16:20:53 INFO: Saving wave file 6 / 10
+2025-08-19 16:20:54 INFO: Saving wave file 7 / 10
+2025-08-19 16:20:55 INFO: Saving wave file 8 / 10
+2025-08-19 16:20:56 INFO: Saving wave file 9 / 10
+2025-08-19 16:20:57 INFO: Saving wave file 10 / 10
+2025-08-19 16:20:57 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_162057.csv
+2025-08-19 16:20:58 INFO: window_000.wav: environment prob=0.77 Normal dB=65.52 prob_ocsvm=-0.92
+2025-08-19 16:20:58 INFO: window_001.wav: elevator prob=0.87 Normal dB=62.96 prob_ocsvm=-0.92
+2025-08-19 16:20:58 INFO: window_002.wav: elevator prob=0.96 Normal dB=64.09 prob_ocsvm=-0.92
+2025-08-19 16:20:58 INFO: window_003.wav: elevator prob=0.55 Normal dB=65.31 prob_ocsvm=-0.92
+2025-08-19 16:20:58 INFO: window_004.wav: environment prob=0.49 Normal dB=62.96 prob_ocsvm=-0.92
+2025-08-19 16:20:58 INFO: window_005.wav: elevator prob=0.82 Normal dB=61.51 prob_ocsvm=-0.92
+2025-08-19 16:20:58 INFO: window_006.wav: elevator prob=0.78 Normal dB=62.25 prob_ocsvm=-0.92
+2025-08-19 16:20:58 INFO: window_007.wav: mast prob=0.59 Normal dB=66.82 prob_ocsvm=-0.92
+2025-08-19 16:20:58 INFO: window_008.wav: environment prob=0.42 Normal dB=66.81 prob_ocsvm=-0.92
+2025-08-19 16:20:58 INFO: window_009.wav: elevator prob=0.77 Normal dB=65.08 prob_ocsvm=-0.92
+2025-08-19 16:20:58 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_162057.csv
+2025-08-19 16:20:59 INFO: Saving wave file 1 / 10
+2025-08-19 16:21:00 INFO: Saving wave file 2 / 10
+2025-08-19 16:21:01 INFO: Saving wave file 3 / 10
+2025-08-19 16:21:02 INFO: Saving wave file 4 / 10
+2025-08-19 16:21:03 INFO: Saving wave file 5 / 10
+2025-08-19 16:21:04 INFO: Saving wave file 6 / 10
+2025-08-19 16:21:05 INFO: Saving wave file 7 / 10
+2025-08-19 16:21:06 INFO: Saving wave file 8 / 10
+2025-08-19 16:21:07 INFO: Saving wave file 9 / 10
+2025-08-19 16:21:08 INFO: Saving wave file 10 / 10
+2025-08-19 16:21:08 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_162108.csv
+2025-08-19 16:21:09 INFO: window_000.wav: elevator prob=0.99 Normal dB=73.04 prob_ocsvm=-0.92
+2025-08-19 16:21:09 INFO: window_001.wav: elevator prob=1.00 Normal dB=72.87 prob_ocsvm=-0.92
+2025-08-19 16:21:09 INFO: window_002.wav: elevator prob=1.00 Normal dB=63.49 prob_ocsvm=-0.92
+2025-08-19 16:21:09 INFO: window_003.wav: elevator prob=0.99 Normal dB=62.22 prob_ocsvm=-0.92
+2025-08-19 16:21:09 INFO: window_004.wav: elevator prob=0.95 Normal dB=61.77 prob_ocsvm=-0.92
+2025-08-19 16:21:09 INFO: window_005.wav: elevator prob=0.70 Normal dB=65.80 prob_ocsvm=-0.92
+2025-08-19 16:21:09 INFO: window_006.wav: elevator prob=0.66 Normal dB=65.60 prob_ocsvm=-0.92
+2025-08-19 16:21:09 INFO: window_007.wav: elevator prob=0.97 Normal dB=63.55 prob_ocsvm=-0.92
+2025-08-19 16:21:09 INFO: window_008.wav: elevator prob=0.58 Normal dB=64.65 prob_ocsvm=-0.92
+2025-08-19 16:21:09 INFO: window_009.wav: environment prob=0.61 Normal dB=64.59 prob_ocsvm=-0.92
+2025-08-19 16:21:09 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_162108.csv
+2025-08-19 16:21:10 INFO: Saving wave file 1 / 10
+2025-08-19 16:21:11 INFO: Saving wave file 2 / 10
+2025-08-19 16:21:12 INFO: Saving wave file 3 / 10
+2025-08-19 16:21:13 INFO: Saving wave file 4 / 10
+2025-08-19 16:21:14 INFO: Saving wave file 5 / 10
+2025-08-19 16:21:15 INFO: Saving wave file 6 / 10
+2025-08-19 16:21:16 INFO: Saving wave file 7 / 10
+2025-08-19 16:21:17 INFO: Saving wave file 8 / 10
+2025-08-19 16:21:18 INFO: Saving wave file 9 / 10
+2025-08-19 16:21:19 INFO: Saving wave file 10 / 10
+2025-08-19 16:21:19 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_162119.csv
+2025-08-19 16:21:20 INFO: window_000.wav: environment prob=0.50 Normal dB=65.17 prob_ocsvm=-0.92
+2025-08-19 16:21:20 INFO: window_001.wav: environment prob=0.91 Normal dB=66.80 prob_ocsvm=-0.92
+2025-08-19 16:21:20 INFO: window_002.wav: environment prob=0.97 Normal dB=66.67 prob_ocsvm=-0.92
+2025-08-19 16:21:20 INFO: window_003.wav: environment prob=0.62 Normal dB=64.04 prob_ocsvm=-0.92
+2025-08-19 16:21:20 INFO: window_004.wav: elevator prob=0.99 Normal dB=75.27 prob_ocsvm=-0.92
+2025-08-19 16:21:20 INFO: window_005.wav: elevator prob=1.00 Normal dB=83.95 prob_ocsvm=-0.92
+2025-08-19 16:21:20 INFO: window_006.wav: elevator prob=1.00 Normal dB=86.02 prob_ocsvm=-0.92
+2025-08-19 16:21:20 INFO: window_007.wav: elevator prob=1.00 Normal dB=86.31 prob_ocsvm=-0.92
+2025-08-19 16:21:20 INFO: window_008.wav: elevator prob=1.00 Normal dB=87.63 prob_ocsvm=-0.92
+2025-08-19 16:21:20 INFO: window_009.wav: elevator prob=1.00 Anomaly dB=88.36 prob_ocsvm=
+2025-08-19 16:21:20 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_162119.csv
+2025-08-19 16:21:21 INFO: Saving wave file 1 / 10
+2025-08-19 16:21:22 INFO: Saving wave file 2 / 10
+2025-08-19 16:21:23 INFO: Saving wave file 3 / 10
+2025-08-19 16:21:24 INFO: Saving wave file 4 / 10
+2025-08-19 16:21:25 INFO: Saving wave file 5 / 10
+2025-08-19 16:21:26 INFO: Saving wave file 6 / 10
+2025-08-19 16:21:27 INFO: Saving wave file 7 / 10
+2025-08-19 16:21:28 INFO: Saving wave file 8 / 10
+2025-08-19 16:21:29 INFO: Saving wave file 9 / 10
+2025-08-19 16:21:30 INFO: Saving wave file 10 / 10
+2025-08-19 16:21:30 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_162130.csv
+2025-08-19 16:21:31 INFO: window_000.wav: elevator prob=1.00 Normal dB=87.50 prob_ocsvm=-0.92
+2025-08-19 16:21:31 INFO: window_001.wav: elevator prob=1.00 Normal dB=85.70 prob_ocsvm=-0.92
+2025-08-19 16:21:31 INFO: window_002.wav: elevator prob=1.00 Normal dB=85.20 prob_ocsvm=-0.92
+2025-08-19 16:21:31 INFO: window_003.wav: elevator prob=1.00 Normal dB=85.19 prob_ocsvm=-0.92
+2025-08-19 16:21:31 INFO: window_004.wav: elevator prob=1.00 Normal dB=86.01 prob_ocsvm=-0.92
+2025-08-19 16:21:31 INFO: window_005.wav: elevator prob=1.00 Normal dB=87.27 prob_ocsvm=-0.92
+2025-08-19 16:21:31 INFO: window_006.wav: elevator prob=1.00 Normal dB=87.78 prob_ocsvm=-0.92
+2025-08-19 16:21:31 INFO: window_007.wav: elevator prob=1.00 Anomaly dB=89.20 prob_ocsvm=
+2025-08-19 16:21:31 INFO: window_008.wav: elevator prob=1.00 Anomaly dB=89.96 prob_ocsvm=
+2025-08-19 16:21:31 INFO: window_009.wav: elevator prob=1.00 Anomaly dB=89.62 prob_ocsvm=
+2025-08-19 16:21:31 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_162130.csv
+2025-08-19 16:21:32 INFO: Saving wave file 1 / 10
+2025-08-19 16:21:33 INFO: Saving wave file 2 / 10
+2025-08-19 16:21:34 INFO: Saving wave file 3 / 10
+2025-08-19 16:21:35 INFO: Saving wave file 4 / 10
+2025-08-19 16:21:36 INFO: Saving wave file 5 / 10
+2025-08-19 16:21:37 INFO: Saving wave file 6 / 10
+2025-08-19 16:21:38 INFO: Saving wave file 7 / 10
+2025-08-19 16:21:39 INFO: Saving wave file 8 / 10
+2025-08-19 16:21:40 INFO: Saving wave file 9 / 10
+2025-08-19 16:21:41 INFO: Saving wave file 10 / 10
+2025-08-19 16:21:41 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_162141.csv
+2025-08-19 16:21:42 INFO: window_000.wav: elevator prob=1.00 Anomaly dB=89.51 prob_ocsvm=
+2025-08-19 16:21:42 INFO: window_001.wav: elevator prob=1.00 Normal dB=87.53 prob_ocsvm=-0.92
+2025-08-19 16:21:42 INFO: window_002.wav: elevator prob=1.00 Normal dB=85.85 prob_ocsvm=-0.92
+2025-08-19 16:21:42 INFO: window_003.wav: elevator prob=1.00 Anomaly dB=88.16 prob_ocsvm=
+2025-08-19 16:21:42 INFO: window_004.wav: elevator prob=1.00 Normal dB=87.79 prob_ocsvm=-0.92
+2025-08-19 16:21:42 INFO: window_005.wav: elevator prob=1.00 Normal dB=87.41 prob_ocsvm=-0.92
+2025-08-19 16:21:42 INFO: window_006.wav: elevator prob=1.00 Normal dB=87.21 prob_ocsvm=-0.92
+2025-08-19 16:21:42 INFO: window_007.wav: elevator prob=1.00 Normal dB=86.69 prob_ocsvm=-0.92
+2025-08-19 16:21:42 INFO: window_008.wav: elevator prob=1.00 Normal dB=86.43 prob_ocsvm=-0.92
+2025-08-19 16:21:42 INFO: window_009.wav: elevator prob=1.00 Normal dB=86.32 prob_ocsvm=-0.92
+2025-08-19 16:21:42 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_162141.csv
+2025-08-19 16:21:43 INFO: Saving wave file 1 / 10
+2025-08-19 16:21:44 INFO: Saving wave file 2 / 10
+2025-08-19 16:21:45 INFO: Saving wave file 3 / 10
+2025-08-19 16:21:46 INFO: Saving wave file 4 / 10
+2025-08-19 16:21:47 INFO: Saving wave file 5 / 10
+2025-08-19 16:21:48 INFO: Saving wave file 6 / 10
+2025-08-19 16:21:49 INFO: Saving wave file 7 / 10
+2025-08-19 16:21:50 INFO: Saving wave file 8 / 10
+2025-08-19 16:21:51 INFO: Saving wave file 9 / 10
+2025-08-19 16:21:52 INFO: Saving wave file 10 / 10
+2025-08-19 16:21:52 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_162152.csv
+2025-08-19 16:21:53 INFO: window_000.wav: elevator prob=1.00 Normal dB=85.66 prob_ocsvm=-0.92
+2025-08-19 16:21:53 INFO: window_001.wav: elevator prob=1.00 Anomaly dB=88.11 prob_ocsvm=
+2025-08-19 16:21:53 INFO: window_002.wav: elevator prob=1.00 Anomaly dB=91.61 prob_ocsvm=
+2025-08-19 16:21:53 INFO: window_003.wav: elevator prob=1.00 Anomaly dB=92.39 prob_ocsvm=
+2025-08-19 16:21:53 INFO: window_004.wav: elevator prob=1.00 Anomaly dB=91.99 prob_ocsvm=
+2025-08-19 16:21:53 INFO: window_005.wav: elevator prob=1.00 Anomaly dB=91.76 prob_ocsvm=
+2025-08-19 16:21:53 INFO: window_006.wav: elevator prob=1.00 Anomaly dB=92.41 prob_ocsvm=
+2025-08-19 16:21:53 INFO: window_007.wav: elevator prob=1.00 Anomaly dB=92.33 prob_ocsvm=
+2025-08-19 16:21:53 INFO: window_008.wav: elevator prob=1.00 Anomaly dB=91.63 prob_ocsvm=
+2025-08-19 16:21:53 INFO: window_009.wav: elevator prob=1.00 Anomaly dB=91.11 prob_ocsvm=
+2025-08-19 16:21:53 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_162152.csv
+2025-08-19 16:21:54 INFO: Saving wave file 1 / 10
+2025-08-19 16:21:55 INFO: Saving wave file 2 / 10
+2025-08-19 16:21:56 INFO: Saving wave file 3 / 10
+2025-08-19 16:21:56 INFO: Shutting down
+2025-08-19 16:21:56 INFO: Processing remaining 3 files before shutdown
+2025-08-19 16:21:56 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_162156.csv
+2025-08-19 16:35:01 INFO: Starting monitoring
+2025-08-19 16:35:01 INFO: Serial=COM5 @ 500000 | SR=22050 | Window=44100 Step=22050 | Batch=10 | MFCC=13
+2025-08-19 16:35:01 INFO: Serial port opened successfully on attempt 1
+2025-08-19 16:35:04 INFO: Saving wave file 1 / 10
+2025-08-19 16:35:05 INFO: Saving wave file 2 / 10
+2025-08-19 16:35:06 INFO: Saving wave file 3 / 10
+2025-08-19 16:35:07 INFO: Saving wave file 4 / 10
+2025-08-19 16:35:08 INFO: Saving wave file 5 / 10
+2025-08-19 16:35:09 INFO: Saving wave file 6 / 10
+2025-08-19 16:35:10 INFO: Saving wave file 7 / 10
+2025-08-19 16:35:11 INFO: Saving wave file 8 / 10
+2025-08-19 16:35:12 INFO: Saving wave file 9 / 10
+2025-08-19 16:35:13 INFO: Saving wave file 10 / 10
+2025-08-19 16:35:13 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_163513.csv
+2025-08-19 16:35:14 INFO: window_000.wav: elevator prob=0.87 Normal dB=73.50 prob_ocsvm=-0.92
+2025-08-19 16:35:14 INFO: window_001.wav: elevator prob=0.64 Normal dB=62.00 prob_ocsvm=-0.92
+2025-08-19 16:35:14 INFO: window_002.wav: elevator prob=0.55 Normal dB=62.01 prob_ocsvm=-0.92
+2025-08-19 16:35:14 INFO: window_003.wav: environment prob=0.64 Normal dB=61.79 prob_ocsvm=-0.92
+2025-08-19 16:35:14 INFO: window_004.wav: elevator prob=0.51 Normal dB=61.66 prob_ocsvm=-0.92
+2025-08-19 16:35:14 INFO: window_005.wav: elevator prob=0.70 Normal dB=61.64 prob_ocsvm=-0.92
+2025-08-19 16:35:14 INFO: window_006.wav: elevator prob=0.85 Normal dB=61.79 prob_ocsvm=-0.92
+2025-08-19 16:35:14 INFO: window_007.wav: elevator prob=0.62 Normal dB=61.97 prob_ocsvm=-0.92
+2025-08-19 16:35:14 INFO: window_008.wav: environment prob=0.60 Normal dB=61.78 prob_ocsvm=-0.92
+2025-08-19 16:35:14 INFO: window_009.wav: elevator prob=0.61 Normal dB=61.63 prob_ocsvm=-0.92
+2025-08-19 16:35:14 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_163513.csv
+2025-08-19 16:35:15 INFO: Saving wave file 1 / 10
+2025-08-19 16:35:16 INFO: Saving wave file 2 / 10
+2025-08-19 16:35:17 INFO: Saving wave file 3 / 10
+2025-08-19 16:35:18 INFO: Saving wave file 4 / 10
+2025-08-19 16:35:19 INFO: Saving wave file 5 / 10
+2025-08-19 16:35:20 INFO: Saving wave file 6 / 10
+2025-08-19 16:35:21 INFO: Saving wave file 7 / 10
+2025-08-19 16:35:22 INFO: Saving wave file 8 / 10
+2025-08-19 16:35:23 INFO: Saving wave file 9 / 10
+2025-08-19 16:35:24 INFO: Saving wave file 10 / 10
+2025-08-19 16:35:24 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_163524.csv
+2025-08-19 16:35:24 INFO: window_000.wav: elevator prob=0.85 Normal dB=62.11 prob_ocsvm=-0.92
+2025-08-19 16:35:24 INFO: window_001.wav: environment prob=0.66 Normal dB=62.92 prob_ocsvm=-0.92
+2025-08-19 16:35:24 INFO: window_002.wav: environment prob=0.92 Normal dB=62.80 prob_ocsvm=-0.92
+2025-08-19 16:35:24 INFO: window_003.wav: environment prob=0.75 Normal dB=62.70 prob_ocsvm=-0.92
+2025-08-19 16:35:24 INFO: window_004.wav: elevator prob=0.74 Normal dB=62.29 prob_ocsvm=-0.92
+2025-08-19 16:35:24 INFO: window_005.wav: elevator prob=0.74 Normal dB=61.60 prob_ocsvm=-0.92
+2025-08-19 16:35:24 INFO: window_006.wav: elevator prob=0.76 Normal dB=61.78 prob_ocsvm=-0.92
+2025-08-19 16:35:24 INFO: window_007.wav: elevator prob=0.79 Normal dB=61.81 prob_ocsvm=-0.92
+2025-08-19 16:35:24 INFO: window_008.wav: environment prob=0.61 Normal dB=62.81 prob_ocsvm=-0.92
+2025-08-19 16:35:24 INFO: window_009.wav: elevator prob=0.49 Normal dB=63.01 prob_ocsvm=-0.92
+2025-08-19 16:35:25 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_163524.csv
+2025-08-19 16:35:25 INFO: Saving wave file 1 / 10
+2025-08-19 16:35:26 INFO: Saving wave file 2 / 10
+2025-08-19 16:35:28 INFO: Saving wave file 3 / 10
+2025-08-19 16:35:29 INFO: Saving wave file 4 / 10
+2025-08-19 16:35:30 INFO: Saving wave file 5 / 10
+2025-08-19 16:35:31 INFO: Saving wave file 6 / 10
+2025-08-19 16:35:32 INFO: Saving wave file 7 / 10
+2025-08-19 16:35:33 INFO: Saving wave file 8 / 10
+2025-08-19 16:35:34 INFO: Saving wave file 9 / 10
+2025-08-19 16:35:35 INFO: Saving wave file 10 / 10
+2025-08-19 16:35:35 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_163535.csv
+2025-08-19 16:35:35 INFO: window_000.wav: elevator prob=0.59 Normal dB=64.46 prob_ocsvm=-0.92
+2025-08-19 16:35:35 INFO: window_001.wav: elevator prob=0.54 Normal dB=64.29 prob_ocsvm=-0.92
+2025-08-19 16:35:35 INFO: window_002.wav: elevator prob=0.63 Normal dB=61.36 prob_ocsvm=-0.92
+2025-08-19 16:35:35 INFO: window_003.wav: elevator prob=0.88 Normal dB=61.78 prob_ocsvm=-0.92
+2025-08-19 16:35:35 INFO: window_004.wav: elevator prob=0.96 Normal dB=62.38 prob_ocsvm=-0.92
+2025-08-19 16:35:35 INFO: window_005.wav: elevator prob=1.00 Normal dB=86.70 prob_ocsvm=-0.92
+2025-08-19 16:35:35 INFO: window_006.wav: elevator prob=1.00 Anomaly dB=91.65 prob_ocsvm=
+2025-08-19 16:35:35 INFO: window_007.wav: elevator prob=1.00 Anomaly dB=92.26 prob_ocsvm=
+2025-08-19 16:35:35 INFO: window_008.wav: elevator prob=1.00 Anomaly dB=91.49 prob_ocsvm=
+2025-08-19 16:35:35 INFO: window_009.wav: elevator prob=1.00 Anomaly dB=91.41 prob_ocsvm=
+2025-08-19 16:35:35 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_163535.csv
+2025-08-19 16:35:36 INFO: Saving wave file 1 / 10
+2025-08-19 16:35:37 INFO: Saving wave file 2 / 10
+2025-08-19 16:35:39 INFO: Saving wave file 3 / 10
+2025-08-19 16:35:40 INFO: Saving wave file 4 / 10
+2025-08-19 16:35:41 INFO: Saving wave file 5 / 10
+2025-08-19 16:35:42 INFO: Saving wave file 6 / 10
+2025-08-19 16:35:43 INFO: Saving wave file 7 / 10
+2025-08-19 16:35:44 INFO: Saving wave file 8 / 10
+2025-08-19 16:35:45 INFO: Saving wave file 9 / 10
+2025-08-19 16:35:46 INFO: Saving wave file 10 / 10
+2025-08-19 16:35:46 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_163546.csv
+2025-08-19 16:35:47 INFO: window_000.wav: elevator prob=1.00 Anomaly dB=91.44 prob_ocsvm=
+2025-08-19 16:35:47 INFO: window_001.wav: elevator prob=1.00 Anomaly dB=91.01 prob_ocsvm=
+2025-08-19 16:35:47 INFO: window_002.wav: elevator prob=1.00 Anomaly dB=89.92 prob_ocsvm=
+2025-08-19 16:35:47 INFO: window_003.wav: elevator prob=1.00 Anomaly dB=89.45 prob_ocsvm=
+2025-08-19 16:35:47 INFO: window_004.wav: elevator prob=1.00 Anomaly dB=90.07 prob_ocsvm=
+2025-08-19 16:35:47 INFO: window_005.wav: elevator prob=1.00 Anomaly dB=90.62 prob_ocsvm=
+2025-08-19 16:35:47 INFO: window_006.wav: elevator prob=1.00 Anomaly dB=90.53 prob_ocsvm=
+2025-08-19 16:35:47 INFO: window_007.wav: elevator prob=1.00 Anomaly dB=90.73 prob_ocsvm=
+2025-08-19 16:35:47 INFO: window_008.wav: elevator prob=1.00 Anomaly dB=90.47 prob_ocsvm=
+2025-08-19 16:35:47 INFO: window_009.wav: elevator prob=1.00 Anomaly dB=89.28 prob_ocsvm=
+2025-08-19 16:35:47 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_163546.csv
+2025-08-19 16:35:48 INFO: Saving wave file 1 / 10
+2025-08-19 16:35:49 INFO: Saving wave file 2 / 10
+2025-08-19 16:35:50 INFO: Saving wave file 3 / 10
+2025-08-19 16:35:51 INFO: Saving wave file 4 / 10
+2025-08-19 16:35:51 INFO: Shutting down
+2025-08-19 16:35:51 INFO: Processing remaining 4 files before shutdown
+2025-08-19 16:35:51 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_4.2\Logs\IPC1_20250819_163551.csv

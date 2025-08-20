@@ -1,0 +1,2 @@
+Timestamp,Component,Component_proba,Status,Status_proba,dB,TopFreq1,TopFreq2,TopFreq3,TopFreq4,TopFreq5,Tester_id,MFCC1,MFCC2,MFCC3,MFCC4,MFCC5,MFCC6,MFCC7,MFCC8,MFCC9,MFCC10,MFCC11,MFCC12,MFCC13
+2025-08-19T16:14:32,environment,0.95,Normal,-0.92,75.50,356.72,436.69,715.78,300.07,0.00,IPC1,-259.32,105.05,8.67,12.23,-3.42,-8.67,-6.92,-12.81,-5.63,-4.55,-1.96,-8.61,-1.51
