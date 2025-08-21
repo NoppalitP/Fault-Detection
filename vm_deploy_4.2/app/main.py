@@ -126,6 +126,7 @@ def main():
                         method=cfg['db']['method'],
                         ref_rms = ref_rms,
                         scaler=scaler
+
                     )  # ส่งเฉพาะ timestamp 30 ตัวล่าสุด
                     batch_file_counter = 0  # รีเซ็ตตัวนับ batch
                     ts_arr = []
@@ -142,12 +143,16 @@ def main():
             curr_log = new_log_file(datetime.now(), log_dir, tester)
             logging.info(f"Rotated log: {curr_log}")
             batch_predict(
-                wav_dir, curr_log, ocsvm, log_reg, comps,
-                sr, n_mfcc, tester, ts_arr[-batch_sz:],
-                cfg['db']['normal_max'], cfg['db']['anomaly_min'],
-                cfg['ocsvm']['threshold'], cfg['db']['calib_offset'],
-                scaler=scaler
-            )
+                        wav_dir, curr_log, ocsvm, log_reg, comps,
+                        sr, n_mfcc, tester, ts_arr[-batch_sz:],
+                        cfg['db']['normal_max'], cfg['db']['anomaly_min'],
+                        cfg['ocsvm']['threshold'], 
+                        calib_offset=cfg['db']['calib_offset'],
+                        method=cfg['db']['method'],
+                        ref_rms = ref_rms,
+                        scaler=scaler
+
+                    )  # ส่งเฉพาะ timestamp 30 ตัวล่าสุด
         if spinner_enabled:
             stop_spinner(wait_stop_event, wait_thread)
         if ser.is_open:

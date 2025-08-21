@@ -1,0 +1,475 @@
+2025-08-20 15:39:38 | INFO     | __main__             | _load_config         | Configuration loaded from config.yaml
+2025-08-20 15:39:38 | INFO     | __main__             | _init_connection_pool | Connection pool initialized successfully
+2025-08-20 15:39:38 | INFO     | __main__             | __init__             | CSV source directory: D:\NOPPALIT\History\Saturn_Acc_Logs
+2025-08-20 15:39:38 | INFO     | __main__             | __init__             | Export directory: D:\NOPPALIT\History\Saturn_Acc_Logs
+2025-08-20 15:39:38 | INFO     | __main__             | init_db              | Database initialized successfully
+2025-08-20 15:39:38 | INFO     | __main__             | start                | Starting CSV processing service every 1 minutes...
+2025-08-20 15:39:38 | INFO     | __main__             | start                | CSV source directory: D:\NOPPALIT\History\Saturn_Acc_Logs
+2025-08-20 15:39:38 | INFO     | __main__             | start                | Delete after export: True
+2025-08-20 15:39:38 | ERROR    | __main__             | get_connection       | Database operation failed: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _import_rows_to_db   | Failed to import rows to database: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _process_single_csv  | Failed to process CSV file D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_152859.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | process_all_csv_files | Failed to process RPB1_20250820_152859.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | get_connection       | Database operation failed: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _import_rows_to_db   | Failed to import rows to database: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _process_single_csv  | Failed to process CSV file D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_152910.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | process_all_csv_files | Failed to process RPB1_20250820_152910.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | get_connection       | Database operation failed: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _import_rows_to_db   | Failed to import rows to database: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _process_single_csv  | Failed to process CSV file D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_152921.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | process_all_csv_files | Failed to process RPB1_20250820_152921.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | get_connection       | Database operation failed: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _import_rows_to_db   | Failed to import rows to database: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _process_single_csv  | Failed to process CSV file D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_152932.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | process_all_csv_files | Failed to process RPB1_20250820_152932.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | get_connection       | Database operation failed: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _import_rows_to_db   | Failed to import rows to database: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _process_single_csv  | Failed to process CSV file D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_152943.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | process_all_csv_files | Failed to process RPB1_20250820_152943.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | get_connection       | Database operation failed: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _import_rows_to_db   | Failed to import rows to database: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _process_single_csv  | Failed to process CSV file D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_152954.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | process_all_csv_files | Failed to process RPB1_20250820_152954.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | get_connection       | Database operation failed: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _import_rows_to_db   | Failed to import rows to database: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _process_single_csv  | Failed to process CSV file D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_153005.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | process_all_csv_files | Failed to process RPB1_20250820_153005.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | get_connection       | Database operation failed: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _import_rows_to_db   | Failed to import rows to database: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _process_single_csv  | Failed to process CSV file D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_153016.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | process_all_csv_files | Failed to process RPB1_20250820_153016.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | get_connection       | Database operation failed: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _import_rows_to_db   | Failed to import rows to database: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _process_single_csv  | Failed to process CSV file D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_153038.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | process_all_csv_files | Failed to process RPB1_20250820_153038.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | get_connection       | Database operation failed: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _import_rows_to_db   | Failed to import rows to database: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _process_single_csv  | Failed to process CSV file D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_153049.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | process_all_csv_files | Failed to process RPB1_20250820_153049.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | get_connection       | Database operation failed: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _import_rows_to_db   | Failed to import rows to database: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _process_single_csv  | Failed to process CSV file D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_153100.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | process_all_csv_files | Failed to process RPB1_20250820_153100.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | get_connection       | Database operation failed: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _import_rows_to_db   | Failed to import rows to database: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _process_single_csv  | Failed to process CSV file D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_153111.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | process_all_csv_files | Failed to process RPB1_20250820_153111.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | get_connection       | Database operation failed: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _import_rows_to_db   | Failed to import rows to database: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _process_single_csv  | Failed to process CSV file D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_153122.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | process_all_csv_files | Failed to process RPB1_20250820_153122.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | get_connection       | Database operation failed: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _import_rows_to_db   | Failed to import rows to database: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _process_single_csv  | Failed to process CSV file D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_153133.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | process_all_csv_files | Failed to process RPB1_20250820_153133.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | get_connection       | Database operation failed: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _import_rows_to_db   | Failed to import rows to database: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _process_single_csv  | Failed to process CSV file D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_153144.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | process_all_csv_files | Failed to process RPB1_20250820_153144.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | get_connection       | Database operation failed: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _import_rows_to_db   | Failed to import rows to database: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _process_single_csv  | Failed to process CSV file D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_153155.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | process_all_csv_files | Failed to process RPB1_20250820_153155.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | get_connection       | Database operation failed: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _import_rows_to_db   | Failed to import rows to database: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _process_single_csv  | Failed to process CSV file D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_153206.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | process_all_csv_files | Failed to process RPB1_20250820_153206.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | get_connection       | Database operation failed: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _import_rows_to_db   | Failed to import rows to database: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _process_single_csv  | Failed to process CSV file D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_153217.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | process_all_csv_files | Failed to process RPB1_20250820_153217.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | get_connection       | Database operation failed: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _import_rows_to_db   | Failed to import rows to database: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _process_single_csv  | Failed to process CSV file D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_153228.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | process_all_csv_files | Failed to process RPB1_20250820_153228.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | get_connection       | Database operation failed: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _import_rows_to_db   | Failed to import rows to database: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _process_single_csv  | Failed to process CSV file D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_153239.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | process_all_csv_files | Failed to process RPB1_20250820_153239.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | get_connection       | Database operation failed: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _import_rows_to_db   | Failed to import rows to database: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _process_single_csv  | Failed to process CSV file D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_153250.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | process_all_csv_files | Failed to process RPB1_20250820_153250.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | get_connection       | Database operation failed: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _import_rows_to_db   | Failed to import rows to database: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _process_single_csv  | Failed to process CSV file D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_153301.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | process_all_csv_files | Failed to process RPB1_20250820_153301.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | get_connection       | Database operation failed: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _import_rows_to_db   | Failed to import rows to database: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _process_single_csv  | Failed to process CSV file D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_153312.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | process_all_csv_files | Failed to process RPB1_20250820_153312.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | get_connection       | Database operation failed: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _import_rows_to_db   | Failed to import rows to database: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _process_single_csv  | Failed to process CSV file D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_153323.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | process_all_csv_files | Failed to process RPB1_20250820_153323.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | get_connection       | Database operation failed: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _import_rows_to_db   | Failed to import rows to database: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _process_single_csv  | Failed to process CSV file D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_153334.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | process_all_csv_files | Failed to process RPB1_20250820_153334.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | get_connection       | Database operation failed: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _import_rows_to_db   | Failed to import rows to database: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _process_single_csv  | Failed to process CSV file D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_153345.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | process_all_csv_files | Failed to process RPB1_20250820_153345.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | get_connection       | Database operation failed: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _import_rows_to_db   | Failed to import rows to database: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _process_single_csv  | Failed to process CSV file D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_153356.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | process_all_csv_files | Failed to process RPB1_20250820_153356.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | get_connection       | Database operation failed: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _import_rows_to_db   | Failed to import rows to database: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _process_single_csv  | Failed to process CSV file D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_153535.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | process_all_csv_files | Failed to process RPB1_20250820_153535.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | get_connection       | Database operation failed: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _import_rows_to_db   | Failed to import rows to database: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | _process_single_csv  | Failed to process CSV file D:\NOPPALIT\History\Saturn_Acc_Logs\RPB1_20250820_153546.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:39:38 | ERROR    | __main__             | process_all_csv_files | Failed to process RPB1_20250820_153546.csv: syntax error at or near ")"
+LINE 4: ) 
+        ^
+
+2025-08-20 15:40:34 | INFO     | __main__             | start                | Service interrupted by user
+2025-08-20 15:40:34 | INFO     | __main__             | close                | Connection pool closed
+2025-08-20 15:40:34 | INFO     | __main__             | cleanup              | Service cleanup completed

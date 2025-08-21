@@ -13,7 +13,7 @@ WINDOW_SIZE_SAMPLES = 1024  # Default window size for audio processing
 
 def _float_pcm(x: np.ndarray) -> np.ndarray:
     if np.issubdtype(x.dtype, np.integer):
-        return x.astype(np.float32) / 32768.0   # int16 → [-1,1]
+        return x.astype(np.float32) / 32768.0   # int16 → [-1,1]L
     return x.astype(np.float32, copy=False)
 
 def a_weighting_db(f: np.ndarray) -> np.ndarray:
