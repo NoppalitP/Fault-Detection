@@ -21,9 +21,8 @@ def new_log_file(start_time: datetime, log_dir: Path, tester_name: str) -> Path:
         base_columns = ["Timestamp","Component","Component_proba","Status","Status_proba","dB","TopFreq1","TopFreq2","TopFreq3","TopFreq4","TopFreq5","Tester_id"]
         # New columns
         # MFCC feature columns (13 columns)
-        mfcc_columns = [f"MFCC{i+1}" for i in range(13)]
         # Combine all columns
-        all_columns = base_columns  + mfcc_columns
+        all_columns = base_columns  
         csv.writer(f).writerow(all_columns)
     return path
 

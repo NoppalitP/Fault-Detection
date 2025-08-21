@@ -1,63 +1,52 @@
-import joblib , librosa
+import joblib, librosa
 from pathlib import Path
 from typing import Tuple, List
 from app.audio import save_wave_file
 import numpy as np
 from app.audio import compute_db, compute_top_frequencies
 import csv, logging
+
+# =========================
+# Utilities
+# =========================
+
 def load_models(base: Path, cfg: dict):
     """Load OCSVM, classifier, and optional scaler (if configured)."""
     ocsvm = joblib.load(base / cfg['models']['ocsvm'])
     log_reg = joblib.load(base / cfg['models']['log_reg'])
+    scaler = None
     try:
         scaler_path = cfg.get('models', {}).get('scaler')
         if scaler_path:
             scaler = joblib.load(base / scaler_path)
     except Exception:
-        scaler = None
+        logging.exception("Failed to load scaler; continuing without it")
     return ocsvm, log_reg, scaler
 
+
 def extract_features(segment, sr, n_mfcc):
-    #Spectral features
-    #centroid  = librosa.feature.spectral_centroid(y=segment, sr=sr)
-    # bandwidth = librosa.feature.spectral_bandwidth(y=segment, sr=sr)
-    # rolloff   = librosa.feature.spectral_rolloff(y=segment, sr=sr)
-    #flatness  = librosa.feature.spectral_flatness(y=segment)
-    # contrast  = librosa.feature.spectral_contrast(y=segment, sr=sr)
-    # zcr       = librosa.feature.zero_crossing_rate(y=segment)
-    #rms       = librosa.feature.rms(y=segment)
-
     mfccs = librosa.feature.mfcc(y=segment, sr=sr, n_mfcc=n_mfcc)
-
-    # Combine all features (take mean across time axis)
-    feat_vec = np.concatenate([
-        #centroid.mean(axis=1),
-        # bandwidth.mean(axis=1),
-        # rolloff.mean(axis=1),
-        #flatness.mean(axis=1),
-        # contrast.mean(axis=1),
-        # zcr.mean(axis=1),
-        #rms.mean(axis=1),
-        mfccs.mean(axis=1),
-    ])
-
+    feat_vec = mfccs.mean(axis=1)
     return feat_vec
 
-def preprocess_file(wav_path: Path,  sample_rate: int, n_mfcc: int) -> Tuple:
-    sig, sr = librosa.load(str(wav_path), sr=sample_rate)
-    feat_vec = extract_features(sig,sample_rate,n_mfcc)
+
+def preprocess_file(wav_path: Path, sample_rate: int, n_mfcc: int) -> Tuple:
+    sig, _ = librosa.load(str(wav_path), sr=sample_rate)
+    feat_vec = extract_features(sig, sample_rate, n_mfcc)
     return feat_vec, sig
 
 
+# =========================
+# Main batch predict
+# =========================
 
 def batch_predict(
     wav_dir: Path, log_path: Path, ocsvm, log_reg, components: List[str],
     sample_rate: int, n_mfcc: int, tester_name: str, ts_array: List[str],
     db_normal_max: float, db_anomaly_min: float, ocsvm_threshold: float,
-    calib_offset: float,method:str,ref_rms:float,
+    calib_offset: float, method: str, ref_rms: float,
     scaler=None  # optional
 ):
-
 
     DB_NORMAL_MAX = float(db_normal_max)
     DB_ANOMALY_MIN = float(db_anomaly_min)
@@ -83,135 +72,134 @@ def batch_predict(
             feats.append(None)
             sigs.append(None)
 
-    # เก็บเฉพาะที่ extract feature สำเร็จ
+    # valid indices relative to the original files list
     valid_idx = [i for i, v in enumerate(feats) if v is not None]
     if not valid_idx:
         logging.error("All feature extractions failed.")
         return
 
+    # Feature matrix X aligned to valid_idx order (k indexes this)
     X = np.asarray([feats[i] for i in valid_idx], dtype=np.float32)
     if scaler is not None:
         X = scaler.transform(X)
 
-    # ทำนายคลาสด้วย log_reg (ทุกรายการ)
-    cls_out = log_reg.predict(X).astype(int)
-    # ความน่าจะเป็นของคลาสที่ทำนาย (ถ้ามี predict_proba)
-    probs_all = None
+    # Classify all valid rows
+    cls_out = log_reg.predict(X).astype(int)  # aligned to valid_idx (use k!)
     try:
-        probs_all = log_reg.predict_proba(X)
+        probs_all = log_reg.predict_proba(X)  # shape (len(valid_idx), n_classes)
     except Exception:
         probs_all = None
 
-    # คำนวณ dB / top-freq ต่อแถว (สำหรับทำกติกา override และบันทึก log)
-    dbs = []
-    freqs_all = []
+    # Compute dB and top frequencies per valid row (k index)
+    dbs, freqs_all = [], []
     for i in valid_idx:
-        dbs.append(compute_db(sigs[i],method=method ,calib_offset=calib_offset,ref_rms=ref_rms))
-        freqs_all.append(compute_top_frequencies(sigs[i], sample_rate))
+        try:
+            dbs.append(compute_db(sigs[i], method=method, calib_offset=calib_offset, ref_rms=ref_rms))
+        except Exception:
+            logging.exception("compute_db failed for %s", files[i])
+            dbs.append(np.nan)
+        try:
+            freqs_all.append(compute_top_frequencies(sigs[i], sample_rate))
+        except Exception:
+            logging.exception("compute_top_frequencies failed for %s", files[i])
+            freqs_all.append([])
 
-    # --- เลือกเฉพาะแถวที่ "ต้องรัน" OCSVM ---
-    db_arr   = np.asarray(dbs, dtype=float)
-    finite   = np.isfinite(db_arr)
-    lt_mask  = finite & (db_arr < DB_ANOMALY_MIN)     # < 78  => Normal (ไม่รัน OCSVM)
-    gt_mask  = finite & (db_arr > DB_ANOMALY_MIN)    # > 88  => Anomaly (ไม่รัน OCSVM)
-    need_oc  = ~(lt_mask | gt_mask)                  # ช่วง 78–88 หรือ dB ไม่ finite
+    # Threshold masks (arrays aligned to valid_idx → index with k)
+    db_arr  = np.asarray(dbs, dtype=float)
+    finite  = np.isfinite(db_arr)
+    lt_mask = finite & (db_arr < DB_ANOMALY_MIN)   # below lower bound → Normal
+    gt_mask = finite & (db_arr > DB_ANOMALY_MIN)  # above upper bound → Anomaly
+    need_oc = finite & ~(lt_mask | gt_mask)       # only middle band needs OCSVM
 
-    ocsvm_out = np.zeros(len(valid_idx), dtype=int)  # เตรียมที่ไว้ (0 เป็นค่า placeholder)
-    ocsvm_score = np.full(len(valid_idx), np.nan, dtype=float)
+    # Run OCSVM only where needed
+    ocsvm_out   = np.zeros(len(valid_idx), dtype=int)
+    ocsvm_score = np.full(len(valid_idx), np.nan, float)
     if np.any(lt_mask):
-        ocsvm_scores = ocsvm.decision_function(X[lt_mask])  # shape = (n_need,)
-        ocsvm_score[lt_mask] = ocsvm_scores
-        ocsvm_out[lt_mask] = np.where(ocsvm_scores >= ocsvm_threshold, 1, -1)
-    # ------------------------------------------------
-    
+        idx_need = np.where(lt_mask)[0]                 # positions k
+        oc_scores = ocsvm.decision_function(X[idx_need])
+        ocsvm_score[idx_need] = oc_scores
+        ocsvm_out[idx_need]   = np.where(oc_scores >= ocsvm_threshold, 1, -1)
+
     f1 = "{:.2f}".format
     rows = []
+
     for k, i in enumerate(valid_idx):
-        # ตัดสินสถานะตามกติกา dB ก่อนเสมอ
-        #isnormal_str = "Normal" if ocsvm_out[k] == 1 else "Anomaly"
+        # Decide Normal/Anomaly
         if lt_mask[k]:
             isnormal_str = "Normal"
         elif gt_mask[k]:
             isnormal_str = "Anomaly"
-        #else:
-            # ช่วงกำกวม => ใช้ผล OCSVM
-            #isnormal_str = "Normal" if ocsvm_out[k] == 1 else "Anomaly"
+        else:
+            isnormal_str = "Normal" if ocsvm_out[k] == 1 else "Anomaly"
 
-        label = components[cls_out[k]]
-        
-        # Calculate component probability
+        # Use k for arrays aligned to valid_idx (cls_out, probs_all)
+        label_idx = int(cls_out[k]) if np.ndim(cls_out) == 1 else int(np.argmax(cls_out[k]))
+        label = components[label_idx] if 0 <= label_idx < len(components) else "unknown"
+
         component_proba = ""
-        if probs_all is not None and 0 <= cls_out[k] < probs_all.shape[1]:
-            component_proba = f1(probs_all[k, cls_out[k]])
-        
-        # Calculate status probability (OCSVM score converted to probability-like value)
-        status_proba = ""
-        if np.isfinite(ocsvm_score[k]):
-            # Use raw OCSVM score without sigmoid conversion
-            status_proba = f1(ocsvm_score[k])
-        
-        # Get frequencies (ensure we have at least 5 frequencies)
-        freqs = freqs_all[k]
-        freqs = list(freqs[:5]) + [0.0] * (5 - len(freqs))
-        
-        # Get MFCC features (all 13 coefficients)
-        # ปรับค่า dB ถ้าเป็น environment
-        db_val = f1(db_arr[k]) 
-        if label == "environment":
-            db_val = f1(db_arr[k] - 5)
+        if probs_all is not None and probs_all.shape[0] > k and 0 <= label_idx < probs_all.shape[1]:
+            component_proba = f1(probs_all[k, label_idx])
 
-        # Original row data
+        status_proba = f1(ocsvm_score[k]) if np.isfinite(ocsvm_score[k]) else ""
+
+        # Frequencies (k)
+        freqs = list(freqs_all[k][:5]) if len(freqs_all[k]) else []
+        freqs += [0.0] * (5 - len(freqs))
+
+        # dB (with environment adjustment)
+        db_val = db_arr[k]
+        if label == "environment":
+            db_val -= 5.0
+        db_val_str = f1(db_val)
+
+        # ts_array & files are in original order → index with i
         base_row = [
             ts_array[i],
             label,
             component_proba,
             isnormal_str,
             status_proba,
-            db_val,
+            db_val_str,
             *[f1(f) for f in freqs[:5]],
-            tester_name
+            tester_name,
         ]
+        rows.append(base_row)
 
-        # New columns data
-        #new_data = [component_proba, status_proba, freq4, freq5]
-        # MFCC features data
-        
-        # Combine all data
-        row = base_row  
-        rows.append(row)
-
-    # เขียนไฟล์ครั้งเดียว
+    # Write once
     with open(log_path, "a", newline="") as fh:
         csv.writer(fh).writerows(rows)
 
-    # logging ต่อแถว (ออปชัน)
+    # Logging per row (mirror indices carefully)
     for k, i in enumerate(valid_idx):
-        isnormal_str = "Normal" if ocsvm_out[k] == 1 else "Anomaly"
         if lt_mask[k]:
             isnormal_str = "Normal"
         elif gt_mask[k]:
             isnormal_str = "Anomaly"
-        #else:
-            #isnormal_str = "Normal" if ocsvm_out[k] == 1 else "Anomaly"
+        else:
+            isnormal_str = "Normal" if ocsvm_out[k] == 1 else "Anomaly"
 
-        # probability for predicted class if available
-        if probs_all is not None and 0 <= cls_out[k] < probs_all.shape[1]:
-            prob_for_label = float(probs_all[k, cls_out[k]])
-            prob_str = f1(prob_for_label)
+        if probs_all is not None and probs_all.shape[0] > k and 0 <= int(cls_out[k]) < probs_all.shape[1]:
+            prob_str = f1(float(probs_all[k, int(cls_out[k])]))
         else:
             prob_str = ""
+        db_val = db_arr[k]
+        if label == "environment":
+            db_val -= 5.0
+        db_val_str = f1(db_val)
 
         logging.info(
             "%s: %s prob=%s %s dB=%s prob_ocsvm=%s",
             files[i].name,
-            components[cls_out[k]],
+            components[int(cls_out[k])] if 0 <= int(cls_out[k]) < len(components) else "unknown",
             prob_str,
             isnormal_str,
-            f1(db_arr[k]),
+            db_val_str,
             f1(ocsvm_score[k]) if np.isfinite(ocsvm_score[k]) else "",
         )
 
-    # cleanup
+    # cleanup wav windows
     for wf in wav_dir.glob("window_*.wav"):
-        wf.unlink()
-
+        try:
+            wf.unlink()
+        except Exception:
+            logging.exception("Failed to delete %s", wf)
