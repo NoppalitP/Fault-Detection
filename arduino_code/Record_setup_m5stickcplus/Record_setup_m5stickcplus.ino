@@ -1,7 +1,8 @@
+
 #include <M5Unified.h>
 ///////config
 
-int Board_rate = 500000;
+int Board_rate = 921600;
 int Sampling_rate = 22050;
 
 /////

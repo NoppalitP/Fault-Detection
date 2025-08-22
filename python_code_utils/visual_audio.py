@@ -22,7 +22,7 @@ from scipy import signal
 from contextlib import nullcontext
 
 # Resolve vm_deploy_3.9 package for shared utilities
-BASE = Path(__file__).resolve().parent.parent / "vm_deploy_3.9"
+BASE = Path(__file__).resolve().parent.parent / "vm_deploy_4.2"
 sys.path.insert(0, str(BASE))
 
 from app.logger import setup_logging
@@ -34,7 +34,7 @@ CFG = yaml.safe_load(open(BASE / "config" / "config.yaml", "r"))
 
 # --- Serial Port Settings ---
 SERIAL_PORT = CFG['serial']['port']
-BAUD_RATE = CFG['serial']['baud_rate']
+BAUD_RATE = 921600
 
 # --- Audio Settings ---
 SAMPLE_RATE = CFG['audio']['sample_rate']

@@ -32,8 +32,8 @@ STEP_DURATION = 1    # ความถี่ในการบันทึกไ
 
 #============================================================================
 
-OUTPUT_DIRECTORY = r"lab"
-NAME_COMPONENT= "94@1K"  # ชื่อของ component ที่บันทึก
+OUTPUT_DIRECTORY = r"RP56/"
+NAME_COMPONENT= "shuttle"  # ชื่อของ component ที่บันทึก
 
 
 # === DERIVED CONSTANTS (DO NOT CHANGE) ======================================

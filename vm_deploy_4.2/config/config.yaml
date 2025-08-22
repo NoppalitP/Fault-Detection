@@ -2,7 +2,7 @@
 
 # === SERIAL PORT SETTINGS ===
 serial:
-  port: "COM5"
+  port: "COM4"
   baud_rate: 500000
 
 # === AUDIO / SAMPLING SETTINGS ===
