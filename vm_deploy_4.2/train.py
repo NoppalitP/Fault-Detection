@@ -22,7 +22,7 @@ PATTERNS = {
     2: "gripper_*.wav",
     3: "shuttle_*.wav",
     4: "environment_*.wav",
-   # 5: "mast_bearing_broken_*.wav"
+    5: "mast_bearing_broken_*.wav"
 }
 SR = 22050
 SEG_DUR = 2.0
@@ -34,8 +34,8 @@ N_FFT = 2048
 HOP = 512
 RAND_SEED = 1337
 VAL_RATIO = 0.2
-USE_EMA_CMVN = False      # <<< BEST for deploy with EMA
-EMA_ALPHA = 0.02      # 0.01–0.05 reasonable
+USE_EMA_CMVN = 1      # <<< BEST for deploy with EMA
+EMA_ALPHA = 0.01      # 0.01–0.05 reasonable
 OUT_DIR = Path("/content/models"); OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 rng = np.random.default_rng(RAND_SEED)
