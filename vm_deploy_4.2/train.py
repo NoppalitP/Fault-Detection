@@ -9,7 +9,11 @@ from sklearn.metrics import (classification_report, confusion_matrix,
                              accuracy_score, f1_score)
 from sklearn.svm import OneClassSVM
 from sklearn.model_selection import GroupShuffleSplit
-
+import sys, numpy, sklearn, joblib
+print("Python  :", sys.version.split()[0])
+print("NumPy   :", numpy.__version__)
+print("scikit-learn:", sklearn.__version__)
+print("joblib  :", joblib.__version__)
 # --------------------- CONFIG ---------------------
 DATA_DIR = r"D:\NOPPALIT\Fault-Detection\all_tester"
 PATTERNS = {
@@ -18,7 +22,7 @@ PATTERNS = {
     2: "gripper_*.wav",
     3: "shuttle_*.wav",
     4: "environment_*.wav",
-    5: "mast_bearing_broken_*.wav"
+   # 5: "mast_bearing_broken_*.wav"
 }
 SR = 22050
 SEG_DUR = 2.0
