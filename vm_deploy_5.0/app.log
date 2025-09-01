@@ -1,0 +1,214 @@
+2025-09-01 10:22:08 INFO: Starting monitoring
+2025-09-01 10:22:08 INFO: Serial=COM5 @ 500000 | SR=22050 | Window=44100 Step=22050 | Batch=1 | MFCC=13
+2025-09-01 10:22:08 INFO: Serial port opened successfully on attempt 1
+2025-09-01 10:22:10 INFO: Saving wave file 1 / 1
+2025-09-01 10:22:10 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_102210.csv
+2025-09-01 10:22:10 WARNING: ts_array has 1 entries for 9 files; truncating to 1.
+2025-09-01 10:22:10 INFO: Serial closed
+2025-09-01 10:24:45 INFO: Starting monitoring
+2025-09-01 10:24:45 INFO: Serial=COM5 @ 500000 | SR=22050 | Window=44100 Step=22050 | Batch=1 | MFCC=13
+2025-09-01 10:24:45 INFO: Serial port opened successfully on attempt 1
+2025-09-01 10:24:47 INFO: Saving wave file 1 / 1
+2025-09-01 10:24:47 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_102447.csv
+2025-09-01 10:24:47 WARNING: ts_array has 1 entries for 9 files; truncating to 1.
+2025-09-01 10:24:48 INFO: Serial closed
+2025-09-01 10:39:10 INFO: Starting monitoring
+2025-09-01 10:39:10 INFO: Serial=COM5 @ 500000 | SR=22050 | Window=44100 Step=22050 | Batch=1 | MFCC=13
+2025-09-01 10:39:10 INFO: Serial port opened successfully on attempt 1
+2025-09-01 10:39:13 INFO: Saving wave file 1 / 1
+2025-09-01 10:39:13 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_103913.csv
+2025-09-01 10:39:13 WARNING: ts_array has 1 entries for 9 files; truncating to 1.
+2025-09-01 10:39:13 INFO: Serial closed
+2025-09-01 10:42:37 INFO: Starting monitoring
+2025-09-01 10:42:37 INFO: Serial=COM5 @ 500000 | SR=22050 | Window=44100 Step=22050 | Batch=1 | MFCC=13
+2025-09-01 10:42:37 INFO: Serial port opened successfully on attempt 1
+2025-09-01 10:42:39 INFO: Saving wave file 1 / 1
+2025-09-01 10:42:39 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104239.csv
+2025-09-01 10:42:39 WARNING: ts_array has 1 entries for 9 files; truncating to 1.
+2025-09-01 10:42:40 INFO: Serial closed
+2025-09-01 10:43:53 INFO: Starting monitoring
+2025-09-01 10:43:53 INFO: Serial=COM5 @ 500000 | SR=22050 | Window=44100 Step=22050 | Batch=1 | MFCC=13
+2025-09-01 10:43:53 INFO: Serial port opened successfully on attempt 1
+2025-09-01 10:43:56 INFO: Saving wave file 1 / 1
+2025-09-01 10:43:56 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104356.csv
+2025-09-01 10:43:56 WARNING: ts_array has 1 entries for 9 files; truncating to 1.
+2025-09-01 10:43:56 INFO: window_000.wav: mast prob= Normal dB=75.21
+2025-09-01 10:43:56 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104356.csv
+2025-09-01 10:43:57 INFO: Saving wave file 1 / 1
+2025-09-01 10:43:57 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104357.csv
+2025-09-01 10:43:57 INFO: window_000.wav: mast prob= Normal dB=70.90
+2025-09-01 10:43:57 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104357.csv
+2025-09-01 10:43:58 INFO: Saving wave file 1 / 1
+2025-09-01 10:43:58 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104358.csv
+2025-09-01 10:43:58 INFO: window_000.wav: mast prob= Normal dB=75.24
+2025-09-01 10:43:58 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104358.csv
+2025-09-01 10:43:59 INFO: Saving wave file 1 / 1
+2025-09-01 10:43:59 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104359.csv
+2025-09-01 10:43:59 INFO: window_000.wav: mast prob= Normal dB=75.61
+2025-09-01 10:43:59 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104359.csv
+2025-09-01 10:44:00 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:00 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104400.csv
+2025-09-01 10:44:00 INFO: window_000.wav: mast prob= Normal dB=78.95
+2025-09-01 10:44:00 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104400.csv
+2025-09-01 10:44:01 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:01 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104401.csv
+2025-09-01 10:44:01 INFO: window_000.wav: mast prob= Normal dB=78.90
+2025-09-01 10:44:01 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104401.csv
+2025-09-01 10:44:02 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:02 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104402.csv
+2025-09-01 10:44:02 INFO: window_000.wav: mast prob= Normal dB=79.08
+2025-09-01 10:44:02 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104402.csv
+2025-09-01 10:44:03 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:03 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104403.csv
+2025-09-01 10:44:03 INFO: window_000.wav: mast prob= Normal dB=78.86
+2025-09-01 10:44:03 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104403.csv
+2025-09-01 10:44:04 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:04 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104404.csv
+2025-09-01 10:44:04 INFO: window_000.wav: mast prob= Normal dB=70.12
+2025-09-01 10:44:04 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104404.csv
+2025-09-01 10:44:05 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:05 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104405.csv
+2025-09-01 10:44:05 INFO: window_000.wav: mast prob= Normal dB=71.14
+2025-09-01 10:44:05 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104405.csv
+2025-09-01 10:44:06 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:06 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104406.csv
+2025-09-01 10:44:06 INFO: window_000.wav: mast prob= Normal dB=71.39
+2025-09-01 10:44:06 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104406.csv
+2025-09-01 10:44:07 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:07 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104407.csv
+2025-09-01 10:44:07 INFO: window_000.wav: mast prob= Normal dB=72.11
+2025-09-01 10:44:07 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104407.csv
+2025-09-01 10:44:08 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:08 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104408.csv
+2025-09-01 10:44:08 INFO: window_000.wav: mast prob= Normal dB=71.62
+2025-09-01 10:44:08 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104408.csv
+2025-09-01 10:44:09 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:09 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104409.csv
+2025-09-01 10:44:09 INFO: window_000.wav: mast prob= Normal dB=70.39
+2025-09-01 10:44:09 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104409.csv
+2025-09-01 10:44:10 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:10 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104410.csv
+2025-09-01 10:44:10 INFO: window_000.wav: mast prob= Normal dB=69.65
+2025-09-01 10:44:10 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104410.csv
+2025-09-01 10:44:11 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:11 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104411.csv
+2025-09-01 10:44:11 INFO: window_000.wav: mast prob= Normal dB=69.12
+2025-09-01 10:44:11 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104411.csv
+2025-09-01 10:44:12 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:12 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104412.csv
+2025-09-01 10:44:12 INFO: window_000.wav: mast prob= Normal dB=69.49
+2025-09-01 10:44:12 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104412.csv
+2025-09-01 10:44:13 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:13 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104413.csv
+2025-09-01 10:44:13 INFO: window_000.wav: mast prob= Normal dB=70.40
+2025-09-01 10:44:13 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104413.csv
+2025-09-01 10:44:14 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:14 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104414.csv
+2025-09-01 10:44:14 INFO: window_000.wav: mast prob= Normal dB=70.02
+2025-09-01 10:44:14 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104414.csv
+2025-09-01 10:44:15 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:15 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104415.csv
+2025-09-01 10:44:15 INFO: window_000.wav: mast prob= Normal dB=69.27
+2025-09-01 10:44:15 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104415.csv
+2025-09-01 10:44:16 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:16 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104416.csv
+2025-09-01 10:44:16 INFO: window_000.wav: mast prob= Normal dB=77.56
+2025-09-01 10:44:17 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104416.csv
+2025-09-01 10:44:17 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:17 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104417.csv
+2025-09-01 10:44:17 INFO: window_000.wav: mast prob= Normal dB=80.87
+2025-09-01 10:44:18 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104417.csv
+2025-09-01 10:44:18 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:18 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104418.csv
+2025-09-01 10:44:19 INFO: window_000.wav: mast prob= Normal dB=78.71
+2025-09-01 10:44:19 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104418.csv
+2025-09-01 10:44:20 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:20 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104420.csv
+2025-09-01 10:44:20 INFO: window_000.wav: mast prob= Normal dB=69.78
+2025-09-01 10:44:20 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104420.csv
+2025-09-01 10:44:21 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:21 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104421.csv
+2025-09-01 10:44:21 INFO: window_000.wav: mast prob= Normal dB=69.56
+2025-09-01 10:44:21 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104421.csv
+2025-09-01 10:44:22 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:22 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104422.csv
+2025-09-01 10:44:22 INFO: window_000.wav: mast prob= Normal dB=69.94
+2025-09-01 10:44:22 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104422.csv
+2025-09-01 10:44:23 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:23 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104423.csv
+2025-09-01 10:44:23 INFO: window_000.wav: mast prob= Normal dB=79.18
+2025-09-01 10:44:23 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104423.csv
+2025-09-01 10:44:24 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:24 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104424.csv
+2025-09-01 10:44:24 INFO: window_000.wav: mast prob= Normal dB=79.14
+2025-09-01 10:44:24 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104424.csv
+2025-09-01 10:44:25 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:25 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104425.csv
+2025-09-01 10:44:25 INFO: window_000.wav: mast prob= Normal dB=70.62
+2025-09-01 10:44:25 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104425.csv
+2025-09-01 10:44:26 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:26 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104426.csv
+2025-09-01 10:44:26 INFO: window_000.wav: mast prob= Normal dB=72.89
+2025-09-01 10:44:26 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104426.csv
+2025-09-01 10:44:27 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:27 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104427.csv
+2025-09-01 10:44:27 INFO: window_000.wav: mast prob= Normal dB=75.95
+2025-09-01 10:44:27 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104427.csv
+2025-09-01 10:44:28 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:28 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104428.csv
+2025-09-01 10:44:28 INFO: window_000.wav: mast prob= Normal dB=76.11
+2025-09-01 10:44:28 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104428.csv
+2025-09-01 10:44:29 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:29 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104429.csv
+2025-09-01 10:44:29 INFO: window_000.wav: mast prob= Normal dB=73.17
+2025-09-01 10:44:29 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104429.csv
+2025-09-01 10:44:30 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:30 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104430.csv
+2025-09-01 10:44:30 INFO: window_000.wav: mast prob= Normal dB=70.39
+2025-09-01 10:44:30 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104430.csv
+2025-09-01 10:44:31 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:31 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104431.csv
+2025-09-01 10:44:31 INFO: window_000.wav: mast prob= Normal dB=70.07
+2025-09-01 10:44:31 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104431.csv
+2025-09-01 10:44:32 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:32 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104432.csv
+2025-09-01 10:44:32 INFO: window_000.wav: mast prob= Normal dB=70.92
+2025-09-01 10:44:32 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104432.csv
+2025-09-01 10:44:33 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:33 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104433.csv
+2025-09-01 10:44:33 INFO: window_000.wav: mast prob= Normal dB=71.37
+2025-09-01 10:44:33 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104433.csv
+2025-09-01 10:44:34 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:34 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104434.csv
+2025-09-01 10:44:34 INFO: window_000.wav: mast prob= Normal dB=71.80
+2025-09-01 10:44:34 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104434.csv
+2025-09-01 10:44:35 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:35 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104435.csv
+2025-09-01 10:44:35 INFO: window_000.wav: mast prob= Normal dB=70.78
+2025-09-01 10:44:35 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104435.csv
+2025-09-01 10:44:36 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:36 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104436.csv
+2025-09-01 10:44:36 INFO: window_000.wav: mast prob= Normal dB=69.75
+2025-09-01 10:44:36 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104436.csv
+2025-09-01 10:44:37 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:37 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104437.csv
+2025-09-01 10:44:37 INFO: window_000.wav: mast prob= Normal dB=71.36
+2025-09-01 10:44:37 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104437.csv
+2025-09-01 10:44:38 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:38 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104438.csv
+2025-09-01 10:44:38 INFO: window_000.wav: mast prob= Normal dB=71.30
+2025-09-01 10:44:38 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104438.csv
+2025-09-01 10:44:39 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:39 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104439.csv
+2025-09-01 10:44:39 INFO: window_000.wav: mast prob= Normal dB=71.12
+2025-09-01 10:44:39 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104439.csv
+2025-09-01 10:44:40 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:40 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104440.csv
+2025-09-01 10:44:40 INFO: window_000.wav: mast prob= Normal dB=70.67
+2025-09-01 10:44:40 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104440.csv
+2025-09-01 10:44:41 INFO: Saving wave file 1 / 1
+2025-09-01 10:44:41 INFO: Rotated log: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104441.csv
+2025-09-01 10:44:41 INFO: window_000.wav: mast prob= Normal dB=71.40
+2025-09-01 10:44:41 INFO: Successfully logged: C:\Users\7359451\Documents\GitHub\Fault-Detection\vm_deploy_5.0\Logs\IPC1_20250901_104441.csv
+2025-09-01 10:44:42 INFO: Shutting down
+2025-09-01 10:44:42 INFO: Serial closed
