@@ -2,7 +2,7 @@
 #include <M5Unified.h>
 ///////config
 
-int Board_rate = 921600;
+int Board_rate = 500000;
 int Sampling_rate = 22050;
 
 /////
@@ -86,7 +86,7 @@ void sendPCMData() {
 
 void playButtonFeedback() {
   // Play beep sound (if speaker available)
-  M5.Speaker.tone(10000, 400); // 1kHz tone for 100ms
+  M5.Speaker.tone(10000, 400); 
   
   // Flash built-in LED
 digitalWrite(10, LOW);

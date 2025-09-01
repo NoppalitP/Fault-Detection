@@ -32,7 +32,7 @@ STEP_DURATION = 1    # ความถี่ในการบันทึกไ
 
 #============================================================================
 
-OUTPUT_DIRECTORY = r"RPB3/"
+OUTPUT_DIRECTORY = r"RP06/"
 NAME_COMPONENT= "environment"  # ชื่อของ component ที่บันทึก
 
 
