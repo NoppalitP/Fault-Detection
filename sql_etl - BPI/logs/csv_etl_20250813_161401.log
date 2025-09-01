@@ -1,0 +1,11 @@
+2025-08-13 16:14:01 | INFO     | __main__             | _load_config         | Configuration loaded from config.yaml
+2025-08-13 16:14:01 | INFO     | __main__             | _init_connection_pool | Connection pool initialized successfully
+2025-08-13 16:14:01 | INFO     | __main__             | __init__             | CSV source directory: D:\NOPPALIT\History\Saturn_Acc_Logs
+2025-08-13 16:14:01 | INFO     | __main__             | __init__             | Export directory: D:\NOPPALIT\History\Saturn_Acc_Logs
+2025-08-13 16:14:01 | INFO     | __main__             | init_db              | Database initialized successfully
+2025-08-13 16:14:01 | INFO     | __main__             | start                | Starting CSV processing service every 1 minutes...
+2025-08-13 16:14:01 | INFO     | __main__             | start                | CSV source directory: D:\NOPPALIT\History\Saturn_Acc_Logs
+2025-08-13 16:14:01 | INFO     | __main__             | start                | Delete after export: True
+2025-08-13 16:14:27 | INFO     | __main__             | start                | Service interrupted by user
+2025-08-13 16:14:27 | INFO     | __main__             | close                | Connection pool closed
+2025-08-13 16:14:27 | INFO     | __main__             | cleanup              | Service cleanup completed

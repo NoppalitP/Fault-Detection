@@ -4,7 +4,7 @@ from typing import Tuple, List
 from app.audio import save_wave_file
 import numpy as np
 from app.audio import compute_db, compute_top_frequencies
-import csv, logging
+import csv, logging , os , tempfile
 
 # =========================
 # Utilities
@@ -13,7 +13,7 @@ import csv, logging
 def load_models(base: Path, cfg: dict):
     """Load OCSVM, classifier, and optional scaler (if configured)."""
     ocsvm = joblib.load(base / cfg['models']['ocsvm'])
-    log_reg = joblib.load(base / cfg['models']['log_reg'])
+    lgb = joblib.load(base / cfg['models']['classification_model'])
     scaler = None
     try:
         scaler_path = cfg.get('models', {}).get('scaler')
@@ -21,13 +21,37 @@ def load_models(base: Path, cfg: dict):
             scaler = joblib.load(base / scaler_path)
     except Exception:
         logging.exception("Failed to load scaler; continuing without it")
-    return ocsvm, log_reg, scaler
+    return ocsvm, lgb, scaler
 
 
-def extract_features(segment, sr, n_mfcc):
+import numpy as np
+import librosa
+
+def extract_features(segment: np.ndarray, sr: int, n_mfcc: int = 13):
+    """
+    Extract MFCC-based features from a raw audio segment.
+
+    Args:
+        segment (np.ndarray): Audio samples
+        sr (int): Sampling rate
+        n_mfcc (int): Number of MFCC coefficients
+
+    Returns:
+        np.ndarray: Feature vector (mean + std of MFCCs)
+    """
+    # 1. MFCCs
     mfccs = librosa.feature.mfcc(y=segment, sr=sr, n_mfcc=n_mfcc)
-    feat_vec = mfccs.mean(axis=1)
-    return feat_vec
+    mfccs_mean = np.mean(mfccs, axis=1)
+    mfccs_std = np.std(mfccs, axis=1)
+
+    # Combine into one vector
+    features = np.hstack([
+        mfccs_mean,
+        mfccs_std
+    ])
+
+    return features
+
 
 
 def preprocess_file(wav_path: Path, sample_rate: int, n_mfcc: int) -> Tuple:
@@ -166,8 +190,10 @@ def batch_predict(
         rows.append(base_row)
 
     # Write once
-    with open(log_path, "a", newline="") as fh:
+    tmp_path = log_path.with_suffix(".tmp")
+    with open(tmp_path, "w", newline="") as fh:
         csv.writer(fh).writerows(rows)
+    os.replace(tmp_path, log_path)  # atomic replace
 
     # Logging per row (mirror indices carefully)
     for k, i in enumerate(valid_idx):

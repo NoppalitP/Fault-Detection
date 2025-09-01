@@ -1,0 +1,24 @@
+# Database Configuration
+host: localhost
+port: 5432
+dbname: testco_database
+user: postgres
+password: 170970022Za-
+
+# Connection Pool Configuration
+min_connections: 1
+max_connections: 10
+
+# Table Configuration
+table_name: measurements_v4
+
+# Service Configuration
+interval_minutes: 1
+export_directory: D:\NOPPALIT\History\BPI_Acc_Logs
+csv_source_directory: D:\NOPPALIT\History\BPI_Acc_Logs
+retention_days: 30
+delete_after_export: true
+
+# Logging Configuration
+log_level: INFO
+log_file: sql_etl.log
