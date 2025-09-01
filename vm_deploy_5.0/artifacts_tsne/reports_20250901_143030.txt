@@ -1,0 +1,29 @@
+=== Logistic Regression (t-SNE) ===
+              precision    recall  f1-score   support
+
+           0       0.97      0.84      0.90       101
+           1       0.98      0.97      0.98       119
+           2       0.99      0.98      0.99       119
+           3       0.98      1.00      0.99       105
+           4       0.94      0.96      0.95       102
+           5       0.62      0.95      0.75        21
+
+    accuracy                           0.95       567
+   macro avg       0.91      0.95      0.93       567
+weighted avg       0.96      0.95      0.96       567
+
+
+=== Random Forest (t-SNE) ===
+              precision    recall  f1-score   support
+
+           0       0.91      0.88      0.89       101
+           1       1.00      1.00      1.00       119
+           2       1.00      1.00      1.00       119
+           3       1.00      0.99      1.00       105
+           4       0.96      1.00      0.98       102
+           5       0.57      0.57      0.57        21
+
+    accuracy                           0.96       567
+   macro avg       0.91      0.91      0.91       567
+weighted avg       0.96      0.96      0.96       567
+

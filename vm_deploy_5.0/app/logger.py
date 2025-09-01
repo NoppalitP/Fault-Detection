@@ -3,6 +3,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
+from logging.handlers import TimedRotatingFileHandler
 try:
     # colorama provides cross-platform ANSI color support on Windows terminals
     from colorama import Fore, Style, Back, init as colorama_init
@@ -50,23 +51,24 @@ class _ColorFormatter(logging.Formatter):
 
 def setup_logging(log_file: Path) -> None:
     """Configure file + colorized console logging.
-
-    - File: full timestamp, plain text
-    - Console: short timestamp, colored levels (if supported)
+    - File: rotate every 1 day, keep 7 backups
+    - Console: colored levels (if supported)
     """
-
-    # Initialize color on Windows terminals
+    from colorama import init as colorama_init
     colorama_init(autoreset=True)
 
     root_logger = logging.getLogger()
     root_logger.setLevel(logging.INFO)
-
-    # Reset existing handlers to avoid duplicate logs if re-initialized
     root_logger.handlers.clear()
 
-    # File handler (plain)
-    file_handler = logging.FileHandler(str(log_file))
-    file_handler.setLevel(logging.INFO)
+    # File handler (rotate daily, keep last 7 days)
+    file_handler = TimedRotatingFileHandler(
+        filename=str(log_file),
+        when="D",            # D = day
+        interval=1,          # rotate every 1 day
+        backupCount=7,       # keep 7 files, delete older
+        encoding="utf-8"
+    )
     file_formatter = logging.Formatter(
         fmt="%(asctime)s %(levelname)s: %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
@@ -74,14 +76,7 @@ def setup_logging(log_file: Path) -> None:
     file_handler.setFormatter(file_formatter)
 
     # Console handler (colorized)
-    # Send console logs to stderr to avoid interleaving with spinner (stdout)
     console_handler = logging.StreamHandler(sys.stderr)
-    # Reuse the same I/O lock as spinner to serialize writes across streams
-    try:
-        from app.utils import IO_LOCK  # type: ignore
-        console_handler.lock = IO_LOCK  # type: ignore[attr-defined]
-    except Exception:
-        pass
     console_handler.setLevel(logging.INFO)
     console_handler.setFormatter(_ColorFormatter())
 

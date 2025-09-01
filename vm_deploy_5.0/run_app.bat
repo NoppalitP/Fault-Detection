@@ -1,10 +1,10 @@
 @echo off
 
+REM เปลี่ยนโฟลเดอร์ทำงานไปที่ C:\Saturn\Acoustic
+cd /d C:\Saturn\Acoustic
+
 REM เปิดใช้งาน environment
 call myenv\Scripts\activate.bat
-
-REM ติดตั้ง LightGBM (จะติดตั้งใน env ที่เปิดแล้ว)
-pip install lightgbm
 
 REM รันโปรแกรมหลักโดยตรงจาก python.exe ของ env
 myenv\python.exe -m app.main
