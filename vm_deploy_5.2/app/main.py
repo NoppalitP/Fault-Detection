@@ -60,7 +60,7 @@ def main():
     )
 
     with spinner_ctx("Connecting to serial...", interval_seconds=spinner_interval):
-        ser = open_serial_with_retry(sp_port, baud)
+        ser =open_serial_with_retry(sp_port, baud_rate=baud)
         if not ser:
             return
 
