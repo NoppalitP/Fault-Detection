@@ -162,6 +162,7 @@ class RotatingCsvWriter(object):
 
 
 def int16_le_rms_dB(payload_bytes, calib_db):
+    eps = 1e-12
     n = len(payload_bytes) // 2
     if n == 0:
         return -120.0
@@ -176,7 +177,7 @@ def int16_le_rms_dB(payload_bytes, calib_db):
         ss += x * x
     scale = 1.002374467 / 0.33347884
     rms = math.sqrt(ss / float(n))
-    rms_pa = max(rms * scale, 1e-12)
+    rms_pa = max(rms * scale, eps)
     db = 20.0 * math.log10(rms_pa / 20e-6)
     db_cal = db + calib_db
     print(db_cal)
