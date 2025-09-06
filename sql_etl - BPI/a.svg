@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="420" viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .box { stroke:#1f2937; stroke-width:2; fill:#f3f4f6; }
+    .label { font-family:Arial, Helvetica, sans-serif; font-size:14px; fill:#111827; }
+    .part { stroke:#111827; stroke-width:2; }
+    /* สีเริ่มต้น (จะถูก override ด้วย mapping/threshold ของ Grafana) */
+    #mast, #elevator, #gripper, #shuttle { fill:#10b981; }
+  </style>
+
+  <!-- โครงตู้ -->
+  <rect x="20" y="20" width="760" height="380" rx="16" class="box"/>
+  <text x="40" y="50" class="label" font-size="18" font-weight="bold">Saturn Tester</text>
+
+  <!-- Mast -->
+  <g id="mast" class="part">
+    <rect x="80" y="100" width="120" height="220" rx="10"/>
+    <text x="90" y="95" class="label">Mast</text>
+  </g>
+
+  <!-- Elevator -->
+  <g id="elevator" class="part">
+    <rect x="260" y="140" width="120" height="180" rx="10"/>
+    <text x="270" y="135" class="label">Elevator</text>
+  </g>
+
+  <!-- Gripper -->
+  <g id="gripper" class="part">
+    <rect x="440" y="170" width="120" height="150" rx="10"/>
+    <text x="450" y="165" class="label">Gripper</text>
+  </g>
+
+  <!-- Shuttle -->
+  <g id="shuttle" class="part">
+    <rect x="620" y="200" width="120" height="120" rx="10"/>
+    <text x="630" y="195" class="label">Shuttle</text>
+  </g>
+
+  <!-- Legend -->
+  <g>
+    <circle cx="650" cy="70" r="8" fill="#10b981"/><text x="665" y="75" class="label">OK</text>
+    <circle cx="650" cy="95" r="8" fill="#f59e0b"/><text x="665" y="100" class="label">Warning</text>
+    <circle cx="650" cy="120" r="8" fill="#ef4444"/><text x="665" y="125" class="label">Fault</text>
+  </g>
+</svg>

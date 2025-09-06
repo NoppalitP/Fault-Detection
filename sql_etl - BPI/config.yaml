@@ -10,7 +10,7 @@ min_connections: 1
 max_connections: 10
 
 # Table Configuration
-table_name: measurements_v4
+table_name: BPI_tester_measurements
 
 # Service Configuration
 interval_minutes: 1
